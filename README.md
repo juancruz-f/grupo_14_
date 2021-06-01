@@ -4,7 +4,7 @@ OhShots es un e-commerce de bedidas alcohólicas que apunta a un público mayor 
 En el instante que pensamos en bebidas alcohólicas, vino a nuestras mentes los famosos “shots ” de tequilas o bebidas blancas. Lo consideramos simpático pero corto, fue ahí como surgió “oh shots!”, haciendo referencia al insulto “oh sxht!” en ingles en un juego de palabras. 
 # Los integrantes del grupo 14 son:
 - Carlos Müller
-- Belen Mamani
+- Belen Mamani : Estudiante de Programación FullStackWeb, 19 años de Edad
 - Solange Abreu : Estudiante de FullStackWeb e Ingeniería en informática, 31 años de edad.
 - Juan Cruz Fernández : Estudiante de Programación FullStackWeb.- 26 años de edad.
 
