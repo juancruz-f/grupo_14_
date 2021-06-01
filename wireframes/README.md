@@ -1,1 +1,0 @@
-Acá van las imagenes de los wireframes.
