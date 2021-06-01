@@ -6,7 +6,7 @@ En el instante que pensamos en bebidas alcohólicas, vino a nuestras mentes los 
 - Carlos Muller
 - Belen Mamani
 - Solange Abreu : Estudiante de FullStackWeb e Ingeniería en informática, 31 años de edad.
-- Juan Cruz Fernández
+- Juan Cruz Fernández : Estudiante de Programación FullStackWeb.- 26 años de edad.
 
 # Los sitios en los que nos inspiramos para este proyecto son:
 - Cheersapp (https://www.cheersapp.com.ar/): De este sitio nos gustó mucho el dinamismo de las imágenes, el header que te sigue para que no tengas que volver hacia arriba nunca y el bot de ayuda.
