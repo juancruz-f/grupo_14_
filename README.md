@@ -1,11 +1,11 @@
 # grupo_14_OhShots
 OhShots es un e-commerce de bedidas alcohólicas que apunta a un público mayor de 18 años. Los productos ofrecidos son: vinos, cervezas y bebidas blancas. Para complementar con los productos ofrecidos, el sitio tambien dispondrá de una categoría que tendrá recetas de tragos para poder disfrutar al máximo de los productos.
 # El origen del nombre
-El nombre se eligió porque al pensar en bebidas alcoholicas pensamos en los famosos "shots" de tequilas o bebidas blancas y nos pareció simpático pero corto, entonces pensamos en oh shots! haciendo referencia al insulto "oh sxht!" en ingles en un juego de palabras.
+En el instante que pensamos en bebidas alcohólicas, vino a nuestras mentes los famosos “shots ” de tequilas o bebidas blancas. Lo consideramos simpático pero corto, fue ahí como surgió “oh shots!”, haciendo referencia al insulto “oh sxht!” en ingles en un juego de palabras. 
 # Los integrantes del grupo 14 son:
 - Carlos Muller
 - Belen Mamani
-- Solange Abreu
+- Solange Abreu : Estudiante de FullStackWeb e Ingeniería en informática, 31 años de edad.
 - Juan Cruz Fernández
 
 # Los sitios en los que nos inspiramos para este proyecto son:
