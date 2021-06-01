@@ -1,5 +1,7 @@
 # grupo_14_OhShots
 OhShots es un e-commerce de bedidas alcohólicas que apunta a un público mayor de 18 años. Los productos ofrecidos son: vinos, cervezas y bebidas blancas. Para complementar con los productos ofrecidos, el sitio tambien dispondrá de una categoría que tendrá recetas de tragos para poder disfrutar al máximo de los productos.
+# El origen del nombre
+El nombre se eligió porque al pensar en bebidas alcoholicas pensamos en los famosos "shots" de tequilas o bebidas blancas y nos pareció simpático pero corto, entonces pensamos en oh shots! haciendo referencia al insulto "oh sxht!" en ingles en un juego de palabras.
 # Los integrantes del grupo 14 son:
 - Carlos Muller
 - Belen Mamani
