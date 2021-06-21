@@ -1,4 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,100&display=swap');
 body{
+    box-sizing: border-box;
     font-family: "Roboto";
+    margin: 0;
+    padding: 0;
 }
+
+:root{
+
+    --color-header: #222831;
+--color-footer: #393e46;
+--color-amarillo: #ffd369;
+--color-grisClaro: #eeeeee;
+--color-grisFooter: #8D9791;
+
+}
+
+
