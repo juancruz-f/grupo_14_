@@ -41,7 +41,7 @@ header{
   
   ul.slider li img{
     width: 100%;
-    height: 120px;
+    height: inherit;
     object-fit: cover;
   }
   
