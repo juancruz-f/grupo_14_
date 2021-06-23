@@ -1,0 +1,22 @@
+header{
+    background-color: var(--color-header);
+    width: 100%;
+    
+    
+    
+
+  }
+  header img{
+      width: 70%;
+      display: block;
+      margin: 0  auto 0;
+      
+      
+  }
+  .burger{
+      margin-left: 3px;
+      margin-bottom: 3px;
+  }
+  .carrito{
+
+  }
