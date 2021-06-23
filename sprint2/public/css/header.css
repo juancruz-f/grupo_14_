@@ -17,6 +17,12 @@ header{
       margin-left: 3px;
       margin-bottom: 3px;
   }
-  .carrito{
+.carrito {
+    position: absolute;
+    right: 0;
+    margin-bottom: 3px;
+    margin-right: 3px;
+    
+}
 
-  }
+  

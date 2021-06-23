@@ -64,3 +64,23 @@
     font-size: 20px;
     border-radius: 100%;
   }
+  section .info{
+    width: 98%;
+  }
+  section .compraonline{
+    display: none;
+  }
+
+
+  @media (min-width: 768px){
+    section .info{
+      display:none
+    }
+    section .compraonline{
+      display: inline-block;
+      width: 98%;
+    }
+
+
+
+  }
