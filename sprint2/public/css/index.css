@@ -34,6 +34,7 @@
     height: inherit;
     object-fit: cover;
   }
+ 
   
   ul.slider li:first-child {
       opacity: 1; /*Mostramos el primer <li>*/
