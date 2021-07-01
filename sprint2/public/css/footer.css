@@ -1,0 +1,29 @@
+footer nav{
+    background-color: var(--color-footer);
+    text-align: center;
+    padding: 10px;
+}
+footer nav ul li{
+    margin: 10px 0;
+}
+    
+    
+
+footer nav ul li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-grisClaro);
+    
+
+}
+footer div.contacto{
+    background-color: var(--color-grisFooter);
+}
+footer div.contacto img{
+    max-width: 260px;
+    max-height: 120px;
+}
+footer div.contacto #redes{
+    
+
+}
