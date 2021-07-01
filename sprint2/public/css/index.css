@@ -77,7 +77,7 @@
       display:none
     }
     section .compraonline{
-      display: inline-block;
+      display: initial;
       width: 98%;
     }
 
