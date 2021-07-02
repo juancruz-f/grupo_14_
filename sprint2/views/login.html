@@ -12,30 +12,79 @@
 <body class="body--login">
     <header>
         <img src="/images/logotipo.png" alt="">
-
-
+    
+    
         <button class="burger">
           <i class="fas fa-bars"></i>
     
         </button>
+
     
         <button class="carrito">
           <i class="fas fa-shopping-cart"></i>
         </button>
     
-    </header>
-    <main> 
+        <nav>
+    
+    
+        </nav>
+      </header >
+      <div class="container--login">
+
+        <ul class="slider">
+          <li id="slide1">
+            <img src="/images/carousel-1.jpg" alt="">
+    
+    
+          </li>
+          <li id="slide2">
+            <img src="/images/carousel-2.jpg" alt="">
+    
+          </li>
+          <li id="slide3">
+            <img src="/images/carousel-3.jpg" alt="">
+    
+          </li>
+        </ul>
+    
+        <ul class="menu">
+          <li>
+            <a href="#slide1"></a>
+          </li>
+          <li>
+            <a href="#slide2"></a>
+          </li>
+          <li>
+            <a href="#slide3"></a>
+          </li>
+        </ul>
+    
+      </div>
+    <main class="main--login"> 
         <h5>INICIAR SESIÓN</h5>
             <div class="cont--login">
                   <form action="/registro" method="POST"></form>
                   <div class="cont--loginInt">            
-                      <input class="input--login" type="email" name= "email" placeholder="  EMAIL">
+                      <input class="input--login" type="email" name= "email" placeholder= "   EMAIL">
                     <input class="input--login" type="text" name= "usuario" placeholder="  CONTRASEÑA">
                     <button class="button--login" type="submit"> INGRESAR </button>
                     <a href="/">¿Olvidaste tu contraseña?</a>
                      </div>
             </div>
-          
+        <section class="newsletter--Caja">
+            <div clas="newsletter--login">
+                 
+                <h4 class="h4--login">NEWSLETTER</h4>
+                <p class="p--login">dejanos tu email para poder enterarte de nuestras novedades y promos</p>
+                <div class="div--login">
+                 <div clas="divCjta-login">
+                  <input class="input--email" type="email" name="email" placeholder="  Ingresa tu e-mail">
+                  <button class="button--newsletter" type="submit">Enviar</button>
+                 </div> 
+
+            </div>
+            </div>
+        </section>
 
 
     </main>
