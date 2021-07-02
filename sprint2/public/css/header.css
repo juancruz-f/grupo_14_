@@ -19,11 +19,11 @@ header nav{
      border-top: 1px var(--color-grisClaro) solid;
      border-bottom: 1px var(--color-grisClaro) solid;
  }
-header .botones{
+ header .botones {
     color: var(--color-grisClaro);
     display: flex;
     justify-content: space-between;
-    margin: 0 10px;
+    margin: 0 10px 10px;
 }
 @media (min-width: 768px){
     header.botones{
@@ -40,6 +40,7 @@ header .botones{
 @media (min-width: 1024px){
     header .botones{
         font-size: 30px;
+        margin:0 20px 15px;
     }
     
 }
