@@ -65,6 +65,7 @@
     font-size: 20px;
     border-radius: 100%;
   }
+  
   section.destacados h1, p, h4{
     color: var(--color-grisFooter);
     text-transform: uppercase;
@@ -99,6 +100,9 @@
     display: none;
   }
   main.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 40px;
     
     
@@ -113,7 +117,14 @@
     }
     section .compraonline{
       display: initial;
-      width: 98%;
+      width: 100%;
+    }
+    main.contenedor{
+     justify-content: space-evenly;
+     flex-wrap: nowrap;
+      
+      
+     
     }
 
 
