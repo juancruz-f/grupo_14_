@@ -92,6 +92,16 @@
     width: 275px;
     
   }
+  section.contenedor button{
+    border-radius: 20%;
+    background-color: var(--color-footer);
+    color: var(--color-grisFooter);
+    font-weight: 900;
+    font-size: 25px;
+  }
+  section.contenedor button a{
+    text-decoration: none;
+  }
   section .info{
     width: 98%;
   }
