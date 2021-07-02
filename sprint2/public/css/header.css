@@ -8,6 +8,8 @@ header{
     
 
   }
+
+  
 header img{
       width: 70%;
       display: block;
@@ -19,11 +21,16 @@ header nav{
      border-top: 1px var(--color-grisClaro) solid;
      border-bottom: 1px var(--color-grisClaro) solid;
  }
- header .botones {
+ header .botones{
     color: var(--color-grisClaro);
     display: flex;
     justify-content: space-between;
     margin: 0 10px 10px;
+    
+}
+a{
+    color: var(--color-grisClaro);
+
 }
 @media (min-width: 768px){
     header.botones{
