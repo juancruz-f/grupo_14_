@@ -10,3 +10,4 @@ app.get('/productDetail',(req,res)=>res.sendFile(path.join(__dirname,'views','pr
 
 
 app.listen(port, () => console.log('Server runing in http://localhost:' + port))
+app.get('/productDetail',(req,res)=>res.sendFile(path.join(__dirname,'views','productDetail.html')))
