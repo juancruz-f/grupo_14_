@@ -20,17 +20,16 @@
 }
 
 img{
-    width: 35%; /* le puse el 40% xq pensé que si al article le daba 60% se acomodaba(? pero no */
-    display: flex;
-    align-self: flex-start;
-    margin-left: 30px;
+    width: 200px; /* le puse el 40% xq pensé que si al article le daba 60% se acomodaba(? pero no */
+    
 }
-article{
+
+.product{
     display: flex;
     justify-content: left;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
     margin: 0 20px 2em;
-
 }
 .cantidad-prod{
     color: #8D9791;
@@ -49,18 +48,22 @@ article{
     flex-flow: column;
     margin: 20px;
 }
-h4.envio{
+.envio-cod{
     font-size: 25px;
     font-weight: bold;
-    padding-left: 30px;
+}
+.envio{
+    font-size: 25px;
+    font-weight: bold;
     padding-top: 20px;
+    margin-left: 30px;
 }
 .codigo-p{
     color: #8D9791;
     font-size: 25px;
     font-style: italic;
     font-weight: bold;
-    width: 16em;
+    /* width: 16em; */
     padding-left: 20px;
     border-radius: 20px;
     block-size: 50px;
@@ -115,6 +118,29 @@ a{
 }
 /* VOLVER A PRODUCTOS / HOME */
 .mas-prod{
-    margin: 20px 10em;
     font-size: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 460px){
+    h2{
+        width: 100%;
+    }
+    article{
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+        margin: 0 20px 2em;
+    
+    }
+    h4.envio{
+        padding-left: 30px;
+    }
+    .codigo-p{
+        width: 16em;
+    }
+}
+@media (min-width: 768px){
+
 }
