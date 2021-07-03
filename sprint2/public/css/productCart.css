@@ -1,0 +1,120 @@
+.carrito{
+    /* background-color: white; */
+    background-color: #EEEE;
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+.fa-angle-left{
+    color: #222831;
+    font-size: 35px;
+    padding-top: 7px;
+}
+/* PRODUCTOS */
+.carrito h2{
+    font-size: 25px;
+    font-weight: 700;
+    margin: 10px 20px 30px;
+}
+
+img{
+    width: 35%; /* le puse el 40% xq pensé que si al article le daba 60% se acomodaba(? pero no */
+    display: flex;
+    align-self: flex-start;
+    margin-left: 30px;
+}
+article{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    margin: 0 20px 2em;
+
+}
+.cantidad-prod{
+    color: #8D9791;
+    border-radius: 20px;
+    font-size: x-small;
+    block-size: 30px;
+    border: none;
+}
+.fa-trash-alt{
+    padding-left: 10px;
+    font-size: 25px;
+}
+/* MÉTODO DE ENVÍO */
+.envio-postal{
+    display: flex;
+    flex-flow: column;
+    margin: 20px;
+}
+h4.envio{
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+.codigo-p{
+    color: #8D9791;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+    width: 16em;
+    padding-left: 20px;
+    border-radius: 20px;
+    block-size: 50px;
+    border: none;
+}
+a{
+    color: #8D9791;
+}
+
+/* BOOSTRAP */
+
+.correo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid #222831;
+    border-radius: 20px;
+    padding: 35px 20px 35px;
+    margin: 20px
+}
+
+/* MONTO TOTAL */
+.contenedor-c{
+    width: 100%;
+    border: 1px solid #222831;
+    padding: 10px 20px 1px;
+    border-left: hidden;
+    border-right: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.amount{
+    display: flex;
+    justify-content: space-between;
+}
+.total{
+    width: 100%;
+    padding: 10px 20px 1px;
+    display: flex;
+    justify-content: space-between;
+}
+.comprar{
+    background-color: #222831;
+    color: #EEEE;
+    text-transform: uppercase;
+    font-weight: 900;
+    border-radius: 20px;
+    border: none;
+    margin: 0 50px;
+    width: 16em;
+    block-size: 50px;
+}
+/* VOLVER A PRODUCTOS / HOME */
+.mas-prod{
+    margin: 20px 10em;
+    font-size: 15px;
+}
