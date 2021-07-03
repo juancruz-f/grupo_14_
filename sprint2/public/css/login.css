@@ -1,5 +1,9 @@
       /* MOBBILE*/
-
+    
+.body--login, .cont--login{
+    background-color: var( --color-grisClaro);
+    
+}
 .container--login{
     display: none;
 }
@@ -11,6 +15,7 @@
 
 }
 .cont--login{
+    border-top: solid 1px var( --color-footer);
     display: flex;
     justify-content: center;
 }
@@ -47,6 +52,7 @@
         color:var( --color-header);
         text-decoration: none;
         margin-top: 10px;
+        font-size: small;
     }
 
 .cont--loginInt a{
@@ -66,6 +72,7 @@
     .container--login{
         display: initial;  
     }
+   
     
 
     .newsletter--Caja{
@@ -130,6 +137,10 @@
     /*responsive*/
 
 @media (min-width: 1024px){
+    .cont--login{
+        max-height: 800px;
+ 
+    }
 
     .cont--loginInt .h5--login{
         text-align: center;
