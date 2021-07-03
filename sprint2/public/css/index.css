@@ -5,14 +5,13 @@
     width: 98%;
     
   }
-  
-  ul, li {
+    ul, li {
       padding: 0;
       margin: 0;
       list-style: none;
   }
   
-  ul.slider{
+ ul.slider{
     position: relative;
     width: 100%;
     height: 300px;
@@ -65,24 +64,34 @@
     font-size: 20px;
     border-radius: 100%;
   }
-  section.destacados h1, p, h4{
+  main{
+    background-color: var(--color-amarillo);
+    padding-bottom:30px;
+  }
+  
+  main.destacados p, h4{
     color: var(--color-grisFooter);
     text-transform: uppercase;
 
   }
-  section.destacados h1{
+  main.destacados h1{
     font-weight: 700;
     text-align: center;
+    color: var(--color-header);
+    text-transform: uppercase;
   }
-  section.destacados p,h4{
+  main#primero.destacados h1{
+    padding-top: 30px;
+  }
+  main.destacados p,h4{
     font-size: 20px;
   }
-  section.destacados img{
+  main.destacados img{
     max-width: 150px;
     max-height: 300px;
     align-items: center;
   }
-  section.destacados article{
+  main.destacados article{
   
     border: 3px var(--color-grisFooter) solid;
     border-radius: 20%;
@@ -90,15 +99,29 @@
     margin: 20px 10px;
     padding: 10px;
     width: 275px;
+    background-color: var(--color-grisClaro);
     
+  }
+  section.contenedor button{
+    border-radius: 20%;
+    background-color: var(--color-footer);
+    color: var(--color-grisFooter);
+    font-weight: 900;
+    font-size: 25px;
+  }
+  section.contenedor button a{
+    text-decoration: none;
   }
   section .info{
     width: 98%;
   }
-  section .compraonline{
+ section .compraonline{
     display: none;
   }
-  main.contenedor{
+  section.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 40px;
     
     
@@ -113,7 +136,14 @@
     }
     section .compraonline{
       display: initial;
-      width: 98%;
+      width: 100%;
+    }
+    section.contenedor{
+     justify-content: space-evenly;
+     flex-wrap: nowrap;
+      
+      
+     
     }
 
 
