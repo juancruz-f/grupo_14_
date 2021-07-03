@@ -1,8 +1,11 @@
-
+.body--register{
+    background-color: var( --color-grisClaro);
+}
 .register--responsive{
     display: none;
 }
 .container--register{
+    background-color:  var( --color-grisClaro);
     display: flex;
     justify-content: center; 
 }
@@ -11,7 +14,8 @@
     justify-content: center;
     flex-direction: column;
 }
-.caja--register h4{
+.caja--register .h4--register{
+    text-align: center;
     margin-top: 40px;
     color: var( --color-footer)
 }
@@ -65,7 +69,7 @@
     .caja--register button{
         border-radius: 5px;
         width: 300px;
-        margin-left: 95px;
+        margin-left: 52px;
     }
     .caja--register p{
         text-align: center;

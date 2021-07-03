@@ -13,53 +13,83 @@
 </head>
 
 <body class="body--register">
-    <header class="header--register">
-        <img src="/images/logotipo.png" alt="">
-
-        <div class="botones">
-
-            <i class="far fa-user fa-lg"></i>
-
-            <i class="fas fa-shopping-cart fa-lg"></i>
-
-        </div>
 
 
-
-        <i id="user" class="far fa-user fa-lg"></i>
-
-
-
-        <nav class="navegador">
-            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--colorGrisClaro);">
+        <header>
+            <img src="/images/logotipo.png" alt="">
+        
+            <div class="botones">
+              <a href="/login"> <i class="far fa-user fa-lg"></i></a>
+        
+        
+              <a href="/productCart"><i class="fas fa-shopping-cart fa-lg"></i></a>
+        
+            </div>
+        
+            <nav class="navegador">
+              <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--colorGrisClaro);">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Productos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Bebidas blancas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Vinos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Promos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Recetas</a>
-                            </li>
-                        </ul>
-                    </div>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Productos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Bebidas blancas</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Vinos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Promos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Recetas</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+              </nav>
+        
+        
+        
             </nav>
-
-    </header>
+          </header>
+          <div class="container-fluid">
+        
+            <ul class="slider">
+              <li id="slide1">
+                <img src="/images/carousel-1.jpg" alt="">
+        
+        
+              </li>
+              <li id="slide2">
+                <img src="/images/carousel-2.jpg" alt="">
+        
+              </li>
+              <li id="slide3">
+                <img src="/images/carousel-3.jpg" alt="">
+        
+              </li>
+            </ul>
+        
+            <ul class="menu">
+              <li>
+                <a href="#slide1"></a>
+              </li>
+              <li>
+                <a href="#slide2"></a>
+              </li>
+              <li>
+                <a href="#slide3"></a>
+              </li>
+            </ul>
+        
+          </div>
     <main>
         <nav class="container--register">
             <div class="caja--register">
@@ -74,7 +104,7 @@
                     <input type="password" name="password" placeholder=" CONTRASEÑA" value="" required>
                     <input type="password" name="password" placeholder="  REINGRESE CONTRASEÑA" value="" required>
                     <button type="submit" value="enviar"> REGISTRARME </button>
-                    <p>¿Ya tienes una cuenta? <a href="/views/login.html">Inicia sesión</a></p>
+                    <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a></p>
                     <a href=""></a>
                 </form>
 
@@ -86,19 +116,21 @@
     </main>
     <footer>
         <nav>
-            <ul>
-                <li><a href="">Contacto</a></li>
-                <li><a href="">Quienes somos</a></li>
-                <li><a href="">Preguntas frecuentes</a></li>
-            </ul>
+          <ul>
+            <div class="preguntas">
+              <li><a href="">Contacto</a></li>
+              <li><a href="">Quienes somos</a></li>
+              <li><a href="">Preguntas frecuentes</a></li>
+            </div>
+          </ul>
         </nav>
         <div class="contacto">
-            <a href="https://www.facebook.com/"> <img src="/images/facebooklogo.png" alt=""></img></a>
-            <a href="https://www.instagram.com/"> <img src="/images/instagramlogo.png" alt=""></img></a>
-            <img class="metodos" src="/images/metodosDePago.png" alt="">
+          <a href="https://www.facebook.com/"> <img src="/images/facebooklogo.png" alt=""></img></a>
+          <a href="https://www.instagram.com/"> <img src="/images/instagramlogo.png" alt=""></img></a>
+          <img class="metodos" src="/images/metodosDePago.png" alt="">
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
