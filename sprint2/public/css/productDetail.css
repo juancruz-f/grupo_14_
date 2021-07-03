@@ -1,3 +1,6 @@
+.productDetail{
+    background-color: var(--color-grisClaro);
+}
 .productDetail h4{
     margin-left: 3px;
     font-style: 'Roboto';
