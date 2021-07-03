@@ -22,10 +22,10 @@
             <h2>CARRITO DE COMPRAS</h2>
             <!-- PRODUCTO -->
             <div class="product">
-                <div style="width:200px;">
+                <div>
                     <img src="/images/product1.jpg" alt="">
                 </div>
-                <div>
+                <div class="detalle">
                     <div>
                         <p>Nombre de producto</p>
                         <p>$$ Precio</p>
@@ -42,10 +42,10 @@
                 </div>
             </div>
             <div class="product">
-                <div style="width:200px;">
+                <div>
                     <img src="/images/product1.jpg" alt="">
                 </div>
-                <div>
+                <div class="detalle">
                     <div>
                         <p>Nombre de producto</p>
                         <p>$$ Precio</p>
@@ -70,23 +70,25 @@
                 <a href="">No sé mi código postal</a>
             </div>
             <!-- BOOSTRAP -->
-            <div></div>
-            <h4 class="envio">Envío a Domicilio</h4>
-            <div class="correo">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Envío por Correo Argentino
-                    </label>
+            <div>
+                <h4 class="envio">Envío a Domicilio</h4>
+                <div class="correo">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Envío por Correo Argentino
+                        </label>
+                    </div>
+                    <p>$$$$</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                            checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Envío por correo YYYYY
+                        </label>
+                    </div>
+                    <p>$$$</p>
                 </div>
-                <p>$$$$</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        Envío por correo YYYYY
-                    </label>
-                </div>
-                <p>$$$</p>
             </div>
             <!-- MONTO TOTAL -->
             <div class="contenedor-c">
@@ -103,9 +105,11 @@
                 <h5>Total</h5>
                 <p>$$Total</p>
             </div>
+
             <button class="comprar">Iniciar Compra</button>
             <!-- VOLVER A PRODUCTOS / HOME -->
             <a class="mas-prod" href="/">Ver más productos</a>
+
         </div>
     </section>
 </body>

@@ -12,22 +12,22 @@
     font-size: 35px;
     padding-top: 7px;
 }
-/* PRODUCTOS */
 .carrito h2{
     font-size: 25px;
     font-weight: 700;
     margin: 10px 20px 30px;
 }
+/* PRODUCTOS */
 
 img{
-    width: 200px; /* le puse el 40% xq pensé que si al article le daba 60% se acomodaba(? pero no */
+    width: 170px; /* le puse el 40% xq pensé que si al article le daba 60% se acomodaba(? pero no */
     
 }
 
 .product{
     display: flex;
     justify-content: left;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; detalle de prod en responsive */
     flex-direction: row;
     margin: 0 20px 2em;
 }
@@ -63,7 +63,6 @@ img{
     font-size: 25px;
     font-style: italic;
     font-weight: bold;
-    /* width: 16em; */
     padding-left: 20px;
     border-radius: 20px;
     block-size: 50px;
@@ -82,10 +81,11 @@ a{
     border: 1px solid #222831;
     border-radius: 20px;
     padding: 35px 20px 35px;
-    margin: 20px
+    margin: 20px;
 }
 
 /* MONTO TOTAL */
+
 .contenedor-c{
     width: 100%;
     border: 1px solid #222831;
@@ -123,24 +123,38 @@ a{
     text-align: center;
 }
 
-@media (min-width: 460px){
-    h2{
-        width: 100%;
+
+@media (max-width: 375px) {
+    .product{
+        flex-wrap: wrap;
     }
-    article{
+}
+
+@media (min-width: 425px){
+    .detalle{
+        margin-left: 10px;
+    }
+    .monto{
         display: flex;
-        justify-content: left;
-        flex-direction: column;
-        margin: 0 20px 2em;
-    
-    }
-    h4.envio{
-        padding-left: 30px;
     }
     .codigo-p{
-        width: 16em;
+        width: 14em;
     }
 }
 @media (min-width: 768px){
-
+    h2{
+        width: 100%;
+        font-size: 30px;
+    }
+    .envio-postal{
+        width: 100%;
+    }
+    .correo{
+        width: 100%;
+        margin:15px 30px;
+    }
+    .comprar{
+        margin:0 10em;
+        width: 100%;
+    }
 }
