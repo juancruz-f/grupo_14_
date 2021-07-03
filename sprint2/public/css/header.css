@@ -8,25 +8,32 @@ header{
     
 
   }
-  header img{
+
+  
+header img{
       width: 70%;
       display: block;
       margin: 0  auto 0;
       
       
   }
- nav{
+header nav{
      border-top: 1px var(--color-grisClaro) solid;
      border-bottom: 1px var(--color-grisClaro) solid;
  }
-.botones{
+ header .botones{
     color: var(--color-grisClaro);
     display: flex;
     justify-content: space-between;
-    margin: 0 10px;
+    margin: 0 10px 10px;
+    
+}
+a{
+    color: var(--color-grisClaro);
+
 }
 @media (min-width: 768px){
-    .botones{
+    header.botones{
         font-size: 20px;
     }
     header img{
@@ -38,8 +45,9 @@ header{
 
 }
 @media (min-width: 1024px){
-    .botones{
+    header .botones{
         font-size: 30px;
+        margin:0 20px 15px;
     }
     
 }

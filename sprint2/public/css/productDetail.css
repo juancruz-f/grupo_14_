@@ -72,7 +72,7 @@
 .recomendados{
     display: flex;
     background-color: var(--color-amarillo);
-    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 .recomendados article img{
@@ -108,4 +108,11 @@
     text-transform: uppercase;
     font-style: 'Roboto';
     color: white;
+}
+@media (min-width: 768px){
+    .recomendados{
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+    }
 }

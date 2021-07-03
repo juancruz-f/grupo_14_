@@ -16,20 +16,12 @@
     <img src="/images/logotipo.png" alt="">
 
     <div class="botones">
-     
-      <i class="far fa-user fa-lg"></i>
+      <a href="/login"> <i class="far fa-user fa-lg"></i></a>
 
-      <i class="fas fa-shopping-cart fa-lg"></i>
+
+      <a href="/productCart"><i class="fas fa-shopping-cart fa-lg"></i></a>
 
     </div>
-
-
-
-
-
-  <i id="user" class="far fa-user fa-lg"></i>
-
-
 
     <nav class="navegador">
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--colorGrisClaro);">
@@ -64,43 +56,6 @@
 
     </nav>
   </header>
-  <div class="container-fluid">
-
-    <ul class="slider">
-      <li id="slide1">
-        <img src="/images/carousel-1.jpg" alt="">
-
-
-      </li>
-      <li id="slide2">
-        <img src="/images/carousel-2.jpg" alt="">
-
-      </li>
-      <li id="slide3">
-        <img src="/images/carousel-3.jpg" alt="">
-
-      </li>
-    </ul>
-
-    <ul class="menu">
-      <li>
-        <a href="#slide1"></a>
-      </li>
-      <li>
-        <a href="#slide2"></a>
-      </li>
-      <li>
-        <a href="#slide3"></a>
-      </li>
-    </ul>
-
-  </div>
-  
-  <nav>
-
-
-</nav>
-</header>
 <main class="productDetail">
 <h4>Ubicacion > nombre del producto</h4>
 <article>
@@ -114,7 +69,7 @@
 </h3>
 <p class="detalle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, rem excepturi facilis tenetur ducimus, quibusdam eius corrupti quam ex est voluptatibus sed commodi? Unde aperiam maiores cum? Doloribus, rerum fugit magni nisi laborum aut, recusandae saepe veritatis magnam, reprehenderit quis ipsum mollitia itaque dolore quidem id fuga maxime. Pariatur, a.</p>
 <div class="contenedor">
-   <p class="precio"> $$$$ </p>  <button class="boton">comprar</button>
+   <p class="precio"> $$$$ </p>  <a href="/productCart"><button class="boton">comprar</button></a>
 </div>
 <div class="separador1">
     <h2>Tambien te puede interesar</h2>
@@ -141,9 +96,11 @@
 <footer>
   <nav>
     <ul>
-      <li><a href="">Contacto</a></li>
-      <li><a href="">Quienes somos</a></li>
-      <li><a href="">Preguntas frecuentes</a></li>
+      <div class="preguntas">
+        <li><a href="">Contacto</a></li>
+        <li><a href="">Quienes somos</a></li>
+        <li><a href="">Preguntas frecuentes</a></li>
+      </div>
     </ul>
   </nav>
   <div class="contacto">
@@ -152,6 +109,7 @@
     <img class="metodos" src="/images/metodosDePago.png" alt="">
   </div>
 </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
