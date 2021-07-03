@@ -18,10 +18,12 @@ footer nav ul li a{
 }
 footer div.contacto{
     background-color: var(--color-grisFooter);
+   text-align: center;
+   padding: 10px;
 }
 footer div.contacto img{
-    max-width: 260px;
-    max-height: 120px;
+    max-width: 30px;
+    max-height: 30px;
 }
 /*footer div.contacto #redes{
     
