@@ -11,3 +11,4 @@ app.get('/register',(req,res)=>res.sendFile(path.join(__dirname,'views','registe
 
 
 app.listen(port, () => console.log('Server runing in http://localhost:' + port))
+app.get('/productDetail',(req,res)=>res.sendFile(path.join(__dirname,'views','productDetail.html')))
