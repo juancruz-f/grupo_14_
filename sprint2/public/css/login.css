@@ -1,9 +1,10 @@
       /* MOBBILE*/
+
 .container--login{
     display: none;
 }
 
-.body--login h5 {
+.cont--loginInt .h5--login {
     color: var( --color-header);
     margin: 45px 30px 10px;
     font-weight: 700;
@@ -16,7 +17,8 @@
     
 .cont--loginInt{
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
+    justify-content: center;  
 }
 .input--login , .button--login{
     color: var(--color-grisClaro); 
@@ -40,14 +42,21 @@
     font-size:x-small;
     color: var( --color-grisFooter);
 }
-.body--login a{
+
+.cont--loginInt .resgistrarse--login{
+        color:var( --color-header);
+        text-decoration: none;
+        margin-top: 10px;
+    }
+
+.cont--loginInt a{
     color: var( --color-grisFooter);
     font-size:x-small;
     text-align: center;
-    margin: 4px 0 40px ;
+    margin: 4px 0 10px ;
     font-weight: 700; 
 }
-.main--login .h4--login, .div--login, .p--login{
+.newsletter--login .h4--login, .div--login, .p--login{
     display: none; 
 } 
 
@@ -57,12 +66,7 @@
     .container--login{
         display: initial;  
     }
-    .cont--loginInt{
-        width: auto;
-        height: 180px;
-        display: flex;
-        justify-content: center;
-    }
+    
 
     .newsletter--Caja{
         background-color: var( --color-amarillo);
@@ -72,19 +76,16 @@
         justify-content: center;
         color: var( --color-footer);
     }
-    .input--login{
-        width: 300px;
-        height: 80px;
-        font-weight: 600;
-        font-size:15px;
-        
-    }
-    .body--login h5{
-        margin: 0 30px 80px;
+    
+       
+
+    .cont--loginInt .h5--login{
+        text-align: center;
         
     }
     
-    .main--login .h4--login, .div--login, .p--login{
+    .newsletter--login .h4--login, .div--login, .p--login{
+        
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -94,10 +95,15 @@
         text-transform: none;
         
     } 
+    .newsletter--login .p--login{
+        font-size:x-small;
+    }
 
-    .body--login a{
+        
+    .cont--loginInt .a--login{
         font-size: 12px;
         margin-bottom: 90px;
+        
     }
     
     .div--login{
@@ -121,13 +127,24 @@
 }
 
 
+    /*responsive*/
+
 @media (min-width: 1024px){
-    .body--login h5{
+
+    .cont--loginInt .h5--login{
         text-align: center;
+        padding-top: 30px;
     }
     .cont--loginInt{
         height: 300px;
         padding: 3px;
     
     }
+    .input--login{ 
+        height: 80px;
+        font-weight: 600;
+        font-size:15px
+
+    }
+    
 }
