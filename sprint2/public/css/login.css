@@ -120,7 +120,7 @@
     .input--email, .button--newsletter{
         border-radius: 15px;
         background-color: var( --color-footer);
-        
+        border: none;
     }
     .input--email{
         width: 500px;

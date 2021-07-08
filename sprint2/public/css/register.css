@@ -33,6 +33,7 @@
     margin-top: 20px;
     color: var( --color-grisClaro);
     background-color: var( --color-footer);
+    border: none; /* quito el borde que tenía */
 
 }
 .caja--register p{
