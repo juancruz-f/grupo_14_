@@ -25,7 +25,10 @@ footer div.contacto img{
     width: 30px;
     height: 30px;
 }
-/*footer div.contacto #redes{
-    
-
-}*/
+footer div.metodos{
+    margin: 10px;
+}
+footer div.metodos img{
+    width: 15em;
+    height: auto;
+}
