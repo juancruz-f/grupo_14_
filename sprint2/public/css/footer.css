@@ -22,16 +22,13 @@ footer div.contacto{
    padding: 10px;
 }
 footer div.contacto img{
-    max-width: 30px;
-    max-height: 30px;
+    width: 30px;
+    height: 30px;
 }
-footer div.contacto img.metodos{
-    max-height: 100px;
-    max-width: 200px;
+footer div.metodos{
+    margin: 10px;
 }
-@media(min-width:1024px){
-    footer nav div.preguntas{
-        display: flex;
-        justify-content: space-evenly;
-    }
+footer div.metodos img{
+    width: 15em;
+    height: auto;
 }

@@ -1,14 +1,117 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de compras</title>
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="https://kit.fontawesome.com/ecb2ff1f85.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+    <!-- CARRITO -->
+    <section>
+        <div class="carrito">
+            <a href="/">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            <h2>CARRITO DE COMPRAS</h2>
+            <!-- PRODUCTO -->
+            <div class="product">
+                <div>
+                    <img src="/images/product1.jpg" alt="">
+                </div>
+                <div class="detalle">
+                    <div>
+                        <p>Nombre del producto</p>
+                        <p>$$ Precio</p>
+                        <h4>Cantidad</h4>
+                    </div>
+                    <!-- CANTIDAD DE PRODUCTOS -->
+                    <div class="monto">
+                        <i class="fas fa-minus-circle"></i>
+                        <input class="cantidad-prod" type="number">
+                        <i class="fas fa-plus-circle"></i>
+                        <i class="far fa-trash-alt"></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="product">
+                <div>
+                    <img src="/images/product1.jpg" alt="">
+                </div>
+                <div class="detalle">
+                    <div>
+                        <p>Nombre del producto</p>
+                        <p>$$ Precio</p>
+                        <h4>Cantidad</h4>
+                    </div>
+                    <!-- CANTIDAD DE PRODUCTOS -->
+                    <div class="monto">
+                        <i class="fas fa-minus-circle"></i>
+                        <input class="cantidad-prod" type="number">
+                        <i class="fas fa-plus-circle"></i>
+                        <i class="far fa-trash-alt"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- METODOS DE ENVÍO -->
+
+            <div class="envio-postal">
+                <h4 class="envio-cod">Envío</h4>
+                <input class="codigo-p" type="text" placeholder="Tu código postal">
+                <a href="">No sé mi código postal</a>
+            </div>
+            <!-- BOOSTRAP -->
+            <div>
+                <h4 class="envio">Envío a Domicilio</h4>
+                <div class="correo">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Envío por Correo Argentino
+                        </label>
+                    </div>
+                    <p>$$$$</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                            checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Envío por correo YYYYY
+                        </label>
+                    </div>
+                    <p>$$$</p>
+                </div>
+            </div>
+            <!-- MONTO TOTAL -->
+            <div class="contenedor-c">
+                <div class="amount">
+                    <h5>Subtotal</h5>
+                    <p>$$Subtotal</p>
+                </div>
+                <div class="amount">
+                    <h5>Envío</h5>
+                    <p>$$Envío</p>
+                </div>
+            </div>
+            <div class="total">
+                <h5>Total</h5>
+                <p>$$Total</p>
+            </div>
+
+            <button class="comprar">Iniciar Compra</button>
+            <!-- VOLVER A PRODUCTOS / HOME -->
+            <a class="mas-prod" href="/">Ver más productos</a>
+
+        </div>
+    </section>
 </body>
+
 </html>

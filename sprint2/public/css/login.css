@@ -1,0 +1,161 @@
+      /* MOBBILE*/
+    
+.body--login, .cont--login{
+    background-color: var( --color-grisClaro);
+    
+}
+.container--login{
+    display: none;
+}
+
+.cont--loginInt .h5--login {
+    color: var( --color-header);
+    margin: 45px 30px 10px;
+    font-weight: 700;
+
+}
+.cont--login{
+    border-top: solid 1px var( --color-footer);
+    display: flex;
+    justify-content: center;
+}
+    
+.cont--loginInt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+}
+.input--login , .button--login{
+    color: var(--color-grisClaro); 
+    margin: 12px;
+    block-size: 35px;    
+    border-radius: 20px;
+    border: none;
+      
+}
+.button--login{
+    background-color: var(--color-header);
+    width: 150px;
+    margin-left: 50%;
+    margin-bottom: 0;
+    margin-top: 50px;
+    transform: translate(-50%); 
+}
+.input--login{
+    width: 350px;
+    font-weight: 300;
+    font-size:x-small;
+    color: var( --color-grisFooter);
+}
+
+.cont--loginInt .resgistrarse--login{
+        color:var( --color-header);
+        text-decoration: none;
+        margin-top: 10px;
+        font-size: small;
+    }
+
+.cont--loginInt a{
+    color: var( --color-grisFooter);
+    font-size:x-small;
+    text-align: center;
+    margin: 4px 0 10px ;
+    font-weight: 700; 
+}
+.newsletter--login .h4--login, .div--login, .p--login{
+    display: none; 
+} 
+
+      /* TABLET*/
+
+@media (min-width: 768px){
+    .container--login{
+        display: initial;  
+    }
+   
+    
+
+    .newsletter--Caja{
+        background-color: var( --color-amarillo);
+        width: auto;
+        height: 180px;
+        display: flex;
+        justify-content: center;
+        color: var( --color-footer);
+    }
+    
+       
+
+    .cont--loginInt .h5--login{
+        text-align: center;
+        
+    }
+    
+    .newsletter--login .h4--login, .div--login, .p--login{
+        
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin:25px;
+        color: var( --color-footer);
+        font-weight: 700;
+        text-transform: none;
+        
+    } 
+    .newsletter--login .p--login{
+        font-size:x-small;
+    }
+
+        
+    .cont--loginInt .a--login{
+        font-size: 12px;
+        margin-bottom: 90px;
+        
+    }
+    
+    .div--login{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .input--email, .button--newsletter{
+        border-radius: 15px;
+        background-color: var( --color-footer);
+        border: none;
+    }
+    .input--email{
+        width: 500px;
+        color: var( --color-grisFooter);
+        font-weight: 700;   
+    }
+    .button--newsletter{
+        width: 80px;
+        color: var( --color-grisFooter);
+    }
+}
+
+
+    /*responsive*/
+
+@media (min-width: 1024px){
+    .cont--login{
+        max-height: 800px;
+ 
+    }
+
+    .cont--loginInt .h5--login{
+        text-align: center;
+        padding-top: 30px;
+    }
+    .cont--loginInt{
+        height: 300px;
+        padding: 3px;
+    
+    }
+    .input--login{ 
+        height: 80px;
+        font-weight: 600;
+        font-size:15px
+
+    }
+    
+}
