@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Head -->
+<%- include('./partials/head') %> 
+
+
+<body class="body--register">
+
+
+  <!-- Header -->
+ <%- include('./partials/header') %> 
+
+
+  <div class="container-fluid">
+
+    <ul class="slider">
+      <li id="slide1">
+        <img src="/images/carousel-1.jpg" alt="">
+
+
+      </li>
+      <li id="slide2">
+        <img src="/images/carousel-2.jpg" alt="">
+
+      </li>
+      <li id="slide3">
+        <img src="/images/carousel-3.jpg" alt="">
+
+      </li>
+    </ul>
+
+    <ul class="menu">
+      <li>
+        <a href="#slide1"></a>
+      </li>
+      <li>
+        <a href="#slide2"></a>
+      </li>
+      <li>
+        <a href="#slide3"></a>
+      </li>
+    </ul>
+
+  </div>
+  <main>
+    <nav class="container--register">
+      <div class="caja--register">
+        <form class="caja--register" action="/register" method="POST">
+
+          <h4 class="h4--register">CREAR CUENTA</h4>
+          <p class="register--responsive">Comprá más rápido y llevá el control de tus pedidos, ¡en un solo
+            lugar!</p>
+          <input type="text" name="nombre" placeholder="  NOMBRE" value="" required>
+          <input type="text" name="apellido" placeholder="  APELLIDO" value="" required>
+          <input type="email" name="email" placeholder="  EMAIL" value="" required>
+          <input type="password" name="password" placeholder=" CONTRASEÑA" value="" required>
+          <input type="password" name="password" placeholder="  REINGRESE CONTRASEÑA" value="" required>
+          <button type="submit" value="enviar"> REGISTRARME </button>
+          <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a></p>
+          <a href=""></a>
+        </form>
+
+
+      </div>
+    </nav>
+
+
+  </main>
+   <!-- Footer -->
+
+   <%- include('./partials/footer') %> 
+
+   <!-- Script -->
+   <%- include('./partials/script') %> 
+</body>
+
+</html>
