@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Head -->
+<%- include('./partials/head') %> 
+
+
+<body class="body--register">
+
+
+  <!-- Header -->
+ <%- include('./partials/header') %> 
+
+
+  <div class="container-fluid">
+
+    <ul class="slider">
+      <li id="slide1">
+        <img src="/images/carousel-1.jpg" alt="">
+
+
+      </li>
+      <li id="slide2">
+        <img src="/images/carousel-2.jpg" alt="">
+
+      </li>
+      <li id="slide3">
+        <img src="/images/carousel-3.jpg" alt="">
+
+      </li>
+    </ul>
+
+    <ul class="menu">
+      <li>
+        <a href="#slide1"></a>
+      </li>
+      <li>
+        <a href="#slide2"></a>
+      </li>
+      <li>
+        <a href="#slide3"></a>
+      </li>
+    </ul>
+
+  </div>
+<main>
+  <div class="container--add">
+      <div class='caja--add'>
+          <form class='caja--add' action="">
+              <div>
+                  <label for="formGroupExampleInput" class="form-label">Marca</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput" name="title">
+              </div>
+              <div>
+                  <label for="floatingTextarea">Descripción</label>
+                  <textarea class="form-control" id="floatingTextarea" name="description"></textarea>
+
+              </div>
+              <div class='imagen--add'>
+                  <label for=""> Seleccionar imagen de producto</label>
+                  <input class="avatar" type="file" name="avatar" accept=".jpg" required>
+
+              </div>
+
+              <div>
+                  <label for="category" class="form-label">Categoría</label>
+
+                  <select id="category" class="form-select" name="category">
+                      <option value="" selected hidden>Seleccione la categoría</option>
+                      <option name="category" value="Productos">Productos</option>
+                      <option name="category" value="bebidasblancas">Bebidas blancas</option>
+                      <option name="category" value="vinos">Vinos</option>
+                      <option name="category" value="pack">Pack</option>
+                      <option name="category" value="promos"> Promos</option>
+                      <option name="category" value="recetas"> Recetas</option>
+
+                  </select>
+                  <label for="origen" class="form-label">Origen</label>
+                  <select id="origen" class="form-select" name="origen">
+                      <option value="" selected hidden>Seleccione origen</option>
+                      <option name="origen" value="nacional">Nacional</option>
+                      <option name="origen" value="importado">Importado</option>
+                  </select>
+                      <div>
+                      <label for="formGroupExampleInput2" class="form-label">Precio</label>
+                      <input type="number" class="form-control" id="formGroupExampleInput2" name="price">
+                  </div>
+              </div>
+              <button class="button--add" type="submit">Guardar</button>
+          </form>
+      </div>
+  </div>
+</main>
+  <!-- Footer -->
+
+  <%- include('./partials/footer') %> 
+
+  <!-- Script -->
+  <%- include('./partials/script') %> 
+</html>

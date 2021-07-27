@@ -1,0 +1,41 @@
+.container--add{
+    display: flex;
+    justify-content: center;
+
+}
+.caja--add{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 25px 0;
+    padding: 15px;
+}
+.button--add{
+    background-color: var( --color-footer);
+    color: white;
+    margin-top: 25px;
+    border-radius: 5px;
+}
+.imagen--add{
+    margin-top: 15px;
+    width: 100%;
+}
+.imagen--add input{
+    display: block;
+    margin: 15px 0 15px;
+}
+label{
+    color: var( --color-footer);
+    font-weight: 700;
+    margin: 5px;
+}
+  /* TABLET*/
+
+@media (min-width: 768px){
+    .caja--add{
+        margin: 25px 0;
+        padding: 50px;
+    }
+    
+}
