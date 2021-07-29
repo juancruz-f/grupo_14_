@@ -25,7 +25,7 @@ footer div.contacto img{
     max-width: 30px;
     max-height: 30px;
 }
-footer div.contacto img.metodos{
+footer div.metodos img{
     max-height: 100px;
     max-width: 200px;
 }
@@ -34,4 +34,5 @@ footer div.contacto img.metodos{
         display: flex;
         justify-content: space-evenly;
     }
+
 }

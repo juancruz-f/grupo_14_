@@ -83,8 +83,12 @@
   main#primero.destacados h1{
     padding-top: 30px;
   }
+  main.destacados h4{
+    color: var(--color-header);
+  }
   main.destacados p,h4{
     font-size: 20px;
+    color: var(--color-footer)
   }
   main.destacados img{
     max-width: 150px;
@@ -94,7 +98,7 @@
   main.destacados article{
   
     border: 3px var(--color-grisFooter) solid;
-    border-radius: 20%;
+    border-radius: 70px;
     text-align: center;
     margin: 20px 10px;
     padding: 10px;
@@ -103,7 +107,8 @@
     
   }
   section.contenedor button{
-    border-radius: 20%;
+    border-radius: 20px;
+    border-style: none;
     background-color: var(--color-footer);
     color: var(--color-grisFooter);
     font-weight: 900;
@@ -111,6 +116,7 @@
   }
   section.contenedor button a{
     text-decoration: none;
+    font-weight: 400;
   }
   section .info{
     width: 98%;
@@ -142,8 +148,8 @@
      justify-content: space-between;
      flex-wrap: wrap;
    
-    };
-  
+    }
+
     
 
 
