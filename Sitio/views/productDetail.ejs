@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Head -->
+<%- include('./partials/head') %>
+
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+
+      <main class="productDetail">
+        <h4><%= product.category %> > <%= product.title %> </h4>
+        <article>
+          <img src="/images/<%= product.image %>" alt="">
+        </article>
+        <h1>
+          <%= product.title %> 
+        </h1>
+        <!-- <h3>
+    Detalle de producto/informacion
+  </h3> -->
+        <p class="detalle"><%= product.description %> </p>
+        <p clas="detalle"><%= product.origen %> </p>
+        <div class="contenedor">
+          <p class="precio"> <%= product.price.toFixed(2) %>  </p> 
+          <a href="/products/cart"><button class="boton">comprar</button></a>
+        </div>
+
+            <div class="separador1">
+              <h2>También te puede interesar</h2>
+            </div>
+            <section class="recomendados">
+
+              <article class="prod1">
+                <img src="/images/gin.png" alt="">
+                <h5>Nombre producto</h5>
+                <p>$$$$</p>
+              </article>
+              <article class="prod1">
+                <img src="/images/vino.png" alt="">
+                <h5>Nombre producto</h5>
+                <p>$$$$</p>
+              </article>
+              <article class="prod1">
+                <img src="/images/andesroja.png" alt="">
+                <h5>Nombre producto</h5>
+                <p>$$$$</p>
+              </article>
+            </section>
+  </body>
+  </main>
+  <!-- Footer -->
+
+  <%- include('./partials/footer') %>
+
+    <!-- Script -->
+    <%- include('./partials/script') %>
+
+
+      </body>
+
+</html>

@@ -1,0 +1,37 @@
+footer nav{
+    background-color: var(--color-footer);
+    text-align: center;
+    padding: 10px;
+}
+footer nav ul li{
+    margin: 10px 0;
+}
+    
+    
+
+footer nav ul li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-grisClaro);
+    
+
+}
+footer div.contacto{
+    background-color: var(--color-grisFooter);
+   text-align: center;
+   padding: 10px;
+}
+footer div.contacto img{
+    max-width: 30px;
+    max-height: 30px;
+}
+footer div.contacto img.metodos{
+    max-height: 100px;
+    max-width: 200px;
+}
+@media(min-width:1024px){
+    footer nav div.preguntas{
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

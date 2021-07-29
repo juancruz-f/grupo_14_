@@ -1,0 +1,45 @@
+.contenedor--contact{
+    display: flex;
+    justify-content: center;
+
+}
+.caja--contact{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+
+}
+.mensaje--contact textarea{
+    width: 300px;
+    height: 80px;
+}
+
+.div--contact label{
+    display:block;
+}
+.div--contact input{
+    border-radius: 5px;
+    width: 250px;
+
+}
+
+.button--contact button{
+    border-radius: 5px;
+    background-color: var( --color-footer);
+    color: white;
+    margin: 15px;
+    
+}
+
+@media(min-width: 768px){
+    .mensaje--contact textarea{
+        border-radius: 5px;
+        width: 500px;
+        height: 80px;
+    }
+    .div--contact input{
+        width: 500px;
+    }
+
+}

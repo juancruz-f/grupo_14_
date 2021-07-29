@@ -1,0 +1,95 @@
+[
+   
+    {
+        "id":1,
+        "title":"Alquimista Gin",
+        "description":"Es un gin pensado y diseñado para ser armónico, elegante y disruptivo",
+        "category":"Bebida blanca",
+        "image":"gin.png",
+        "origen":"Nacional",
+        "section":"destacados",
+        "price": 1799.00
+    },
+    {
+        "id":2,
+        "title":"Vino Estancia Mendoza",
+        "description":"De estilo frutado, en estos vinos destacan los aromas varietales y sus taninos redondos.",
+        "category":"vinos",
+        "image":"vino.png",
+        "origen":"Nacional",
+        "section":"destacados",
+        "price": 230.00
+    },
+    {
+        "id":3,
+        "title":"Cerveza Andes roja",
+        "description":"pack de 24 unidades, 473ml",
+        "category":"packs",
+        "image":"andesroja.png",
+        "origen":"Nacional",
+        "section":"destacados",
+        "price": 2760.00
+    },
+    {
+        "id":4,
+        "title":"Yu Gin",
+        "description":"Un gin refrescante y único, elaborado en Francia.",
+        "category":"bebidas blancas",
+        "image":"yuGin.png",
+        "origen":"Importado",
+        "section":"interes",
+        "price": 7600.00
+    },
+    {
+        "id":5,
+        "title":"Sidra Peer",
+        "description":"Peer Maracuyá es una sidra de pera con Maracuyá. Pack de 4 unidades por 500ml",
+        "category":"promos",
+        "image":"sidraPeer.png",
+        "origen":"Nacional",
+        "section":"interes",
+        "price": 1000.00
+    },
+    {
+        "id":6,
+        "title":"Absolut Peach",
+        "description":"Vodka con sabor a durazno, 750ml",
+        "category":"bebidas blancas",
+        "image":"absolutVodka.png",
+        "origen":"importado",
+        "section":"interes",
+        "price": 2600.00
+    },
+    {
+        "id":7,
+        "title":"Cerveza Brahma",
+        "description":"Pack de 24 unidades",
+        "category":"packs",
+        "image":"packBrahma.png",
+        "origen":"Nacional",
+        "section":"packs",
+        "price": 1900.00
+    },
+    {
+        "id":8,
+        "title":"Stella Artois",
+        "description":"pack de 24 unidades",
+        "category":"packs",
+        "image":"packStella.png",
+        "origen":"importada",
+        "section":"packs",
+        "price": 2300.00
+    },
+    {
+        "id":9,
+        "title":"Cerveza Patagonia",
+        "description":"pack de 24 unidades",
+        "category":"packs",
+        "image":"patagoniaLatas.png",
+        "origen":"Nacional",
+        "section":"packs",
+        "price": 3000.00
+    }
+
+
+]
