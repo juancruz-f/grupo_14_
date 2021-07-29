@@ -7,6 +7,7 @@
         "category":"Bebida blanca",
         "image":"gin.png",
         "origen":"Nacional",
+        "section":"destacados",
         "price": 1799.00
     },
     {
@@ -16,6 +17,7 @@
         "category":"vinos",
         "image":"vino.png",
         "origen":"Nacional",
+        "section":"destacados",
         "price": 230.00
     },
     {
@@ -25,6 +27,7 @@
         "category":"packs",
         "image":"andesroja.png",
         "origen":"Nacional",
+        "section":"destacados",
         "price": 2760.00
     },
     {
@@ -34,6 +37,7 @@
         "category":"bebidas blancas",
         "image":"yuGin.png",
         "origen":"Importado",
+        "section":"interes",
         "price": 7600.00
     },
     {
@@ -43,6 +47,7 @@
         "category":"promos",
         "image":"sidraPeer.png",
         "origen":"Nacional",
+        "section":"interes",
         "price": 1000.00
     },
     {
@@ -52,6 +57,7 @@
         "category":"bebidas blancas",
         "image":"absolutVodka.png",
         "origen":"importado",
+        "section":"interes",
         "price": 2600.00
     },
     {
@@ -61,6 +67,7 @@
         "category":"packs",
         "image":"packBrahma.png",
         "origen":"Nacional",
+        "section":"packs",
         "price": 1900.00
     },
     {
@@ -70,6 +77,7 @@
         "category":"packs",
         "image":"packStella.png",
         "origen":"importada",
+        "section":"packs",
         "price": 2300.00
     },
     {
@@ -79,6 +87,7 @@
         "category":"packs",
         "image":"patagoniaLatas.png",
         "origen":"Nacional",
+        "section":"packs",
         "price": 3000.00
     }
 
