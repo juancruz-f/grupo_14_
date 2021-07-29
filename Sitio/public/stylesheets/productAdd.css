@@ -19,7 +19,7 @@
 }
 .imagen--add{
     margin-top: 15px;
-    width: 100%;
+    width: 100%
 }
 .imagen--add input{
     display: block;
@@ -34,8 +34,10 @@ label{
 
 @media (min-width: 768px){
     .caja--add{
-        margin: 25px 0;
-        padding: 50px;
+        display: flex;
+        justify-content: center;
+        width:800px;
+        padding: 15px;
     }
     
 }

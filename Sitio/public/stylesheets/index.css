@@ -139,12 +139,12 @@
       width: 100%;
     }
     section.contenedor{
-     justify-content: space-evenly;
-     flex-wrap: nowrap;
-      
-      
-     
-    }
+     justify-content: space-between;
+     flex-wrap: wrap;
+   
+    };
+  
+    
 
 
 

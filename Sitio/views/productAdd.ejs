@@ -63,16 +63,15 @@
               </div>
 
               <div>
-                  <label for="category" class="form-label">Categoría</label>
+                  <label for="category" class="form-label" name="category">Categoría</label>
 
                   <select id="category" class="form-select" name="category">
                       <option value="" selected hidden>Seleccione la categoría</option>
-                      <option name="category" value="Productos">Productos</option>
-                      <option name="category" value="bebidasblancas">Bebidas blancas</option>
-                      <option name="category" value="vinos">Vinos</option>
-                      <option name="category" value="pack">Pack</option>
-                      <option name="category" value="promos"> Promos</option>
-                      <option name="category" value="recetas"> Recetas</option>
+                      <% categories.forEach(category => { %>
+                        <option value="<%= category %> "> <%= category %> </option>
+
+                       
+                      <% }) %>
 
                   </select>
                   <label for="origen" class="form-label">Origen</label>
