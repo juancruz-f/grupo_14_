@@ -28,6 +28,7 @@ footer div.contacto img{
 footer div.metodos img{
     max-height: 100px;
     max-width: 200px;
+    padding: 10px;
 }
 @media(min-width:1024px){
     footer nav div.preguntas{

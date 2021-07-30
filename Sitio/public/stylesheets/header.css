@@ -4,9 +4,6 @@ header{
     display: flex;
     flex-direction: column;
     
-    
-    
-
   }
 
   
@@ -32,6 +29,16 @@ a{
     color: var(--color-grisClaro);
 
 }
+
+.dropdown-menu{
+    background-color: var( --color-header);
+    
+}
+.dropdown-menu .dropdown-item{
+    color: white;
+
+}
+
 @media (min-width: 768px){
     header.botones{
         font-size: 20px;
@@ -39,6 +46,41 @@ a{
     header img{
         max-width: 400px;
     }
+    .navegador{
+        
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#959595+0,0d0d0d+46,010101+50,0a0a0a+53,4e4e4e+76,383838+87,1b1b1b+100;Black+Gloss+Pipe */
+background: #959595; /* Old browsers */
+background: -moz-linear-gradient(top,  #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
+
+
+
+    }
+    .container-fluid{
+        width: 100%;
+    }
+    header .navegador .nav-link.active{
+        padding: 10px 30px;
+    }
+     .collapse{
+        margin-left: 50px;
+    }
+
+    /* hover*/
+    .dropdown-item:hover{
+        background-color:var( --color-amarillo);
+        color:var( --color-footer)
+    }
+   
+    a:hover{
+        color: var( --color-amarillo);
+    }
+    #navbarDropdown:hover{
+        color: var( --color-amarillo);
+    }
+    
 
 
 

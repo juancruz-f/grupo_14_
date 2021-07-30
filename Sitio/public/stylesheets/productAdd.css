@@ -8,8 +8,10 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    margin: 25px 0;
-    padding: 15px;
+  
+}
+.form-select{
+    margin:15px 0;
 }
 .button--add{
     background-color: var( --color-footer);
