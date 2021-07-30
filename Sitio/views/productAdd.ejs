@@ -2,98 +2,108 @@
 <html lang="es">
 
 <!-- Head -->
-<%- include('./partials/head') %> 
+<%- include('./partials/head') %>
 
 
-<body class="body--register">
+  <body class="body--register">
 
 
-  <!-- Header -->
- <%- include('./partials/header') %> 
+    <!-- Header -->
+    <%- include('./partials/header') %>
 
 
-  <div class="container-fluid">
+      <div class="container-fluid">
 
-    <ul class="slider">
-      <li id="slide1">
-        <img src="/images/carousel-1.jpg" alt="">
+        <ul class="slider">
+          <li id="slide1">
+            <img src="/images/carousel-1.jpg" alt="">
 
 
-      </li>
-      <li id="slide2">
-        <img src="/images/carousel-2.jpg" alt="">
+          </li>
+          <li id="slide2">
+            <img src="/images/carousel-2.jpg" alt="">
 
-      </li>
-      <li id="slide3">
-        <img src="/images/carousel-3.jpg" alt="">
+          </li>
+          <li id="slide3">
+            <img src="/images/carousel-3.jpg" alt="">
 
-      </li>
-    </ul>
+          </li>
+        </ul>
 
-    <ul class="menu">
-      <li>
-        <a href="#slide1"></a>
-      </li>
-      <li>
-        <a href="#slide2"></a>
-      </li>
-      <li>
-        <a href="#slide3"></a>
-      </li>
-    </ul>
+        <ul class="menu">
+          <li>
+            <a href="#slide1"></a>
+          </li>
+          <li>
+            <a href="#slide2"></a>
+          </li>
+          <li>
+            <a href="#slide3"></a>
+          </li>
+        </ul>
 
-  </div>
-<main>
-  <div class="container--add">
-      <div class='caja--add'>
-          <form class='caja--add' action="">
+      </div>
+      <main>
+        <div class="container--add">
+          <div class='caja--add'>
+            <h2>Agregar producto</h2>
+            <form class='caja--add' action="" method="POST">
               <div>
-                  <label for="formGroupExampleInput" class="form-label">Marca</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput" name="title">
+                <label for="formGroupExampleInput" class="form-label">Marca</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="title">
               </div>
               <div>
-                  <label for="floatingTextarea">Descripción</label>
-                  <textarea class="form-control" id="floatingTextarea" name="description"></textarea>
+                <label for="floatingTextarea">Descripción</label>
+                <textarea class="form-control" id="floatingTextarea" name="description"></textarea>
 
               </div>
               <div class='imagen--add'>
-                  <label for=""> Seleccionar imagen de producto</label>
-                  <input class="avatar" type="file" name="avatar" accept=".jpg" required>
+                <label for=""> Seleccionar imagen de producto</label>
+                <input class="avatar" type="file" name="avatar" accept=".jpg">
 
               </div>
+
+              <div class="mb-3">
+                <label for="category" class="form-label">Categoría</label>
+
+                <select id="category" class="form-select" name="category">
+                  <option value="" selected hidden>Seleccione la categoría</option>
+                  <% categories.forEach(category=> { %>
+                    <option value="<%= category %> ">
+                      <%= category %>
+                    </option>
+                    <% }) %>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="category" class="form-label">Categoría</label>
+
+                <select id="origen" class="form-select" name="origen">
+                  <option value="" selected hidden>Seleccione la categoría</option>
+                  <% origenes.forEach(origen=> { %>
+                    <option value="<%= origen %> "><%= origen %></option>
+                    <% }) %>
+                </select>
+              </div>
+
+
+
 
               <div>
-                  <label for="category" class="form-label" name="category">Categoría</label>
-
-                  <select id="category" class="form-select" name="category">
-                      <option value="" selected hidden>Seleccione la categoría</option>
-                      <% categories.forEach(category => { %>
-                        <option value="<%= category %> "> <%= category %> </option>
-
-                       
-                      <% }) %>
-
-                  </select>
-                  <label for="origen" class="form-label">Origen</label>
-                  <select id="origen" class="form-select" name="origen">
-                      <option value="" selected hidden>Seleccione origen</option>
-                      <option name="origen" value="nacional">Nacional</option>
-                      <option name="origen" value="importado">Importado</option>
-                  </select>
-                      <div>
-                      <label for="formGroupExampleInput2" class="form-label">Precio</label>
-                      <input type="number" class="form-control" id="formGroupExampleInput2" name="price">
-                  </div>
+                <label for="formGroupExampleInput2" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="formGroupExampleInput2" name="price">
               </div>
+
               <button class="button--add" type="submit">Guardar</button>
-          </form>
-      </div>
-  </div>
-</main>
-  <!-- Footer -->
+            </form>
+          </div>
+        </div>
+      </main>
+      <!-- Footer -->
 
-  <%- include('./partials/footer') %> 
+      <%- include('./partials/footer') %>
 
-  <!-- Script -->
-  <%- include('./partials/script') %> 
+        <!-- Script -->
+        <%- include('./partials/script') %>
+
 </html>
