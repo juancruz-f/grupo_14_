@@ -32,12 +32,16 @@
             </div>
             <section class="recomendados">
 
+              <% interes.forEach(product=>{%>
+
               <article class="prod1">
-                <img src="/images/gin.png" alt="">
-                <h5>Nombre producto</h5>
-                <p>$$$$</p>
+                <img src="/images/<%= product.image %>" alt="">
+                <h5><%= product.title %> </h5>
+                <p> <%= product.price.toFixed(2) %></p>
               </article>
-              <article class="prod1">
+
+              <% }) %>
+              <!-- <article class="prod1">
                 <img src="/images/vino.png" alt="">
                 <h5>Nombre producto</h5>
                 <p>$$$$</p>
@@ -46,7 +50,7 @@
                 <img src="/images/andesroja.png" alt="">
                 <h5>Nombre producto</h5>
                 <p>$$$$</p>
-              </article>
+              </article> -->
             </section>
   </body>
   </main>

@@ -9,6 +9,7 @@ module.exports = {
         return res.render('productDetail',{
                 products,
                 product,
+                interes: products.filter(product => product.section === "interes")
                 
         })
     },

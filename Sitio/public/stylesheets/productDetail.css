@@ -6,7 +6,7 @@
 .productDetail h4{
     margin-left: 3px;
     text-transform: uppercase;
-    color: var(--color-grisFooter);
+    color: var(--color-header);
     margin: 5px 10px 10px;
 }
 .productDetail article {
@@ -18,7 +18,7 @@
     font-style: normal;
     margin-left: 9px;
     text-transform: uppercase;
-    color: var(--color-grisFooter);
+    color: var(--color-header);
 }
 .productDetail h3{
     font-style: normal;
@@ -30,7 +30,7 @@
 .detalle{
     margin-left: 15px;
     text-transform: uppercase;
-    color: var(--color-grisFooter);  
+    color: var(--color-footer);  
     border-bottom: 1px var(--color-grisFooter) solid;
     padding-bottom: 15px;
     margin: 5px 5px 10px 10px;
@@ -86,7 +86,7 @@
 .recomendados h5{
     font-style: normal;
     text-transform: uppercase;
-    color: var(--color-grisFooter);
+    color: var(--color-header);
 }
 
 .recomendados .prod1{
