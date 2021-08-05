@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const {detail, cart, add, save, edit, update, remove} = require('../controllers/productsController')
+const {detail, cart, add, save, edit, update, remove,admin} = require('../controllers/productsController')
 
+router.get('/admin',admin);
 router.get('/detail/:id',detail);
 router.get('/cart',cart);
 router.get('/add',add);

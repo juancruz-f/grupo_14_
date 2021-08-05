@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Head -->
+<%- include('./partials/head') %>
+
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+    <main class="main--admin">
+      <% products.forEach(product => { %>
+         <h1>
+              <%= product.title %> 
+
+            </h1>
+            <div class="contenedor--admin">
+         
+          <div class="caja--admin">
+            
+              <img src="/images/<%= product.image %> " alt="">
+          
+          </div>
+          <div class="caja--admin">
+            <p><b>Id: </b><%= product.id %> </p>
+          
+               <p><b>Descripción: </b>
+              <%= product.description %> 
+            </p>
+            <p> <b>Precio: </b>$ 
+              <%= product.price.toFixed(2) %> 
+            </p>
+            <p> <b>Categoría: </b>
+              <%= product.category %> 
+            </p>
+            <p><b>Origen: </b>
+              <%= product.origen %> 
+
+            </p>
+            </div>
+            
+            
+            <div class="caja--admin">
+              <div class="button--admin"><a id="button1"href="/products/edit/<%= product.id %> "><button class="button-1">
+              editar
+            </button></a>
+            <a href="/products/remove/:id"> <button class="button-2">
+              borrar
+            </button></a></div>
+            
+            </div>
+            
+           
+          </div>
+        </div>
+       
+      <% }) %>
+    </main>
+
+
+      
+      <!-- Footer -->
+
+      <%- include('./partials/footer') %>
+
+        <!-- Script -->
+        <%- include('./partials/script') %>
+
+
+  </body>
+
+</html>

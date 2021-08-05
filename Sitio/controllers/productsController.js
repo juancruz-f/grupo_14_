@@ -6,6 +6,11 @@ const products= require('../data/products_db');
 
 
 module.exports = {
+    admin: (req, res)=>{
+        return res.render('productAdmin',{
+            products,
+        })
+    },
     detail : (req,res) => {
         let product=products.find(product=> product.id === +req.params.id);
         return res.render('productDetail',{

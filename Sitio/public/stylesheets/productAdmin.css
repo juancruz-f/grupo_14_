@@ -1,0 +1,73 @@
+.main--admin{
+    background-color: var( --color-amarillo);
+}
+.contenedor--admin{
+    background-color: var( --color-grisClaro);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: 5px;
+    padding: 5px;
+    border: 1px var( --color-header) solid;
+    border-radius: 5px;
+
+}
+.caja--admin{
+    margin:5px;
+    padding: 5px;
+    justify-content: space-between;
+    align-items:flex-start;
+    width: 100%;
+    height: 200px;
+    flex-wrap: nowrap;
+    align-self: flex-end;
+    
+    
+
+}
+.caja--admin img{
+    height: 150px;
+    width: 100px;
+}
+.main--admin h1{
+    border-top: 1px var( --color-footer) dashed;
+    margin: 15px;
+    padding: 10px;
+}
+.main--admin p{
+    color: var( --color-header);
+    margin: 5px;
+}
+.button--admin{
+    padding-top: 75px;
+   
+}
+#button1{
+    margin-left: 80px;
+    padding-left: 20px;
+    
+}
+.caja--admin a{
+    margin: 15px;
+    
+}
+
+.button-1{
+    background-color: darkgreen;
+    color: white;
+    border-radius: 7px;
+    
+}
+.button-2{
+    background-color: red;
+    color: white;
+    border-radius: 7px;
+    
+}
+a:hover{
+    color: var(--color-amarillo)
+}
+
+
+
+

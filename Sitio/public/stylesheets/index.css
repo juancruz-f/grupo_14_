@@ -64,7 +64,7 @@
     font-size: 20px;
     border-radius: 100%;
   }
-  main{
+  #primero{
     background-color: var(--color-amarillo);
     padding-bottom:30px;
   }
