@@ -1,3 +1,18 @@
+@media (min-width: 368px){
+    .contenedor--admin{
+        flex-wrap: wrap;
+        
+    }
+    .contenedor--admin img{
+        display: block;
+        margin: auto;
+    }
+    .button--admin{
+        margin-left: 55px;
+       
+    }
+
+}
 .main--admin{
     background-color: var( --color-amarillo);
 }
@@ -5,7 +20,7 @@
     background-color: var( --color-grisClaro);
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin: 5px;
     padding: 5px;
     border: 1px var( --color-header) solid;
@@ -103,6 +118,16 @@ a:hover{
    
 }
 @media (min-width: 1024px){
+    .contenedor--admin{
+    background-color: var( --color-grisClaro);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: 5px;
+    padding: 5px;
+    border: 1px var( --color-header) solid;
+    border-radius: 5px;
+    }
     .button-1{
         margin-left: 30px;
     }
