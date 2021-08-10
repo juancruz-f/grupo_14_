@@ -53,13 +53,15 @@ module.exports = {
         res.send(req.body)
     },
     remove : (req,res) => {
-        res.send(req.params.id)
+        return console.log("hASTA ACA LLEGUE");
+        res.redirect("/")
     },
     cart : (req,res) => {
         return res.render('productCart')
     },
     add : (req,res) => {
-        return res.render('productAdd',{
+        console.log("agregar algo")
+        res.render('productAdd',{
             products,
             categories,
             origenes,
