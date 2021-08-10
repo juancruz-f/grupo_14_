@@ -47,9 +47,12 @@
               <div class="button--admin"><a id="button1"href="/products/edit/<%= product.id %> "><button class="button-1">
               editar
             </button></a>
-            ><button class="button-2"><a href="/products/remove/<%= product.id %> ">
-              borrar
-            </a></button></div>
+            
+            <form action="/products/remove/<%= product.id %>?method=DELETE" method="POST">
+              <input type="submit" value="Borrar">
+             </form>
+            
+          </div>
             
             </div>
             

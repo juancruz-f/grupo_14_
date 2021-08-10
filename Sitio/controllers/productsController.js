@@ -53,14 +53,12 @@ module.exports = {
         res.send(req.body)
     },
     remove : (req,res) => {
-        return console.log("hASTA ACA LLEGUE");
-        res.redirect("/")
+        res.redirect('/products/admin')
     },
     cart : (req,res) => {
         return res.render('productCart')
     },
     add : (req,res) => {
-        console.log("agregar algo")
         res.render('productAdd',{
             products,
             categories,
