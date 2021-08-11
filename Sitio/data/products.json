@@ -88,13 +88,5 @@
     "origen": "Nacional",
     "section": "packs",
     "price": 3000
-  },
-  {
-    "id": 10,
-    "title": "ANILLO",
-    "description": "ANILLO DE PALTA",
-    "category": "productos ",
-    "origen": "importado ",
-    "price": 4500
   }
 ]

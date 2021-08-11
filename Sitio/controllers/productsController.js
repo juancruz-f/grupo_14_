@@ -7,8 +7,9 @@ const products= require('../data/products_db');
 
 module.exports = {
     admin: (req, res)=>{
+       
         return res.render('productAdmin',{
-            products,
+            products: JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data','products.json'),'utf-8'))
         })
     },
     detail : (req,res) => {
@@ -53,7 +54,9 @@ module.exports = {
         res.send(req.body)
     },
     remove : (req,res) => {
-        res.redirect('/products/admin')
+        let productos = products.filter(product => product.id != req.params.id)
+        fs.writeFileSync(path.join(__dirname,'..','data','products.json'),JSON.stringify(productos,null,2),'utf-8')
+        return res.redirect('/products/admin')
     },
     cart : (req,res) => {
         return res.render('productCart')
