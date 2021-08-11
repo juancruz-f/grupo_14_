@@ -78,15 +78,5 @@
     "origen": "importada",
     "section": "packs",
     "price": 2300
-  },
-  {
-    "id": 9,
-    "title": "Cerveza Patagonia",
-    "description": "pack de 24 unidades",
-    "category": "packs",
-    "image": "patagoniaLatas.png",
-    "origen": "Nacional",
-    "section": "packs",
-    "price": 3000
   }
 ]
