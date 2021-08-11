@@ -2,7 +2,7 @@ const fs=require('fs');
 const path=require('path');
 const categories= require('../data/categories_db');
 const origenes= require('../data/origen_db')
-const products= require('../data/products_db');
+const {products, guardar} = require('../data/products_db');
 
 
 module.exports = {
@@ -51,7 +51,23 @@ module.exports = {
         })
     },
     update : (req,res) => {
-        res.send(req.body)
+        const {title, description,price,origen,category} = req.body;
+
+        let producto = products.find(producto => producto.id === +req.params.id)
+        let productoEditado = {
+            id : +req.params.id,
+            title,
+            description,
+            origen,
+            price : +price,
+            image : req.file ? req.file.filename : producto.image,
+            category
+        }
+
+        let productosModificados = products.map(producto => producto.id === +req.params.id ? productoEditado : producto)
+
+        guardar(productosModificados)
+        res.redirect('/products/admin')
     },
     remove : (req,res) => {
         let productos = products.filter(product => product.id != req.params.id)
