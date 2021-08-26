@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+var router = express.Router();
 const {detail, cart, add, save, edit, update, remove,admin} = require('../controllers/productsController')
 
 router.get('/admin',admin);
