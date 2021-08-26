@@ -88,5 +88,13 @@
     "origen": "Nacional",
     "section": "packs",
     "price": 3000
+  },
+  {
+    "id": 10,
+    "title": "Dilema",
+    "description": "Vino Rosado Dulce",
+    "category": "vinos ",
+    "origen": "nacional ",
+    "price": 450
   }
 ]
