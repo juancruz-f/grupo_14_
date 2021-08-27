@@ -3,6 +3,7 @@ const path=require('path');
 const categories= require('../data/categories_db');
 const origenes= require('../data/origen_db')
 const {products, guardar} = require('../data/products_db');
+const {validationResult} = require('express-validator');
 
 
 module.exports = {
@@ -22,8 +23,10 @@ module.exports = {
         })
     },
     save: (req,res)=>{
-        const {title, description,price,category,origen,image} = req.body;
+        let errors = validationResult(req)
 
+        if (errors.isEmpty()){
+        const {title, description,price,category,origen,image} = req.body;    
         let product = {
             id : products[products.length - 1].id + 1,
             title,
@@ -38,7 +41,15 @@ module.exports = {
 
        fs.writeFileSync(path.join(__dirname,'..','data','products.json'),JSON.stringify(products,null,2),'utf-8')
        return res.redirect('/')
-
+        } else {
+            return res.redirect('/productAdd', {
+                title,
+                category,
+                description,
+                errores : errors.mapped(),
+                old : req.body
+            })
+        }
     },
     edit : (req,res) => {
         let product = products.find(product => product.id === +req.params.id);
