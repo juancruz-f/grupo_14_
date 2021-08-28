@@ -1,9 +1,34 @@
-[{
+[
+  {
     "id": 1,
-    "nombre" : "juan",
-    "apellido": "perez",
-    "email": "juanperez2@hotmail.com",
-    "password" : "123123",
+    "nombre": "juan",
+    "apellido": "gauto",
+    "email": "gauto@hotmail.com",
+    "password": "$2a$10$vnM5zneinLHAOHA.xp87/O/vOM0Hhlurddc.rItPsUuh.SWiypy0C",
     "rol": "user"
-
-}]
+  },
+  {
+    "id": 2,
+    "nombre": "solange",
+    "apellido": "abreu",
+    "email": "abreu.solange@outlook.com",
+    "password": "$2a$10$tyWNBsz.GH01/9VLEMydcebNC5Zq0AOMYEOqFh5y4SeXbND5.PCc2",
+    "rol": "user"
+  },
+  {
+    "id": 3,
+    "nombre": "pedro",
+    "apellido": "ramires",
+    "email": "ramires@hotmail.com",
+    "password": "$2a$10$oSLi28X9rlFe1nVnbMjaDOStZb./xI2zz6z97Q89qF4vitSZjP1bm",
+    "rol": "user"
+  },
+  {
+    "id": 4,
+    "nombre": "roberto",
+    "apellido": "juares",
+    "email": "juares@hotmail.com",
+    "password": "$2a$10$3fijsEvkbPxtBhzkNJXb6OLi9cxXm7j94.i7KYLX.llkwZ48IxUc.",
+    "rol": "user"
+  }
+]

@@ -45,11 +45,20 @@
     <div class="cont--login">
       <div class="cont--loginInt">
 
-        <form  class="cont--loginInt" action="/login" method="POST">
+        <form  class="cont--loginInt" action="" method="POST">
           <h5 class="h5--login">INICIAR SESIÓN</h5>
-          <input class="input--login" type="email" name="email" placeholder="  EMAIL" value="" required>
-          <input class="input--login" type="password" name="password" placeholder=" CONTRASEÑA" value="" required>
-          <button class="button--login" type="submit" value="INGRESAR"> INGRESAR </button>
+         
+          <input class="input--login" for="exampleInputEmail1" type="email" name="email" placeholder="  EMAIL" >
+          
+          <input class="input--login" for="exampleInputPassword1" type="password" name="password" placeholder=" CONTRASEÑA" >
+          <div class="d-flex justify-content-end">
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="recordar">
+                <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+              </div>
+        </div>
+          <button class="button--login" type="submit"> INGRESAR </button>
+          <span class="text-danger"><%= locals.errores && errores.email ? errores.email.msg : null%> </span>
           <a class="resgistrarse--login" href="/users/register">REGISTRARSE</a>
           <a class="a--login" href="/">¿Olvidaste tu contraseña?</a>
         </form>

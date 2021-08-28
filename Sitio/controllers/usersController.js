@@ -6,11 +6,13 @@ const {products} = require('../data/products_db');
 
 module.exports= {
     register:(req,res)=>{
-        return res.render('register')
+        return res.render('register',{
+            products,
+        })
     },
     processRegister : (req,res) => {
         let errors = validationResult(req);
-        let {nombre,apellido,password} = req.body;
+        let {nombre,apellido,email,password} = req.body;
         if(errors.isEmpty()){
             let usuario = {
                 id : usuarios.length > 0 ? usuarios[usuarios.length - 1].id + 1 : 1,
@@ -28,9 +30,10 @@ module.exports= {
                 nombre : usuario.nombre,
                 rol : usuario.rol
             }
-            return res.send('/')
+            return res.redirect('/login')
         }else{
             return res.render('register',{
+                products,
                 old : req.body,
                 errores : errors.mapped()
             })
