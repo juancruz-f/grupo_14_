@@ -34,24 +34,20 @@ a{
     background-color: var( --color-header);
     
 }
-.dropdown-menu .dropdown-item , .nav-item, #dropdownMenuButton1, .navbar-toggler-icon{ 
+.dropdown-menu .dropdown-item , .nav-item , .nav-link, .nav-link active{ 
     color: white;
 
 }
-#dropdownMenuButton1, .dropdown, .dropdown-menu, .navbar-nav ms-auto mb-2 mb-lg-0{
-    right: 245px;
-    padding-left: 5px;
+.dropdown, #dropdownMenuButton1, .btn, #navbarDropdown{
+    border:none;
     background-color: transparent;
-}
-.navbar-nav, .dropdown-item{
-    margin-left: 5px;
+    left: 10px;
+    top:5px;
 
 }
-.dropdown-menu li{
-    margin-left: 20px;
-    
+#navbarDropdown{
+    padding: 5px;
 }
-
 @media (min-width: 768px){
     header.botones{
         font-size: 20px;
@@ -59,7 +55,7 @@ a{
     header img{
         max-width: 400px;
     }
-    .navegador, .navbar-toggler{
+    .navegador{
         
         /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#959595+0,0d0d0d+46,010101+50,0a0a0a+53,4e4e4e+76,383838+87,1b1b1b+100;Black+Gloss+Pipe */
 background: #959595; /* Old browsers */
@@ -71,14 +67,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 
 
     }
-    
-    #dropdownMenuButton1, .dropdown ,.btn, .btn btn-secondary dropdown-toggle{
-        border: none;
-    }
-    #dropdownMenuButton1, .dropdown, .dropdown-menu, .navbar-nav ms-auto mb-2 mb-lg-0{
-        background-color: transparent;
-        text-align: center;
-    }
     .container-fluid{
         width: 100%;
     }
@@ -88,54 +76,46 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
      .collapse{
         margin-left: 50px;
     }
-    #dropdownMenuButton1, .dropdown, .dropdown-menu, .navbar-nav ms-auto mb-2 mb-lg-0{
-        right: 600px;
+    .dropdown, #dropdownMenuButton1, .btn, #navbarDropdown{
+        right: 30px;
+
     }
 
    
-
-}
 @media (min-width: 1024px){
     header .botones{
         font-size: 30px;
         margin:0 20px 15px;
     }
-    #dropdownMenuButton1, .dropdown, .dropdown-menu, .navbar-nav ms-auto mb-2 mb-lg-0 {
+    .dropdown, #dropdownMenuButton1, .btn, #navbarDropdown{
+        border:none;
         background-color: transparent;
-        text-align: center;
-        top: 4px;
-        left: 600px;
+        left: 90px;
+        top:5px;
+    
     }
-    .dropdown-item, .dropdown-menu{
-        background-color: var( --color-header);
-    }
-    .dropdown-menu li{
-        margin: 5px;
-    }
+    
 }
  /* hover*/
- .dropdown-item:hover{
-    background-color:var( --color-amarillo);
-    color:var( --color-footer)
+    .dropdown-item:hover{
+        background-color:var( --color-amarillo);
+        color:var( --color-footer)
+    }
+    .dropdown-menu:hover{
+        background-color:var( --color-amarillo);
+        color:var( --color-footer)
+    }
+
+   
+    a:hover{
+        color: var( --color-amarillo);
+    }
+    #navbarDropdown:hover{
+        color: var( --color-amarillo);
+    }
+    
+
+
+
+
 }
-.dropdown-menu:hover{
-    background-color:var( --color-amarillo);
-    color:var( --color-footer)
-}
-#dropdownMenuButton1:hover{
-    background-color: var( --color-footer);
-    color:var( --color-amarillo)
-
-}
-
-
-a:hover{
-    color: var( --color-amarillo);
-}
-#navbarDropdown:hover{
-    color: var( --color-amarillo);
-}
-
-
-
-

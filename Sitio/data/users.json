@@ -1,34 +1,18 @@
 [
   {
     "id": 1,
-    "nombre": "juan",
-    "apellido": "gauto",
-    "email": "gauto@hotmail.com",
-    "password": "$2a$10$vnM5zneinLHAOHA.xp87/O/vOM0Hhlurddc.rItPsUuh.SWiypy0C",
-    "rol": "user"
-  },
-  {
-    "id": 2,
     "nombre": "solange",
     "apellido": "abreu",
     "email": "abreu.solange@outlook.com",
-    "password": "$2a$10$tyWNBsz.GH01/9VLEMydcebNC5Zq0AOMYEOqFh5y4SeXbND5.PCc2",
-    "rol": "user"
+    "password": "$2a$10$fDL929TBRH4/96hGXILg9uK3DC/o0TAgFchxfs5bBgutawAhfZUrO",
+    "rol": "admin"
   },
   {
-    "id": 3,
-    "nombre": "pedro",
-    "apellido": "ramires",
-    "email": "ramires@hotmail.com",
-    "password": "$2a$10$oSLi28X9rlFe1nVnbMjaDOStZb./xI2zz6z97Q89qF4vitSZjP1bm",
-    "rol": "user"
-  },
-  {
-    "id": 4,
-    "nombre": "roberto",
-    "apellido": "juares",
-    "email": "juares@hotmail.com",
-    "password": "$2a$10$3fijsEvkbPxtBhzkNJXb6OLi9cxXm7j94.i7KYLX.llkwZ48IxUc.",
+    "id": 2,
+    "nombre": "carlos",
+    "apellido": "perez",
+    "email": "carlos@hotmail.com",
+    "password": "$2a$10$rah5kIKQ9a90hObvvqYbV.2tbqGyCJSRxHic5iiaCW5O1LdLDg4ou",
     "rol": "user"
   }
 ]

@@ -30,7 +30,7 @@ module.exports= {
                 nombre : usuario.nombre,
                 rol : usuario.rol
             }
-            return res.redirect('/login')
+            return res.redirect('/users/login')
         }else{
             return res.render('register',{
                 products,
