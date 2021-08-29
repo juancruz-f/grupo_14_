@@ -41,8 +41,8 @@
 
   </div>
   <main>
-
-    <div class="cont--login">
+    <% if (!locals.userLogin) { %>
+     <div class="cont--login">
       <div class="cont--loginInt">
 
         <form  class="cont--loginInt" action="" method="POST">
@@ -64,6 +64,12 @@
         </form>
       </div>
     </div>
+    
+     
+    <% } %>
+    
+ 
+    
     <section class="newsletter--Caja">
       <div class="newsletter--login">
 
