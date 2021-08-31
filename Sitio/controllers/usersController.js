@@ -42,7 +42,7 @@ module.exports= {
     },
     login : (req,res) => {
         return res.render('login',{
-            products
+            products,
         })
     },
     processLogin : (req,res) => {
@@ -72,5 +72,16 @@ module.exports= {
         req.session.destroy();
         res.cookie('ohshots',null,{maxAge:-1})
         return res.redirect('/')
+    },
+    contact:(req,res)=>{
+        return res.render('contact')
+    },
+    profile: (req, res) => {
+        if (req.locals.userLogin) {
+            res.locals.userLogin 
+        } else {
+            return res.render('login')
+        }
     }
+
 }

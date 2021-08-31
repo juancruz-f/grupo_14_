@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head -->
+<%- include('./partials/head') %>
+
+
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+    <div class="container-fluid">
+
+        <ul class="slider">
+          <li id="slide1">
+            <img src="/images/carousel-1.jpg" alt="">
+
+
+          </li>
+          <li id="slide2">
+            <img src="/images/carousel-2.jpg" alt="">
+
+          </li>
+          <li id="slide3">
+            <img src="/images/carousel-3.jpg" alt="">
+
+          </li>
+        </ul>
+
+        <ul class="menu">
+          <li>
+            <a href="#slide1"></a>
+          </li>
+          <li>
+            <a href="#slide2"></a>
+          </li>
+          <li>
+            <a href="#slide3"></a>
+          </li>
+        </ul>
+
+      </div>
+
+ <main>
+
+      <h1>Listado de productos</h1>
+            <% products.forEach(product=> { %>
+                <div class="contenedor--admin">
+
+                    <div class="caja--admin">
+
+                        <img src="/images/<%= product.image %> " alt="">
+
+                    </div>
+                    <div class="caja--admin">
+                        <h4>
+                            <%= product.title %>
+                        </h4>
+                        <p>
+                            $ <%= product.price %>
+                        </p>
+                        <button class="articulo"><a href="/products/detail/<%= product.id %> ">Más info</a></button>
+                    </div>
+
+
+                </div>
+                </div>
+
+                <% }) %>
+
+</main>
+
+     <!-- Footer -->
+
+     <%- include('./partials/footer') %>
+
+     <!-- Script -->
+     <%- include('./partials/script') %>
+
+    </body>
+
+</html>
