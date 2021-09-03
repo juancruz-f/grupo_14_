@@ -1,9 +1,10 @@
-[{
+[
+  {
     "id": 1,
-    "nombre" : "juan",
-    "apellido": "perez",
-    "email": "juanperez2@hotmail.com",
-    "password" : "123123",
+    "nombre": "Juan",
+    "apellido": "Fernandez",
+    "email": "juancruzfernandez108@gmail.com",
+    "password": "$2a$10$v2zx6MCSlerqX/NGzLBTn.kjM0xYdq4pZo1Tg1xvoSVaSTwl9bjLy",
     "rol": "user"
-
-}]
+  }
+]
