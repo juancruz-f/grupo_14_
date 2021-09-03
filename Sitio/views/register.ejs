@@ -46,7 +46,7 @@
   <main>
     <nav class="container--register">
       <div class="caja--register">
-        <form class="caja--register" novalidate method="POST">
+        <form class="caja--register" novalidate method="POST" enctype="multipart/form-data">
 
           <h4 class="h4--register">CREAR CUENTA</h4>
           <p class="register--responsive">Comprá más rápido y llevá el control de tus pedidos, ¡en un solo
@@ -55,7 +55,8 @@
           <span class="text-danger small"><%= locals.errores && locals.errores.nombre ? errores.nombre.msg : null %> </span>
           <input type="text" name="apellido" placeholder="  APELLIDO" value="<%= locals.old && locals.old.nombre ? old.nombre : null%>" >
           <span class="text-danger small"><%= locals.errores && locals.errores.apellido ? errores.apellido.msg : null %> </span>
-         
+          <label for=""> Seleccionar imagen de Perfil</label>
+          <input class="profile-pic" type="file" name="profilePic" accept=".jpg">
           <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="  EMAIL" >
           <span class="text-danger small"><%= locals.errores && locals.errores.email ? errores.email.msg : null %> </span>
           <input type="password" name="password" placeholder=" CONTRASEÑA" >

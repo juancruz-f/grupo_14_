@@ -96,5 +96,21 @@
     "category": "vinos ",
     "origen": "nacional ",
     "price": 450
+  },
+  {
+    "id": 11,
+    "title": "ASDASDASD",
+    "description": "asede",
+    "category": "vinos ",
+    "origen": "nacional ",
+    "price": 999
+  },
+  {
+    "id": 12,
+    "title": "fgnfd",
+    "description": "rethrthr",
+    "category": "bebidas blancas ",
+    "origen": "importado ",
+    "price": 66566
   }
 ]

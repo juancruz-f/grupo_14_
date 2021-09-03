@@ -40,34 +40,35 @@
         </ul>
 
       </div>
-
+      <h1>Listado de productos</h1>
       <main class="listado">
 
-        <h1>Listado de productos</h1>
-        <% products.forEach(product=> { %>
-          <div class="contenedor-lista">
 
-            <div class="caja-lista">
+        <div>
+          <% products.forEach(product=> { %>
+            <div class="contenedor-lista">
 
-              <img src="/images/<%= product.image %> " alt="">
+              <div class="caja-lista">
+
+                <img src="/images/<%= product.image %> " alt="">
+
+              </div>
+              <div class="caja-lista">
+                <h4>
+                  <%= product.title %>
+                </h4>
+                <p>
+                  $ <%= product.price %>
+                </p>
+                <button><a href="/products/detail/<%= product.id %> ">Más info</a></button>
+              </div>
+
 
             </div>
-            <div class="caja-lista">
-              <h4>
-                <%= product.title %>
-              </h4>
-              <p>
-                $ <%= product.price %>
-              </p>
-              <button><a href="/products/detail/<%= product.id %> ">Más info</a></button>
-            </div>
+        </div>
 
-
+        <% }) %>
           </div>
-          </div>
-
-          <% }) %>
-
       </main>
       <!-- Footer -->
 

@@ -22,5 +22,13 @@
     "email": "belele2@gmail.com",
     "password": "$2a$10$EbsO3VjPY8VyCwG0mqfcbuEtEAUdUaMBmR8cjUHLc3S4uv9J4Zmv2",
     "rol": "admin"
+  },
+  {
+    "id": 4,
+    "nombre": "Ara",
+    "apellido": "Bel",
+    "email": "arara11@gmail.com",
+    "password": "$2a$10$of93BuG.ljYEJRTTnhswmOmQDLifHGgnyA7XVpMMwFp.875jl3qMS",
+    "rol": "user"
   }
 ]

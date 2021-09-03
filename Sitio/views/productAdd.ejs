@@ -47,7 +47,7 @@
         <div class="container--add">
           <div class='caja--add'>
             <h2>Agregar producto</h2>
-            <form class='caja--add' action="" method="POST" enctype="multipart/form-data">
+            <form class='caja--add' action="/products/add" method="POST" enctype="multipart/form-data">
               <div>
                 <label for="formGroupExampleInput" class="form-label">Marca</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" name="title">
@@ -59,7 +59,7 @@
               </div>
               <div class='imagen--add'>
                 <label for=""> Seleccionar imagen de producto</label>
-                <input class="avatar" type="file" name="avatar" accept=".jpg">
+                <input class="avatar" type="file" name="avatar" accept="image/*" multiple>
 
               </div>
 
