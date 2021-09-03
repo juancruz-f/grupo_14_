@@ -5,7 +5,6 @@ const origenes= require('../data/origen_db')
 const {products, guardar} = require('../data/products_db');
 const {validationResult} = require('express-validator');
 
-
 module.exports = {
     admin: (req, res)=>{
        
@@ -95,5 +94,10 @@ module.exports = {
             origenes,
         })
     
+    },
+    products : (req,res) => {
+        res.render('listProducts',{
+            products,
+        })
     }
 }

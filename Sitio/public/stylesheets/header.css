@@ -34,11 +34,20 @@ a{
     background-color: var( --color-header);
     
 }
-.dropdown-menu .dropdown-item{
+.dropdown-menu .dropdown-item , .nav-item , .nav-link, .nav-link active{ 
     color: white;
 
 }
+.dropdown, #dropdownMenuButton1, .btn, #navbarDropdown{
+    border:none;
+    background-color: transparent;
+    left: 10px;
+    top:5px;
 
+}
+#navbarDropdown{
+    padding: 10px;
+}
 @media (min-width: 768px){
     header.botones{
         font-size: 20px;
@@ -67,12 +76,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
      .collapse{
         margin-left: 50px;
     }
+    .dropdown, #dropdownMenuButton1, .btn, #navbarDropdown{
+        right: 30px;
 
-    /* hover*/
+    }
+
+   
+@media (min-width: 1024px){
+    header .botones{
+        font-size: 30px;
+        margin:0 20px 15px;
+    }
+    
+    .dropdown, #dropdownMenuButton1, .btn, #navbarDropdown{
+        border:none;
+        background-color: transparent;
+        left: 430px;
+        top:-3px;
+    
+    }
+    
+}
+ /* hover*/
     .dropdown-item:hover{
         background-color:var( --color-amarillo);
         color:var( --color-footer)
     }
+    .dropdown-menu:hover{
+        background-color:var( --color-amarillo);
+        color:var( --color-footer)
+    }
+
    
     a:hover{
         color: var( --color-amarillo);
@@ -85,11 +119,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 
 
 
-}
-@media (min-width: 1024px){
-    header .botones{
-        font-size: 30px;
-        margin:0 20px 15px;
-    }
-    
 }
