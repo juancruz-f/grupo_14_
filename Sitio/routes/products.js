@@ -4,6 +4,8 @@ const {detail, cart, add, save, edit, update, remove,admin, products} = require(
 const multer = require('multer')
 const path = require('path')
 
+const productAddValidator = require('../validations/productAddValidator')
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, path.join(__dirname, '../public/images'))
@@ -21,7 +23,7 @@ router.get('/admin',admin);
 router.get('/detail/:id',detail);
 router.get('/cart',cart);
 router.get('/add',add);
-router.post('/add',save);
+router.post('/add',productAddValidator ,save);
 router.get('/edit/:id',edit);
 router.put('/edit/:id',update);
 router.post('/remove/:id',remove);

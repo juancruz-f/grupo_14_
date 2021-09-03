@@ -77,11 +77,19 @@ module.exports= {
         return res.render('contact')
     },
     profile: (req, res) => {
-        if (req.locals.userLogin) {
+        /* if (req.locals.userLogin) {
             res.locals.userLogin 
         } else {
             return res.render('login')
-        }
-    }
+        } */
+        return res.render('userProfile',{
+            products,
+        })
+    }/* ,
+    profileEdit: (req, res) => {
+        return res.render('userProfileEdit',{
+            products,
+        })
+    } */
 
 }

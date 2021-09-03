@@ -9,7 +9,7 @@
     <!-- Header -->
     <%- include('./partials/header') %>
 
-    <div class="container-fluid">
+      <div class="container-fluid">
 
         <ul class="slider">
           <li id="slide1">
@@ -41,42 +41,41 @@
 
       </div>
 
- <main>
+      <main class="listado">
 
-      <h1>Listado de productos</h1>
-            <% products.forEach(product=> { %>
-                <div class="contenedor--admin">
+        <h1>Listado de productos</h1>
+        <% products.forEach(product=> { %>
+          <div class="contenedor-lista">
 
-                    <div class="caja--admin">
+            <div class="caja-lista">
 
-                        <img src="/images/<%= product.image %> " alt="">
+              <img src="/images/<%= product.image %> " alt="">
 
-                    </div>
-                    <div class="caja--admin">
-                        <h4>
-                            <%= product.title %>
-                        </h4>
-                        <p>
-                            $ <%= product.price %>
-                        </p>
-                        <button class="articulo"><a href="/products/detail/<%= product.id %> ">Más info</a></button>
-                    </div>
+            </div>
+            <div class="caja-lista">
+              <h4>
+                <%= product.title %>
+              </h4>
+              <p>
+                $ <%= product.price %>
+              </p>
+              <button><a href="/products/detail/<%= product.id %> ">Más info</a></button>
+            </div>
 
 
-                </div>
-                </div>
+          </div>
+          </div>
 
-                <% }) %>
+          <% }) %>
 
-</main>
+      </main>
+      <!-- Footer -->
 
-     <!-- Footer -->
+      <%- include('./partials/footer') %>
 
-     <%- include('./partials/footer') %>
+        <!-- Script -->
+        <%- include('./partials/script') %>
 
-     <!-- Script -->
-     <%- include('./partials/script') %>
-
-    </body>
+  </body>
 
 </html>

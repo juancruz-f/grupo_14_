@@ -88,5 +88,9 @@
     "origen": "Nacional",
     "section": "packs",
     "price": 3000
+  },
+  {
+    "id": 10,
+    "price": null
   }
 ]
