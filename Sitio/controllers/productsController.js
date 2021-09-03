@@ -35,6 +35,7 @@ module.exports = {
         }
         origenes,
        products.push(product);
+       
 
        fs.writeFileSync(path.join(__dirname,'..','data','products.json'),JSON.stringify(products,null,2),'utf-8')
        return res.redirect('/')

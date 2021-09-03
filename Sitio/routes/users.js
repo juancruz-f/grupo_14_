@@ -16,6 +16,8 @@ router.post('/register', registerValidator, processRegister);
 router.get('/contact', contact)
 router.get('/logout',logout);
 router.get('/userProfile', profile)
+
+
 /* router.put('/userProfileEdit', profileEdit) */
 
 

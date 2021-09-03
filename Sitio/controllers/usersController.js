@@ -25,11 +25,7 @@ module.exports= {
             usuarios.push(usuario);
             guardar(usuarios);
 
-            req.session.userLogin = {
-                id : usuario.id,
-                nombre : usuario.nombre,
-                rol : usuario.rol
-            }
+           
             return res.redirect('/users/login')
         }else{
             return res.render('register',{
@@ -77,7 +73,7 @@ module.exports= {
         return res.render('contact')
     },
     profile: (req, res) => {
-        /* if (req.locals.userLogin) {
+        /* if (req.locals.userLogin) { // mandar usuarios abajo de productos
             res.locals.userLogin 
         } else {
             return res.render('login')
@@ -85,11 +81,17 @@ module.exports= {
         return res.render('userProfile',{
             products,
         })
+        req.session.userLogin = {
+            id : usuario.id,
+            nombre : usuario.nombre,
+            rol : usuario.rol
+        }
+            res.cookie('ohshots',req.session.userLogin,{maxAge: 1000 * 60})
+        }
     }/* ,
-    profileEdit: (req, res) => {
+    profileEdit: (req, res) => { // update o post: actualizar req.session.userlogin y hacer push.
         return res.render('userProfileEdit',{
             products,
         })
     } */
 
-}
