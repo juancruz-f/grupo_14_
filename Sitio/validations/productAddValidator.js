@@ -1,15 +1,15 @@
-const {check} = require('express-validator')
+const {body} = require('express-validator')
 
 module.exports = [
-    check('title')
+    body('title')
     .notEmpty().withMessage('Este campo es obligatorio'),
 
-    check('description')
+    body('description')
     .notEmpty().withMessage('Añade una descripción'),
 
-    check('price')
+    body('price')
     .notEmpty().withMessage('Añade un precio'),
 
-    check('category')
+    body('category')
     .notEmpty().withMessage('Indica la categoría')
 ]

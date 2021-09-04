@@ -33,7 +33,7 @@ module.exports = {
             origen,
             price : +price,  
         }
-        origenes,
+        origenes
        products.push(product);
        
 

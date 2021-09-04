@@ -58,6 +58,9 @@
          
           <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="  EMAIL" >
           <span class="text-danger small"><%= locals.errores && locals.errores.email ? errores.email.msg : null %> </span>
+         
+         
+        
           <input type="password" name="password" placeholder=" CONTRASEÑA" >
           <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password.msg : null %> </span>
           <input type="password"  id="exampleInputPassword2" name="password2"  placeholder="  REINGRESE CONTRASEÑA">
@@ -65,6 +68,8 @@
           <p>¿Ya tienes una cuenta? <a href="/users/login">Inicia sesión</a></p>
           <a href=""></a>
         </form>
+      
+
 
 
       </div>

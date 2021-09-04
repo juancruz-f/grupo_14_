@@ -38,5 +38,39 @@
     "email": "anifernandez8787@gmail.com",
     "password": "$2a$10$lnBKaqVw/grO17XxUP8IiO3PUrYl.8C.VBFLouXrfuVyNYRYs0MNG",
     "rol": "user"
+  },
+  {
+    "id": 6,
+    "nombre": "kevin",
+    "apellido": "lombardo",
+    "email": "jc-87_09@hotmail.com",
+    "password": "$2a$10$bhrZ2lNQT/EQcYrhGuHaoePT2k0BB35p1GlT2GQgSn6DLEEUJHGGW",
+    "rol": "user"
+  },
+  {
+    "id": 7,
+    "nombre": "ivan",
+    "apellido": "drago",
+    "image": "zx60k2avzgt61.jpg",
+    "email": "ivandrago@gmail.com",
+    "password": "$2a$10$Wrl4u5YqnIP6xQQI2szsEem4u7aHzRRvv6csiPkgrZUyg.9iJmnaq",
+    "rol": "user"
+  },
+  {
+    "id": 8,
+    "nombre": "ivana",
+    "apellido": "dragona",
+    "image": "descarga (11).jpg",
+    "email": "ivanadragona@gmail.com",
+    "password": "$2a$10$8qsoL15NfZyxHBPCGumQd.2n8arEOVqLapBw5MSQyxftH7s1yIuz2",
+    "rol": "user"
+  },
+  {
+    "id": 9,
+    "nombre": "rogelio",
+    "apellido": "santos",
+    "email": "rogesantos@gmail.com",
+    "password": "$2a$10$Xz5tCQaokj7l0RIVz5SYw.1Nz3KZas9pKYtc1Bipj65.blApd0wXW",
+    "rol": "admin"
   }
 ]
