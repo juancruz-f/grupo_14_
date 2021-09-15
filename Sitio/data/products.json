@@ -108,5 +108,13 @@
     "category": "bebidas blancas ",
     "origen": "importado ",
     "price": 2155
+  },
+  {
+    "id": 14,
+    "title": "malta",
+    "description": "age",
+    "category": "vinos ",
+    "origen": "nacional ",
+    "price": 2000
   }
 ]

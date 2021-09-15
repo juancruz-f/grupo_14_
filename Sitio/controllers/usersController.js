@@ -19,7 +19,7 @@ module.exports= {
     processRegister : (req,res) => {
         let errors = validationResult(req);
         let {nombre,apellido,image,email,password} = req.body;
-        console.log(errors)
+        console.log(errors);
         if(errors.isEmpty()){
             let usuario = {
                 id : usuarios.length > 0 ? usuarios[usuarios.length - 1].id + 1 : 1,

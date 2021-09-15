@@ -72,5 +72,22 @@
     "email": "rogesantos@gmail.com",
     "password": "$2a$10$Xz5tCQaokj7l0RIVz5SYw.1Nz3KZas9pKYtc1Bipj65.blApd0wXW",
     "rol": "admin"
+  },
+  {
+    "id": 10,
+    "nombre": "romeo",
+    "apellido": "santos",
+    "image": "midsommar_poster_jpg_151.jpg",
+    "email": "romeosantos@gmail.com",
+    "password": "$2a$10$KvzPRKpiU/huIkIiHrPHNuiJrySiSm/eIF/ekcf84dyMYJuMzevaS",
+    "rol": "user"
+  },
+  {
+    "id": 11,
+    "nombre": "rama",
+    "apellido": "cabra",
+    "email": "ramacabrera@gmail.com",
+    "password": "$2a$10$XfmZB6DVm0woyfQHKIxUE.jJs8DxGOZyGKEUl3wp5PL/hCCUa0ATi",
+    "rol": "user"
   }
 ]
