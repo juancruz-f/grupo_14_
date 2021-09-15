@@ -116,5 +116,13 @@
     "category": "vinos ",
     "origen": "nacional ",
     "price": 2000
+  },
+  {
+    "id": 15,
+    "title": "mobilehome",
+    "description": "genial",
+    "category": "promos ",
+    "origen": "nacional ",
+    "price": 350
   }
 ]

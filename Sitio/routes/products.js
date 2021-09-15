@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
         cb(null, path.join(__dirname, '../public/images'))
     },
     filename: (req, file, cb) => {
-        const newFilename = 'avatar' + Date.now() + path.extname(file.originalname)
+        const newFilename = 'product' + Date.now() + path.extname(file.originalname)
         cb(null, newFilename)
     }
 
@@ -24,7 +24,7 @@ router.get('/admin',admin);
 router.get('/detail/:id',detail);
 router.get('/cart',cart);
 router.get('/add',add);
-router.post('/add', upload.single('avatar') ,productAddValidator,save);
+router.post('/add', upload.single('image') ,productAddValidator,save);
 router.get('/edit/:id',edit);
 router.put('/edit/:id',update);
 router.post('/remove/:id',remove);

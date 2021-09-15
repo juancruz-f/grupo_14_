@@ -22,18 +22,18 @@ module.exports = {
         })
     },
     save: (req,res)=>{
-        const {title, description,price,category,origen,avatar} = req.body;
+        const {title, description,price,category,origen,image} = req.body;
 
         let product = {
             id : products[products.length - 1].id + 1,
             title,
             description,
             category,
-            avatar,
+            image,
             origen,
             price : +price,  
         }
-        origenes
+        
        products.push(product);
        
 
