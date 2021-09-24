@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const categories= require('../data/categories_db');
 const origenes= require('../data/origen_db')
 const sections= require('../data/sections_db')
@@ -30,7 +32,6 @@ module.exports = {
     save: (req,res)=>{
         
         let errors = validationResult(req);
-        res.send(errors)
         if(errors.isEmpty()){
             const {title,description,price,category,origen,section} = req.body;
             if(req.files){
@@ -48,7 +49,7 @@ module.exports = {
             }
        products.push(product);
        guardar(products);
-       return('/')
+       res.redirect('/');
 
         }else{
             return res.render("productAdd",{
