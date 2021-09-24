@@ -4,15 +4,23 @@ body{
 main{
     background-color: var(--color-amarillo);
 }
-.listado h1{
-    text-align: center;
+.h1--listproducts{
+    text-align: left;
+    margin: 5px;
+
+}
+.listado h2{
+    
     margin: 15px;
     padding-top: 20px;
+}
+.articulo-listProducts a{
+    color: var(--color-header)
 }
 .contenedor-lista{
     background-color: var(--color-grisClaro);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 15px;
     padding: 5px;

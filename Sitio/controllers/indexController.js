@@ -11,5 +11,7 @@ module.exports = {
             interes: products.filter(product => product.section === "interes"),
             packs : products.filter(product => product.section === "packs"),
     })
-}
+    
+},
+about : (req,res)=>res.render('about'),
 }

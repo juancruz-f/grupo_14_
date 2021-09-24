@@ -91,38 +91,14 @@
   },
   {
     "id": 10,
-    "price": null
-  },
-  {
-    "id": 11,
-    "price": null
-  },
-  {
-    "id": 12,
-    "price": null
-  },
-  {
-    "id": 13,
-    "title": "fumetsu",
-    "description": "asge",
-    "category": "bebidas blancas ",
-    "origen": "importado ",
-    "price": 2155
-  },
-  {
-    "id": 14,
-    "title": "malta",
-    "description": "age",
+    "title": "san vicente",
+    "description": "kjhggfd",
     "category": "vinos ",
+    "section": "destacados",
+    "images": [
+      "product1632505853504.jpg"
+    ],
     "origen": "nacional ",
-    "price": 2000
-  },
-  {
-    "id": 15,
-    "title": "mobilehome",
-    "description": "genial",
-    "category": "promos ",
-    "origen": "nacional ",
-    "price": 350
+    "price": 451
   }
 ]

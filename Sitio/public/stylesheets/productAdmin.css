@@ -8,7 +8,7 @@
         margin: auto;
     }
     .button--admin{
-        margin-left: 55px;
+        margin:5px;
        
     }
 
@@ -53,12 +53,7 @@
     color: var( --color-header);
     margin: 1px;
 }
-.button--admin button{
-    margin-top: 60px;
-    
-    
-   
-}
+
 
 .caja--admin a{
     margin: 15px;
@@ -69,12 +64,15 @@
     background-color: darkgreen;
     color: white;
     border-radius: 7px;
+    margin:5px;
+    
     
 }
 .button-2{
     background-color: red;
     color: white;
     border-radius: 7px;
+    margin-left: 43px;
     
 }
 a:hover{
@@ -98,20 +96,20 @@ a:hover{
         display: block;
         margin: auto;
     }
-    .button--admin{
-        margin-left: 55px;
-       
-    }
+    
 
 }
 @media (min-width: 768px){
     .contenedor--admin{
-        flex-wrap: nowrap;
-        margin: 15px;
-        height: 280px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+       
     }
     .caja--admin{
+        justify-content: center;
        
+       flex-wrap: wrap;
         margin-top: 0px;
         text-align:left
     }
@@ -120,9 +118,6 @@ a:hover{
 @media (min-width: 1024px){
     .contenedor--admin{
     background-color: var( --color-grisClaro);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
     margin: 5px;
     padding: 5px;
     border: 1px var( --color-header) solid;

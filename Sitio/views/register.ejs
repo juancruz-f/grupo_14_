@@ -46,18 +46,16 @@
   <main>
     <nav class="container--register">
       <div class="caja--register">
-        <form class="caja--register" action="" novalidate method="POST" enctype="multipart/form-data">
+        <form class="caja--register" action="" novalidate method="POST" >
 
           <h4 class="h4--register">CREAR CUENTA</h4>
           <p class="register--responsive">Comprá más rápido y llevá el control de tus pedidos, ¡en un solo
             lugar!</p>
           <input type="text" name="nombre" placeholder="  NOMBRE" value="<%=locals.old && locals.old.nombre ? old.nombre : null%>">
           <span class="text-danger small"><%=locals.errores && locals.errores.nombre ? errores.nombre.msg : null %> </span>
-          <input type="text" name="apellido" placeholder="  APELLIDO" value="<%=locals.old && locals.old.nombre ? old.nombre : null%>" >
-          <span class="text-danger small"><%= locals.errores && locals.errores.apellido ? errores.apellido.msg : null %> </span>
-                    <span class="text-danger"><%= typeof error != 'undefined' ? error : null %> </span>
-          <input type="file" class="" id="" name="image" accept="image/*" multiple>
-         
+          <input type="text" name="apellido" placeholder="  APELLIDO" value="<%=locals.old && locals.old.apellido ? old.apellido : null%>" >
+          <span class="text-danger small"><%=locals.errores && locals.errores.apellido ? errores.apellido.msg : null %> </span>
+          
           <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="  EMAIL" >
           <span class="text-danger small"><%= locals.errores && locals.errores.email ? errores.email.msg : null %> </span>
          

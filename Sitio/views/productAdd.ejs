@@ -76,6 +76,18 @@
                 </select>
               </div>
               <div class="mb-3">
+                <label for="section" class="form-label">Seccion</label>
+
+                <select id="section" class="form-select" name="section">
+                  <option value="" selected hidden>Seleccione seccion</option>
+                  <% sections.forEach(section=> { %>
+                    <option value="<%= section %>">
+                      <%= section %>
+                    </option>
+                    <% }) %>
+                </select>
+              </div>
+              <div class="mb-3">
                 <label for="category" class="form-label">Origen</label>
 
                 <select id="origen" class="form-select" name="origen">
