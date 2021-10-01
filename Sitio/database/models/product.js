@@ -86,5 +86,5 @@ module.exports = (sequelize, dataTypes) => {
     
 
     }
-    return users;
+    return products;
 }
