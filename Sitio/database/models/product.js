@@ -83,6 +83,13 @@ module.exports = (sequelize, dataTypes) => {
                 foreignKey: "imagenId"
     
             });
+products.associate = function (models) {
+                products.belongsTo(models.carts, {
+                    as: "products",
+                    foreignKey: "productId"
+        
+                })};
+    
     
 
     }
