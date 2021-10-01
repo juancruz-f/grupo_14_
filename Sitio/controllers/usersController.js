@@ -1,8 +1,11 @@
+const db = require('../database/models');
 const {products} = require('../data/products_db');
 const {usuarios, guardar}= require('../data/users_db');
 const fsMethods = require("../utils/fsMethods");
 const bcrypt = require('bcryptjs');
 const {validationResult} = require('express-validator');
+
+
 module.exports= {
     register:(req,res)=>{
         return res.render('register',{
@@ -12,26 +15,24 @@ module.exports= {
     processRegister : (req,res) => {
         let errors = validationResult(req);
         let {nombre,apellido,email,password}= req.body;
+        
         if(errors.isEmpty()){
-            let usuario = {
-                id : usuarios.length > 0 ? usuarios[usuarios.length - 1].id + 1 : 1,
-                nombre,
-                apellido,
-                image: req.file? req.file.filename : "default-user-image.png",
-                email,
-                password : bcrypt.hashSync(password,10),
-                rol : "user"
-            }
-            usuarios.push(usuario);
-            guardar(usuarios);
+            db.users.create({
+                nombre : nombre,
+                apellido: apellido,
+                email: email,
+                password: bcrypt.hashSync(password, 10), 
+                avatar : "default.png",
+                rolId : 1
+            })
+            
+            .then(result => {
+                return res.redirect('/users/login')}
+            )
 
-            req.session.userLogin = {
-                id : usuario.id,
-                name : usuario.nombre,
-                rol : usuario.rol
-            }
+            
            
-            return res.redirect('/users/login')
+            
         }else{
             return res.render('register',{
                 products,
