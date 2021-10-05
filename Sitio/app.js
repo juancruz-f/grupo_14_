@@ -1,44 +1,51 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-const methodOverride = require('method-override');
+// dependencies
+require("dotenv").config();
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const methodOverride = require("method-override");
 const session = require('express-session');
-const cookieCheck = require('./middlewares/cookieCheck');
-const localsUserCheck = require('./middlewares/localsUserCheck');
+const cookieCheck= require('./middlewares/cookieCheck');
+const localsCheck = require('./middlewares/localsUserCheck');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var productsRouter = require('./routes/products');
+// import routers
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const productsRouter = require('./routes/products');
+const cartRouter = require('./routes/cart');
 
 
-
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// middlewares
 app.use(logger('dev'));
 app.use(express.json());
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('_method'));
+
 app.use(session({
   secret : "my secret",
   resave: false,
   saveUninitialized: true
 }))
 app.use(cookieCheck);
-app.use(localsUserCheck);
- 
+app.use(localsCheck);
 
-app.use('/',indexRouter)
-app.use('/users', usersRouter);
-app.use('/products', productsRouter);
+//app.use(localsUserCheck);
 
+// config routes
+app.use('/',indexRouter);
+app.use('/users',usersRouter);
+app.use('/products',productsRouter);
+app.use('/cart',cartRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

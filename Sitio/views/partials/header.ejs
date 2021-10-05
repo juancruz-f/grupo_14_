@@ -46,23 +46,26 @@
                         ADMIN
                       </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="/users/profile/<%= locals.userLogin.id %>">Perfil</a></li>
+                        
                         <li><a class="dropdown-item" href="/products/add">Agregar productos</a></li>
                         <li><a class="dropdown-item" href="/products/admin">Editar productos</a></li>
                         <li><a class="dropdown-item" href="/users/logout">Cerrar sesión</a></li>
                       </ul>
                     </div>
                     <% } %>
-                    <% if (locals.userLogin.rol!=="admin") { %>
+                    <% if (locals.userLogin.rol !=="admin") { %>
                       <div class="dropdown" id="navbarDropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-sign-in-alt"></i>
-                      <%= locals.userLogin.nombre %>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="/users/logout">Cerrar sesión</a></li>
-                       
-                      </ul>
-                    </div>
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fas fa-sign-in-alt"></i>
+                          <%=  locals.userLogin.nombre %> 
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="/users/profile/<%= userLogin.id %>">Perfil</a></li>
+                          
+                          <li><a class="dropdown-item" href="/users/logout">Cerrar sesión</a></li>
+                        </ul>
+                      </div>
                     <% } %>
                    
                   

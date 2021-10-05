@@ -59,7 +59,11 @@
               </div>
               <div class='imagen--add'>
                 <label for=""> Seleccionar imagen de producto</label>
+<<<<<<< HEAD
                 <input class="avatar" type="file" name="avatar" accept="image/*" multiple>
+=======
+                <input class="image" type="file" name="image" accept=".jpg">
+>>>>>>> 42848ea06fa6a3c53ec1018f82838ba1453197ba
 
               </div>
 
@@ -69,19 +73,31 @@
                 <select id="category" class="form-select" name="category">
                   <option value="" selected hidden>Seleccione la categoría</option>
                   <% categories.forEach(category=> { %>
-                    <option value="<%= category %> ">
+                    <option value="<%= category %>">
                       <%= category %>
                     </option>
                     <% }) %>
                 </select>
               </div>
               <div class="mb-3">
-                <label for="category" class="form-label">Categoría</label>
+                <label for="section" class="form-label">Seccion</label>
+
+                <select id="section" class="form-select" name="section">
+                  <option value="" selected hidden>Seleccione seccion</option>
+                  <% sections.forEach(section=> { %>
+                    <option value="<%= section %>">
+                      <%= section %>
+                    </option>
+                    <% }) %>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="category" class="form-label">Origen</label>
 
                 <select id="origen" class="form-select" name="origen">
-                  <option value="" selected hidden>Seleccione la categoría</option>
+                  <option value="" selected hidden>Seleccione el origen</option>
                   <% origenes.forEach(origen=> { %>
-                    <option value="<%= origen %> "><%= origen %></option>
+                    <option value="<%= origen %>"><%= origen %></option>
                     <% }) %>
                 </select>
               </div>

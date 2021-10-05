@@ -1,14 +1,15 @@
-const {check, body} = require('express-validator');
-
+const {body} = require('express-validator');
+const users =require('../data/users_db');
 module.exports = [
-    check('nombre')
+    body('nombre')
     .notEmpty().withMessage('El nombre es obligatorio').bail()
     .isLength({
         min : 2,
         max : 50
     }).withMessage('El nombre tiene que tener como mínimo 2 caracteres').bail()
     .isAlpha().withMessage('El nombre debe contener solo letras'),
-    check('apellido')
+
+    body('apellido')
     .notEmpty().withMessage('El apellido es obligatorio').bail()
     .isLength({
         min : 2,
@@ -16,10 +17,18 @@ module.exports = [
     }).withMessage('El apellido tiene que tener como mínimo 2 caracteres').bail()
     .isAlpha().withMessage('El apellido debe contener solo letras'),
 
-    check('email')
-    .isEmail().withMessage('Debes ingresar un email válido'),
+    body('email')
+    .isEmail().withMessage('Debes ingresar un email válido')
+    .custom((value,{req}) => {
+        if(value !== req.body.email){
+            return false
+        }
+        return true
+    }).withMessage('Email ya se encuentra registrado'),
+ 
+ 
 
-    check('password')
+    body('password')
     .isLength({
         min : 6,
         max : 12

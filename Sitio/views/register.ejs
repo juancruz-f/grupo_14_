@@ -46,19 +46,34 @@
   <main>
     <nav class="container--register">
       <div class="caja--register">
+<<<<<<< HEAD
         <form class="caja--register" novalidate method="POST" enctype="multipart/form-data">
+=======
+        <form class="caja--register" action="" novalidate method="POST" >
+>>>>>>> 42848ea06fa6a3c53ec1018f82838ba1453197ba
 
           <h4 class="h4--register">CREAR CUENTA</h4>
           <p class="register--responsive">Comprá más rápido y llevá el control de tus pedidos, ¡en un solo
             lugar!</p>
+<<<<<<< HEAD
           <input type="text" name="nombre" placeholder="  NOMBRE" value="<%= locals.old && locals.old.nombre ? old.nombre : null%>">
           <span class="text-danger small"><%= locals.errores && locals.errores.nombre ? errores.nombre.msg : null %> </span>
           <input type="text" name="apellido" placeholder="  APELLIDO" value="<%= locals.old && locals.old.nombre ? old.nombre : null%>" >
           <span class="text-danger small"><%= locals.errores && locals.errores.apellido ? errores.apellido.msg : null %> </span>
           <label for=""> Seleccionar imagen de Perfil</label>
           <input class="profile-pic" type="file" name="profilePic" accept=".jpg">
+=======
+          <input type="text" name="nombre" placeholder="  NOMBRE" value="<%=locals.old && locals.old.nombre ? old.nombre : null%>">
+          <span class="text-danger small"><%=locals.errores && locals.errores.nombre ? errores.nombre.msg : null %> </span>
+          <input type="text" name="apellido" placeholder="  APELLIDO" value="<%=locals.old && locals.old.apellido ? old.apellido : null%>" >
+          <span class="text-danger small"><%=locals.errores && locals.errores.apellido ? errores.apellido.msg : null %> </span>
+          
+>>>>>>> 42848ea06fa6a3c53ec1018f82838ba1453197ba
           <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="  EMAIL" >
           <span class="text-danger small"><%= locals.errores && locals.errores.email ? errores.email.msg : null %> </span>
+         
+         
+        
           <input type="password" name="password" placeholder=" CONTRASEÑA" >
           <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password.msg : null %> </span>
           <input type="password"  id="exampleInputPassword2" name="password2"  placeholder="  REINGRESE CONTRASEÑA">
@@ -66,6 +81,8 @@
           <p>¿Ya tienes una cuenta? <a href="/users/login">Inicia sesión</a></p>
           <a href=""></a>
         </form>
+      
+
 
 
       </div>

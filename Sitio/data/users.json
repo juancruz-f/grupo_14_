@@ -8,14 +8,6 @@
     "rol": "admin"
   },
   {
-    "id": 2,
-    "nombre": "carlos",
-    "apellido": "perez",
-    "email": "carlos@hotmail.com",
-    "password": "$2a$10$rah5kIKQ9a90hObvvqYbV.2tbqGyCJSRxHic5iiaCW5O1LdLDg4ou",
-    "rol": "user"
-  },
-  {
     "id": 3,
     "nombre": "belen",
     "apellido": "catacora",
@@ -25,10 +17,19 @@
   },
   {
     "id": 4,
-    "nombre": "Ara",
-    "apellido": "Bel",
-    "email": "arara11@gmail.com",
-    "password": "$2a$10$of93BuG.ljYEJRTTnhswmOmQDLifHGgnyA7XVpMMwFp.875jl3qMS",
+    "nombre": "Juan",
+    "apellido": "Fernandez",
+    "email": "juancruzfernandez108@gmail.com",
+    "password": "$2a$10$4el/gXTIOFRsaBRzivbakO5LFhvH.yOcCUTi.VI7r5.pzVLgDXsSe",
+    "rol": "admin"
+  },
+  {
+    "id": 5,
+    "nombre": "clara",
+    "apellido": "gomez",
+    "image": "default-user-image.png",
+    "email": "clara@hotmail.com",
+    "password": "$2a$10$kF22AHCDtxLjbErYHSJOi.jHF15clwG1oeugC5LjKg4mpalwXl6gG",
     "rol": "user"
   }
 ]
