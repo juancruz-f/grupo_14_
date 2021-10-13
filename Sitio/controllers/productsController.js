@@ -1,9 +1,4 @@
-const fs = require('fs');
-const path = require('path');
-const categories= require('../data/categories_db');
-const origenes= require('../data/origen_db')
-const sections= require('../data/sections_db')
-const {products, guardar} = require('../data/products_db');
+const db = require('../database/models');
 const {validationResult} = require('express-validator');
 
 
