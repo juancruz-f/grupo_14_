@@ -1,10 +1,9 @@
 const {body} = require("express-validator");
-const users = require("../data/users_db");
 const path = require("path");
-
+const db = require('../database/models')
 module.exports = [
 
-    body("image").custom((value,{req})=>{
+    body("avatar").custom((value,{req})=>{
         let extensions = [".jpg",".jpeg",".gif",".png",]
 
         if(!req.file){
@@ -25,7 +24,7 @@ module.exports = [
     body('email')
     .isEmail().withMessage('Debes ingresar un email válido')
     .custom((value, {req})=> {
-        let emailRepeat = users.find(user => user.email == value && value != req.body.originalEmail)
+        let emailRepeat = db.users.F
         if(!emailRepeat){
             return true
         }else{

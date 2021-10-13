@@ -54,12 +54,16 @@ module.exports = {
         const { email, recordar } = req.body;
         if (errors.isEmpty()) {
             db.users.findOne({  //por el mail
-                where: { email }
+                where: { email : email }
             }).then(user => {
+                console.log(user);
                 req.session.userLogin = {
-                    id: users.id,
-                    nombre: nombre,
-                    rolId: 1
+                    id: user.id,
+                    nombre: user.nombre,
+                    apellido: user.apellido,
+                    rolId: user.rolId,
+                    email : user.email,
+                    avatar : user.avatar,
                 }
                 recordar && res.cookie('ohshots', req.session.userLogin, { maxAge: 1000 * 60 })
                 return res.redirect('/')
@@ -79,7 +83,19 @@ module.exports = {
     contact: (req, res) => {
         return res.render('contact')
     },
-    profile: (req, res) => res.render("userProfile", { usuario: usuarios.find(usuario => usuario.id === +req.params.id) }),
+    profile: (req, res) => {
+        db.users.findOne({
+            include : ['rol'],
+            where: {email : req.session.userLogin.email}
+        })
+        .then(user =>{ 
+            console.log(user);
+            res.render("userProfile",
+        user
+        )})
+
+    },
+    
     updateProfile: (req, res) => {
         const errors = validationResult(req);
         let oldImage, image

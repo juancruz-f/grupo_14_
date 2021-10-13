@@ -38,7 +38,7 @@
 
             
               <% if (locals.userLogin) { %>
-                <% if (locals.userLogin.rol==="admin" ) { %>
+                <% if (typeof locals.userLogin.rolId == 2 ) { %>
                   
                     <div class="dropdown" id="navbarDropdown">
                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,11 +54,11 @@
                       </ul>
                     </div>
                     <% } %>
-                    <% if (locals.userLogin.rol !=="admin") { %>
+                    <% if (locals.userLogin.rolId !==2) { %>
                       <div class="dropdown" id="navbarDropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                           <i class="fas fa-sign-in-alt"></i>
-                          <%=  locals.userLogin.nombre %> 
+                          <%=  locals.userLogin.nombre + " " + locals.userLogin.apellido %> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                           <li><a class="dropdown-item" href="/users/profile/<%= userLogin.id %>">Perfil</a></li>

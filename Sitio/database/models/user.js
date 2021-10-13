@@ -62,14 +62,14 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "rolId"
 
         })
+        /* users.belongsTo(models.carts, {
+            as: "users",
+            foreignKey: "id"
+
+        }) */
     
 
     }
-    users.associate = function (models) {
-        users.belongsTo(models.carts, {
-            as: "users",
-            foreignKey: "userId"
-
-        })}
+   
     return users;
 }

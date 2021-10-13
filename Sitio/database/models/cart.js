@@ -43,10 +43,10 @@ module.exports = (sequelize, dataTypes) => {
             as: "products",
             foreignKey: "productId",
         })
-        carts.hasMany(models.users, {
+      /*   carts.hasMany(models.users, {
             as: "users",
             foreignKey: "userId",
-        })
+        }) */
 
 
     }

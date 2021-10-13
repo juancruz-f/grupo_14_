@@ -12,33 +12,11 @@
  <%- include('./partials/header') %> 
 
 
-<<<<<<< HEAD
-                <h2 class="profile-title">Mi perfil</h2>
-                <div class="info-usuario">
-                    <img src="<% locals.userLogin.profilePic %>" alt="">
-
-                    <h3 class="user-name">
-                        <% locals.userLogin.nombre %>
-                    </h3>
-                    <p>
-                        <% locals.userLogin.apellido %>
-                    </p>
-                    <p>
-                        <% locals.userLogin.email %>
-                    </p>
-                    <div>
-                        <button class="user-btn">
-                            <a class="logout-btn" href="/users/logout">Cerrar sesión</a>
-                        </button>
-                    </div>
-                </div>
-=======
   <div class="container-fluid">
 
     <ul class="slider">
       <li id="slide1">
         <img src="/images/carousel-1.jpg" alt="">
->>>>>>> 42848ea06fa6a3c53ec1018f82838ba1453197ba
 
 
       </li>
@@ -71,8 +49,8 @@
             <!----------------------------------    BOOSTRAP   ------------------------------------------>
               <div class="c-title-error">
                 <label class="form-label title-images">Imagen de perfil : </label>
-                <%if( locals.errors && locals.errors.image){%>
-                  <p style="color: red;margin: unset;"><%=errors.image.msg%></p>
+                <%if( locals.errors && locals.errors.avatar){%>
+                  <p style="color: red;margin: unset;"><%=errors.avatar.msg%></p>
                 <%}%>
               </div>
               <div class="c-image-inputs">
@@ -101,13 +79,7 @@
                     
                     <div class="col-md-3 inputs-text">
                       <label for="email" class="form-label">Email :</label>
-                      <input type="text" class="form-control <%= locals.errors && errors.email ? "is-invalid" : null%>" id="email" name="email" placeholder="Email" value="<%= typeof old != "undefined" ? old.email : locals.userLogin.email %>">
-                      <input type="text" style="display: none;" value="<%=locals.userLogin.email%>" name="originalEmail">
-                      <div class="invalid-feedback" style="margin: 1vw 0;">
-                        <%if(locals.errors && errors.email){%>
-                          <%=errors.email.msg%>
-                        <%}%>
-                      </div>
+                      <input type="email" disabled class="form-control" id="email" name="email" placeholder="<%= user.email %> " value="">
                     </div>
   
                     <div class="mb-4 input-selects">
