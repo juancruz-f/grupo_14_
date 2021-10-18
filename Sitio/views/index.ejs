@@ -45,55 +45,55 @@
         <h1>Destacados</h1>
         <section class="contenedor">
 
-          <% destacados.forEach(product=>{%>
+          <%# destacados.forEach(product=>{%>
 
             <article>
-              <img src="/images/<%= product.image %>" alt="">
+              <img src="/images/<%#= product.image %>" alt="">
               <h4>
-                <%= product.title %>
+                <%# product.title %>
               </h4>
               <p>
-               $ <%= product.price %>
+               $ <%#= product.price %>
               </p>
-              <button class="articulo"><a href="/products/detail/<%= product.id %>">Más info</a></button>
+              <button class="articulo"><a href="/products/detail/<%#= product.id %>">Más info</a></button>
             </article>
-            <% }) %>
+            <%# }) %>
 
         </section>
 
         <h1>Tambien puede interesarte</h1>
         <section class="contenedor">
-          <% interes.forEach(product=>{%>
+          <%# interes.forEach(product=>{%>
 
             <article>
-              <img src="/images/<%= product.image %>" alt="">
+              <img src="/images/<%#= product.image %>" alt="">
               <h4>
-                <%= product.title %>
+                <%#= product.title %>
               </h4>
               <p>
-                $ <%= product.price %>
+                $ <%#= product.price %>
               </p>
-              <button class="articulo"><a href="/products/detail/<%= product.id %>">Más info</a></button>
+              <button class="articulo"><a href="/products/detail/<%#= product.id %>">Más info</a></button>
             </article>
-            <% }) %>
+            <%# }) %>
 
         </section>
 
         <h1>Packs</h1>
         <section class="contenedor">
-          <% packs.forEach(product=>{%>
+          <%# packs.forEach(product=>{%>
 
             <article>
-              <img src="/images/<%= product.image %>" alt="">
+              <img src="/images/<%#= product.image %>" alt="">
               <h4>
-                <%= product.title %>
+                <%#= product.title %>
               </h4>
               <p>
-               $ <%= product.price %>
+               $ <%#= product.price %>
               </p>
-              <button class="articulo"><a href="/products/detail/<%= product.id %>">Más info</a></button>
+              <button class="articulo"><a href="/products/detail/<%#= product.id %>">Más info</a></button>
             </article>
-            <% }) %>
+            <%# }) %>
         </section>
 
       </main>
