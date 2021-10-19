@@ -5,16 +5,17 @@ const origenes= require('../data/origen_db')
 const sections= require('../data/sections_db')
 const {products, guardar} = require('../data/products_db');
 const {validationResult} = require('express-validator');
+const db = require('../database/models')
 
 module.exports = {
 
     add : (req,res) => {
-        return res.render('productAdd',{
-            products,
-            categories,
-            origenes,
-            sections,
-        })
+        db.categories.findAll()
+        .then(categorias =>{
+            return res.render('productAdd',{
+                categorias
+            })
+        }).catch(error=>console.log(error))
     
     },
     detail : (req,res) => {
