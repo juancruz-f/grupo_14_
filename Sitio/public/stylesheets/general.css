@@ -9,12 +9,17 @@ body{
 }
 
 :root{
+        
+    
 
-    --color-header: #222831;
+--color-header: #222831;
 --color-footer: #393e46;
 --color-amarillo: #ffd369;
 --color-grisClaro: #eeeeee;
 --color-grisFooter: #8D9791;
+--error-color: #dc3545;
+--success-color: #28a745;
+--warning-color: #ffc107;
 
 }
 

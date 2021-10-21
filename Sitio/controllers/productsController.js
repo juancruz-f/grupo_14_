@@ -1,18 +1,16 @@
 const db = require('../database/models');
 const {validationResult} = require('express-validator');
-const category = require('../database/models/category');
-
-
+const db = require('../database/models')
 
 module.exports = {
 
     add : (req,res) => {
-        return res.render('productAdd',{
-            products,
-            categories,
-            origenes,
-            sections,
-        })
+        db.categories.findAll()
+        .then(categorias =>{
+            return res.render('productAdd',{
+                categorias
+            })
+        }).catch(error=>console.log(error))
     
     },
     detail : (req,res) => {

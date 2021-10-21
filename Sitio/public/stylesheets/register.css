@@ -1,3 +1,4 @@
+
 .body--register{
     background-color: var( --color-grisClaro);
 }
@@ -43,6 +44,120 @@
 .caja--register a{
     color: var(--color-grisFooter);
 }
+
+.container {
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.container .h4--register{
+    text-align: center;
+    margin-top: 40px;
+    color: var( --color-footer)
+}
+.container input{
+    color: 223,223,223,0.7; 
+    margin: 12px;
+    block-size: 35px;    
+    border-radius: 20px;
+   
+}
+.container button{
+    border-radius: 20px;
+    margin-top: 20px;
+    color: var( --color-grisClaro);
+    background-color: var( --color-footer);
+    border: none; /* quito el borde que tenía */
+}
+.container p{
+    margin-bottom: 15px 10px;
+    font-size: small;
+}
+.container a{
+    color: var(--color-grisFooter);
+
+}
+
+.form {
+    padding: 10px 20px;
+}
+
+.form h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.form-field {
+    margin-bottom: 5px;
+    width: 100vh;
+
+}
+
+.form-field label {
+    display: block;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.form-field input {
+    border: solid 2px #f0f0f0;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+}
+
+.form-field input:focus {
+    outline: none;
+}
+
+.form-field.error input {
+    border-color: var(--error-color);
+}
+
+.form-field.success input {
+    border-color: var(--success-color);
+}
+
+
+.form-field small {
+    color: var(--error-color);
+   
+}
+
+
+/* button */
+.btn {
+    width: 100%;
+    padding: 3%;
+    background: #007bff;
+    border-bottom: 2px solid #007bff;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: #0069d9;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+
+
+
+
 
 @media (min-width: 768px){
 
