@@ -75,7 +75,7 @@ module.exports = {
     }).catch(error => console.log(error))
 
 } else {
-    db.Category.findAll()
+    db.categories.findAll()
         .then(categorias => {
             return res.render('productAdd', {
                 categorias,
@@ -103,7 +103,7 @@ module.exports = {
   update: (req, res) => {
     const { title, description, price, category, origen, section } = req.body;
 
-    db.Product.update(
+    db.products.update(
         {
             title: title.trim(),
             description: description.trim(),
@@ -122,7 +122,7 @@ module.exports = {
 
 },
 remove: (req, res) => {
-  db.Product.destroy({
+  db.products.destroy({
       where: {
           id: req.params.id
       }
