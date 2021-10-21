@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const {validationResult} = require('express-validator');
+const category = require('../database/models/category');
 
 
 
@@ -15,14 +16,22 @@ module.exports = {
     
     },
     detail : (req,res) => {
-        let product=products.find(product=> product.id === +req.params.id);
-        return res.render('productDetail',{
+        db.products.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [
+                {association : 'category'},
+                {association :'section'},
+                {association :'origen'},
+                {association :'imagen'},
+                {association :'products'}
+            ]
+        }).then(category => {
+            return res.render('productDetail',{
                 products,
-                product,
-                interes: products.filter(product => product.section === "interes"),
-                origenes,
-                
-        })
+            })
+        }).catch(error => console.log(error))
     },
     loading : (req,res)=>res.render('productLoading'),
 
@@ -31,19 +40,29 @@ module.exports = {
         let errors = validationResult(req);
         if(errors.isEmpty()){
             const {title,description,price,category,origen,section} = req.body;
-            if(req.files){
-                var imagenes = req.files.map(imagen=>imagen.filename)
-            }
-            let product={
-                id : products[products.length - 1].id + 1,
-                title,
-                description,
-                category,
-                section,
-                images: req.files.length != 0 ? imagenes : ['default-image.png'],
-                origen,
-                price : +price,  
-            }
+            db.products.create({
+                title : title,
+                description : description,
+                price : price,
+                category : category,
+                origen: origen,
+                section : section
+            }).then(products => {
+                if (req.files){
+                    let image = req.files.map(imagen => image.filename);
+                    imagenes.forEach(img => {
+                        let image = []
+                        let images = {
+                            file : images,
+                            productId : products.id
+                        }
+                        image.push(imagenes)
+                    });
+
+                    db.images.bulkCreate(image,{validate : true})
+                        .then( () => console.log('imagenes agregadas'))
+                }
+            })
        products.push(product);
        guardar(products);
        res.redirect('/');
@@ -101,13 +120,13 @@ module.exports = {
     },
 
     products : (req,res) => {
-        res.render('listProducts',{
-            products,
-            categories,
-            sections,
-            bebidasBlancas : products.filter(product => product.category === "bebidas blancas"),
-            vinos: products.filter(product => product.category === "vinos"),
-            packs : products.filter(product => product.category === "packs"),
+        const productos = db.products.findAll()
+        const productosId = db.products.findByPk(req.params.id);
+        Promise.all([productos, productosId]).then(([productos, productosId]) => {
+            return res.render('listProducts',{
+                productos,
+                productosId,
+            })
         })
     },
     admin: (req, res)=>{

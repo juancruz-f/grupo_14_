@@ -10,20 +10,20 @@
 
 
       <main class="productDetail">
-        <h4><%= product.category %> > <%= product.title %> </h4>
+        <h4><%#= product.category %> > <%#= product.title %> </h4>
         <article>
-          <img src="/images/<%= product.image %>" alt="">
+          <img src="/images/<%#= product.image %>" alt="">
         </article>
         <h1>
-          <%= product.title %> 
+          <%#= product.title %> 
         </h1>
         <!-- <h3>
     Detalle de producto/informacion
   </h3> -->
-        <p class="detalle"><%= product.description %> </p>
-        <p clas="detalle"><%= product.origen %> </p>
+        <p class="detalle"><%#= product.description %> </p>
+        <p clas="detalle"><%#= product.origen %> </p>
         <div class="contenedor">
-          <p class="precio"> <%= product.price.toFixed(2) %>  </p> 
+          <p class="precio"> <%#= product.price.toFixed(2) %>  </p> 
           <a href="/products/cart"><button class="boton">comprar</button></a>
         </div>
 
@@ -32,15 +32,15 @@
             </div>
             <section class="recomendados">
 
-              <% interes.forEach(product=>{%>
+              <%# interes.forEach(product=>{%>
 
               <article class="prod1">
-                <img src="/images/<%= product.image %>" alt="">
-                <h5><%= product.title %> </h5>
-                <p> <%= product.price.toFixed(2) %></p>
+                <img src="/images/<%#= product.image %>" alt="">
+                <h5><%#= product.title %> </h5>
+                <p> <%#= product.price.toFixed(2) %></p>
               </article>
 
-              <% }) %>
+              <%# }) %>
               
             </section>
   </body>
