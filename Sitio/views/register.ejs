@@ -53,20 +53,20 @@
             lugar!</p>
             <div class="form-field d-flex flex-column">
               <label for="nombre">Nombre:</label>
-              <input type="text" id="nombre" name="nombre" value="<%=locals.old && locals.old.nombre ? old.nombre : null%>">
+              <input type="text" id="nombre" name="nombre" autocomplete="off" value="<%=locals.old && locals.old.nombre ? old.nombre : null%>">
          <!--  <span class="text-danger small"><%=locals.errores && locals.errores.nombre ? errores.nombre.msg : null %> </span> -->
             <small></small>
         </div>
             
          <div class="form-field d-flex flex-column">
           <label for="nombre">Apellido:</label>
-          <input type="text" id="apellido" name="apellido" value="<%=locals.old && locals.old.apellido ? old.apellido : null%>" >
+          <input type="text" id="apellido" name="apellido" autocomplete="off" value="<%=locals.old && locals.old.apellido ? old.apellido : null%>" >
           <!--  <span class="text-danger small"><%=locals.errores && locals.errores.apellido ? errores.apellido.msg : null %> </span> -->
            <small></small>
          </div>
          <div class="form-field d-flex flex-column">
           <label for="email">Email:</label>
-          <input type="email" id="email" aria-describedby="emailHelp" name="email">
+          <input type="email" id="email" aria-describedby="emailHelp" autocomplete="off" name="email">
           <!--  <span class="text-danger small"><%= locals.errores && locals.errores.email ? errores.email.msg : null %> </span> -->
           <small></small>
          </div>
@@ -75,7 +75,7 @@
          
          <div class="form-field d-flex flex-column">
           <label for="password">Contraseña:</label>
-          <input type="password" id="password" name="password"  >
+          <input type="password" id="password" name="password" autocomplete="off" >
           <!-- <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password.msg : null %> </span> -->
           <small></small>
          </div>

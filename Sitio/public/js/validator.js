@@ -7,18 +7,18 @@ const confirmPasswordEl = document.querySelector('#password2');
 const form = document.querySelector('#signup');
 
 
-const checkUsername = () => {
+const checkUserName = () => {
 
     let valid = false;
 
     const min = 3,
         max = 25;
 
-    const username = userNameEl.value.trim();
+    const userName = userNameEl.value.trim();
 
-    if (!isRequired(username)) {
+    if (!isRequired(userName)) {
         showError(userNameEl, 'Nombre no puede estar vacío.');
-    } else if (!isBetween(username.length, min, max)) {
+    } else if (!isBetween(userName.length, min, max)) {
         showError(userNameEl, `El nombre debe tener entre ${min} y ${max} carácteres.`)
     } else {
         showSuccess(userNameEl);
@@ -37,7 +37,7 @@ const checkLastName = () => {
 
     if (!isRequired(lastName)) {
         showError(lastNameEl, 'Apellido no puede estar vacío.');
-    } else if (!isBetween(astName.length, min, max)) {
+    } else if (!isBetween(lastName.length, min, max)) {
         showError(lastNameEl, `El apellido debe tener entre ${min} y ${max} carácteres.`)
     } else {
         showSuccess(lastNameEl);
@@ -81,7 +81,7 @@ const checkPassword = () => {
 
 const checkConfirmPassword = () => {
     let valid = false;
-    // check confirm password
+    // chequea la confirmacion de la contraseña
     const confirmPassword = confirmPasswordEl.value.trim();
     const password = passwordEl.value.trim();
 
@@ -112,63 +112,63 @@ const isBetween = (length, min, max) => length < min || length > max ? false : t
 
 
 const showError = (input, message) => {
-    // get the form-field element
+    // atrapas el elemento form-field
     const formField = input.parentElement;
-    // add the error class
+    // añade la clase error
     formField.classList.remove('success');
     formField.classList.add('error');
 
-    // show the error message
+    // muestra el mensaje de error
     const error = formField.querySelector('small');
     error.textContent = message;
 };
 
 const showSuccess = (input) => {
-    // get the form-field element
+    // atrapas el elemento form-field
     const formField = input.parentElement;
 
-    // remove the error class
+    // remueve la clase error y añade success
     formField.classList.remove('error');
     formField.classList.add('success');
 
-    // hide the error message
+    // oculta el mensaje de error
     const error = formField.querySelector('small');
     error.textContent = '';
 }
 
 
 form.addEventListener('submit', function (e) {
-    // prevent the form from submitting
+    // previene el submit del formulario
     e.preventDefault();
 
-    // validate fields
-    let isUsernameValid = checkUsername(),
+    // validan los campos
+    let isUserNameValid = checkUserName(),
         isLastNameValid = checkLastName(),
         isEmailValid = checkEmail(),
         isPasswordValid = checkPassword(),
         isConfirmPasswordValid = checkConfirmPassword();
 
-    let isFormValid = isUsernameValid && 
+    let isFormValid = isUserNameValid && 
         isLastNameValid &&
         isEmailValid &&
         isPasswordValid &&
         isConfirmPasswordValid;
 
-    // submit to the server if the form is valid
+    // hace el submit si el formulario es valido
     if (isFormValid) {
 
     }
 });
 
-
+// pone un delay en los colores
 const debounce = (fn, delay = 500) => {
     let timeoutId;
     return (...args) => {
-        // cancel the previous timer
+        // cancela el timer anterior
         if (timeoutId) {
             clearTimeout(timeoutId);
         }
-        // setup a new timer
+        // añade un nuevo timer
         timeoutId = setTimeout(() => {
             fn.apply(null, args)
         }, delay);
@@ -177,8 +177,8 @@ const debounce = (fn, delay = 500) => {
 
 form.addEventListener('input', debounce(function (e) {
     switch (e.target.id) {
-        case 'username':
-            checkUsername();
+        case 'nombre':
+            checkUserName();
             break;
         case 'email':
             checkEmail();
@@ -186,7 +186,7 @@ form.addEventListener('input', debounce(function (e) {
         case 'password':
             checkPassword();
             break;
-        case 'confirm-password':
+        case 'password2':
             checkConfirmPassword();
             break;
     }
