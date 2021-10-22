@@ -1,28 +1,41 @@
 header{
     background-color: var(--color-header);
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     
   }
 
   
 header img{
-      width: 70%;
+      width: 80%;
       display: block;
       margin: 0  auto 0;
       
       
   }
+  header .box-de-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 header nav{
      border-top: 1px var(--color-grisClaro) solid;
      border-bottom: 1px var(--color-grisClaro) solid;
  }
- header .botones{
+ header .fa-user{
     color: var(--color-grisClaro);
     display: flex;
-    justify-content: space-between;
-    margin: 0 10px 10px;
+    padding-left: 10px;
+    margin: 30px 10px 10px;
+    
+}
+header .fa-shopping-cart{
+    color: var(--color-grisClaro);
+    display: flex;
+    justify-content: right ;
+    padding-right: 10px;
+    margin: 30px 10px 10px;
     
 }
 a{
@@ -49,24 +62,20 @@ a{
     padding: 10px;
 }
 @media (min-width: 768px){
-    header.botones{
-        font-size: 20px;
+    header .fa-user{
+        padding-left: 2.5em;
+        font-size: 24px
+        
+    }
+    header .fa-shopping-cart{
+        padding-right: 2.5em;
+        font-size: 24px
+        
     }
     header img{
         max-width: 400px;
     }
-    .navegador{
-        
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#959595+0,0d0d0d+46,010101+50,0a0a0a+53,4e4e4e+76,383838+87,1b1b1b+100;Black+Gloss+Pipe */
-background: #959595; /* Old browsers */
-background: -moz-linear-gradient(top,  #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
-
-
-
-    }
+    
     .container-fluid{
         width: 100%;
     }
@@ -83,10 +92,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 
    
 @media (min-width: 1024px){
-    header .botones{
-        font-size: 30px;
-        margin:0 20px 15px;
-    }
+    
     
     .dropdown, #dropdownMenuButton1, .btn, #navbarDropdown{
         border:none;

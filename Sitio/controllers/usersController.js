@@ -6,7 +6,7 @@ const { validationResult } = require('express-validator');
 module.exports = {
     register: (req, res) => {
         return res.render('register', {
-            products,
+            /* products, */
         })
     },
     processRegister: (req, res) => {
