@@ -1,6 +1,5 @@
 const db = require('../database/models');
-const {products} = require('../data/products_db');
-const {usuarios, guardar}= require('../data/users_db');
+/* Eliine las llamadas a los json */
 const fsMethods = require("../utils/fsMethods");
 const bcrypt = require('bcryptjs');
 const {validationResult} = require('express-validator');
@@ -9,7 +8,7 @@ const {validationResult} = require('express-validator');
 module.exports= {
     register:(req,res)=>{
         return res.render('register',{
-            products,
+
         })
     },
     processRegister : (req,res) => {
@@ -28,14 +27,10 @@ module.exports= {
             
             .then(result => {
                 return res.redirect('/users/login')}
-            )
-
-            
-           
-            
+            )     
         }else{
             return res.render('register',{
-                products,
+                /* elimine el envio de productos, obsoleto por que lo usaban del json */
                 old : req.body,
                 errores : errors.mapped(),
             })
@@ -44,15 +39,24 @@ module.exports= {
     },
     login : (req,res) => {
         return res.render('login',{
-            products,
+            /* elimine el envio de productos, obsoleto por que lo usaban del json */
         })
     },
     processLogin : (req,res) => {
-
         let errors = validationResult(req);
         const {email, recordar} = req.body;
         if(errors.isEmpty()){
-            let usuario = usuarios.find(usuario => usuario.email === email)
+            /* Uso la base de datos */
+            db.users.findOne({
+                where: {
+                    email: email
+                }
+            }).then(usuario => {
+                usuario
+            }).catch(error => res.send(error))
+
+            /*obsoleto ->usado en el json
+             let usuario = usuarios.find(usuario => usuario.email === email) */
             req.session.userLogin = {
                 id : usuario.id,
                 nombre : usuario.nombre,
@@ -65,7 +69,6 @@ module.exports= {
             return res.redirect('/')
         }else{
             return res.render('login',{
-                products,
                 errores : errors.mapped()
             })
         }
@@ -78,7 +81,16 @@ module.exports= {
     contact:(req,res)=>{
         return res.render('contact')
     },
-    profile : (req,res) => res.render("userProfile",{usuario : usuarios.find(usuario => usuario.id === +req.params.id)}),
+    profile : (req,res) =>{
+        db.users.findByPk(req.params.id)
+        .then(usuario => {
+            res.render('userProfile',{
+                usuario
+            })
+        })
+    }
+    
+    /* res.render("userProfile",{usuario : usuarios.find(usuario => usuario.id === +req.params.id)}) */,
     updateProfile : (req,res) => {
         const errors = validationResult(req);
         let oldImage,image

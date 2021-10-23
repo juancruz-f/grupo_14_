@@ -1,5 +1,3 @@
-const productsController = require("../../controllers/productsController");
-
 require("dotenv").config();
 
 module.exports = {
