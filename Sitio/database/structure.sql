@@ -82,7 +82,7 @@ CREATE TABLE `images` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,6 +91,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (1,'gin.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(2,'vino.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(3,'andesroja.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(4,'yuGin.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(5,'sidraPeer.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(6,'absolutVodka.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(7,'packBrahma.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(8,'packStella.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(9,'patagoniaLatas.png','2021-10-24 00:00:00','2021-10-24 00:00:00');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,7 +145,7 @@ CREATE TABLE `products` (
   CONSTRAINT `fk_products_images1` FOREIGN KEY (`imageId`) REFERENCES `images` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_products_origenes1` FOREIGN KEY (`origenId`) REFERENCES `origenes` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_products_sections1` FOREIGN KEY (`sectionId`) REFERENCES `sections` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,6 +154,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Alquimista Gin','Es un gin pensado y diseñado para ser armónico, elegante y disruptivo',1799,'2021-10-24 00:00:00','2021-10-24 00:00:00',1,1,1,2),(2,'Vino Estancia Mendoza','De estilo frutado, en estos vinos destacan los aromas varietales y sus taninos redondos.',230,'2021-10-24 00:00:00','2021-10-24 00:00:00',2,1,1,3),(3,'Cerveza Andes Roja','Pack de 24 unidades, 473ml',2760,'2021-10-24 00:00:00','2021-10-24 00:00:00',3,1,1,4),(4,'Yu Gin','Un gin refrescante y único, elaborado en Francia.',7600,'2021-10-24 00:00:00','2021-10-24 00:00:00',4,2,2,2),(5,'Sidra Peer','Peer Maracuyá es una sidra de pera con Maracuyá. Pack de 4 unidades por 500ml',1000,'2021-10-24 00:00:00','2021-10-24 00:00:00',5,1,2,5),(6,'Absolut Peach','Vodka con sabor a durazno, 750ml',2600,'2021-10-24 00:00:00','2021-10-24 00:00:00',6,2,2,2),(7,'Cerveza Brahma','Pack de 24 unidades, 473 ml.',1900,'2021-10-24 00:00:00','2021-10-24 00:00:00',7,1,3,4),(8,'Stella Artois','Pack de 24 unidades, 473 ml.',2300,'2021-10-24 00:00:00','2021-10-24 00:00:00',8,2,3,4),(9,'Cerveza Patagonia','Pack de 24 unidades, 473 ml.',3000,'2021-10-24 00:00:00','2021-10-24 00:00:00',9,1,3,4);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -247,4 +249,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-24 14:55:34
+-- Dump completed on 2021-10-24 15:42:43

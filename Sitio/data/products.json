@@ -75,7 +75,7 @@
     "description": "pack de 24 unidades",
     "category": "packs",
     "image": "packStella.png",
-    "origen": "importada",
+    "origen": "importado",
     "section": "packs",
     "price": 2300
   },
