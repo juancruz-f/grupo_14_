@@ -52,21 +52,23 @@ module.exports= {
                     email: email
                 }
             }).then(usuario => {
-                usuario
+                req.session.userLogin = {
+                    id : usuario.id,
+                    nombre : usuario.nombre,
+                    rol : usuario.rol,
+                    imagen: usuario.imagen,
+                    apellido: usuario.apellido
+                }
+                if(recordar){
+                    res.cookie('ohshots',req.session.userLogin,{maxAge: 1000 * 60})
+                }
+                return res.redirect('/')
+    
             }).catch(error => res.send(error))
 
             /*obsoleto ->usado en el json
              let usuario = usuarios.find(usuario => usuario.email === email) */
-            req.session.userLogin = {
-                id : usuario.id,
-                nombre : usuario.nombre,
-                rol : usuario.rol
-            }
-
-            if(recordar){
-                res.cookie('ohshots',req.session.userLogin,{maxAge: 1000 * 60})
-            }
-            return res.redirect('/')
+            
         }else{
             return res.render('login',{
                 errores : errors.mapped()
@@ -93,10 +95,45 @@ module.exports= {
     /* res.render("userProfile",{usuario : usuarios.find(usuario => usuario.id === +req.params.id)}) */,
     updateProfile : (req,res) => {
         const errors = validationResult(req);
-        let oldImage,image
 
         if(errors.isEmpty()){
-            usuarios.forEach(usuario => {
+
+            db.users.update({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                rol: req.body.rol,
+                image: req.file ? req.file.filename : req.session.userLogin,
+                },{
+                    where:{
+                        id:req.params.id
+                    }                
+            }).then(result =>{
+                db.users.findByPk(req.session.userLogin.id)
+                .then(usuario => {
+                    req.session.userLogin = {
+                        id : usuario.id,
+                        nombre : usuario.nombre,
+                        rol : usuario.rol,
+                        imagen: usuario.imagen,
+                        apellido: usuario.apellido
+                    }
+                    res.cookie('ohshots',req.session.userLogin,{maxAge: 1000 * 60})
+                    return res.redirect('/')
+                })
+
+                
+            })
+        }else{
+            req.file ? fsMethods.deleteFile(`../public/images/avatar/${req.file.filename}`) : null
+
+            res.render("userProfile",{
+                errors : errors.mapped(),
+                old : req.body,
+                usuario : req.session.userLogin
+            })
+        }
+            /* usuarios.forEach(usuario => {
                 if(usuario.id === +req.params.id){
 
                     oldImage = usuario.image
@@ -109,9 +146,9 @@ module.exports= {
                     usuario.rol = req.body.rol
                     usuario.image = image != req.body.deleteImage ? image : "default-user-image.png"
                 }
-            });
+            }); */
 
-            fsMethods.saveUsers(users);
+            /* fsMethods.saveUsers(users);
             req.body.deleteImage != "noBorrar" && oldImage != "default-user-image.png" ? fsMethods.deleteFile(`../public/images/users/${oldImage}`) : null; 
 
             let updatedUser = usuarios.find(usuario => usuario.id === +req.params.id)
@@ -133,8 +170,8 @@ module.exports= {
                 errors : errors.mapped(),
                 old : req.body,
                 usuario : usuarios.find(usuario => usuario.id === +req.params.id)
-            })
-        }
+            })*/ 
+        
     }
 
 }
