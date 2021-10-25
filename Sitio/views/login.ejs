@@ -45,12 +45,17 @@
      <div class="cont--login">
       <div class="cont--loginInt">
 
-        <form  class="cont--loginInt" action="" method="POST">
+        <form  class="form" action="" method="POST">
           <h5 class="h5--login">INICIAR SESIÓN</h5>
+          <div class="form-field d-flex flex-column">
+            <input  for="exampleInputEmail1" type="email" id="mail" name="email" placeholder="  EMAIL" >
+          </div>
          
-          <input class="input--login" for="exampleInputEmail1" type="email" id="email" name="email" placeholder="  EMAIL" >
-          
-          <input class="input--login" for="exampleInputPassword1" type="password" id="password" name="password" placeholder=" CONTRASEÑA" >
+         
+          <div class="form-field d-flex flex-column">
+            <input  for="exampleInputPassword1" type="password" id="contrasenia" name="password" placeholder=" CONTRASEÑA" >
+          </div>
+         
           <div class="d-flex justify-content-end">
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1" name="recordar">

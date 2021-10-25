@@ -142,6 +142,7 @@ CREATE TABLE `products` (
   KEY `fk_products_origenes1_idx` (`origenId`),
   KEY `fk_products_sections1_idx` (`sectionId`),
   KEY `fk_products_categories1_idx` (`categoryId`),
+  CONSTRAINT `fk_products_categories1` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_products_images1` FOREIGN KEY (`imageId`) REFERENCES `images` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_products_origenes1` FOREIGN KEY (`origenId`) REFERENCES `origenes` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_products_sections1` FOREIGN KEY (`sectionId`) REFERENCES `sections` (`id`) ON DELETE CASCADE
@@ -249,4 +250,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-24 15:42:43
+-- Dump completed on 2021-10-25 14:53:38
