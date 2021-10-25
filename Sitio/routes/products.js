@@ -5,7 +5,7 @@ const path = require("path");
 const productAddValidator = require('../validations/productAddValidator')
 const adminUserCheck= require("../middlewares/adminUserCheck")
 
-const {detail, add, save, edit, update, remove,admin, products} = require('../controllers/productsController')
+const {detail, add, save, edit, update, remove,admin, products} = require('../controllers/productsControllerDb')
 
 
 
@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage : storage})
 
-router.get('/admin',admin);
+/* router.get('/admin',admin); */
 
 /* product detail*/
 router.get('/detail/:id',detail);
@@ -37,7 +37,7 @@ router.put('/edit/:id',upload.any(),adminUserCheck,update);
 
 /*product delete*/
 router.post('/remove/:id',adminUserCheck,remove);
-router.get('/listProducts',products)
+/* router.get('/listProducts',products) */
 /*carrito*/
 
 

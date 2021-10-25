@@ -4,8 +4,7 @@ const {validationResult} = require('express-validator');
 
 /* module.exports = {
   add: (req, res) => {
-    db.products
-      .findAll()
+    db.products.findAll()
       .then((product) => {
         return res.render("productAdd", {
           products,
@@ -17,8 +16,7 @@ const {validationResult} = require('express-validator');
       .catch((error) => console.log(error));
   },
   detail: (req, res) => {
-    db.products
-      .findOne({
+    db.products.findOne({
         where: {
           id: req.params.id,
         },
