@@ -12,7 +12,6 @@ module.exports = {
                 { association: "section" },
                 { association: "origen" },
                 { association: "imagen" },
-                { association: "products" },
               ],
             })
             .then(productos =>{

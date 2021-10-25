@@ -11,12 +11,12 @@ module.exports = (sequelize, dataTypes) => {
         title: {
             type: dataTypes.STRING,
             allowNull: false,
-            
+
         },
         description: {
             type: dataTypes.STRING,
             allowNull: false,
-           
+
         },
         price: {
             type: dataTypes.INTEGER,
@@ -30,30 +30,29 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DATE,
             allowNull: false
         },
-        imageId:{
+        imageId: {
             type: dataTypes.INTEGER,
             allowNull: true
         },
-        sectionId:{
+        sectionId: {
             type: dataTypes.INTEGER,
             allowNull: true
         },
-        origenId:{
+        origenId: {
             type: dataTypes.INTEGER,
             allowNull: true
 
         },
-        categoryId:{
+        categoryId: {
             type: dataTypes.INTEGER,
             allowNull: true
         }
     }
 
     let config = {
-        tableName: "products"
-       
-       
-
+        tableName: "products",
+        timestamps: true
+        
     }
 
     const products = sequelize.define(alias, cols, config);
@@ -61,37 +60,32 @@ module.exports = (sequelize, dataTypes) => {
     products.associate = function (models) {
         products.belongsTo(models.categories, {
             as: "category",
+            foreignKey: "id",
+            where:"categoria"
+
+        })
+        products.belongsTo(models.sections, {
+            as: "section",
             foreignKey: "id"
 
-        })};
-    products.associate = function (models) {
-            products.belongsTo(models.sections, {
-                as: "section",
-                foreignKey: "id"
-    
-            })};
-    products.associate = function (models) {
-                products.belongsTo(models.origenes, {
-                    as: "origen",
-                    foreignKey: "origenId"
-        
-                })};        
+        })
+        products.belongsTo(models.origenes, {
+            as: "origen",
+            foreignKey: "id"
 
-    products.associate = function (models) {
-            products.hasMany(models.images, {
-                as: "imagen",
-                foreignKey: "imagenId"
-    
-            });
-products.associate = function (models) {
-                products.belongsTo(models.carts, {
-                    as: "products",
-                    foreignKey: "productId"
-        
-                })};
-    
-    
+        })
+        products.hasMany(models.images, {
+            as: "imagen",
+            foreignKey: "id"
 
-    }
+        });
+        products.hasMany(models.carts, {
+            as: "products",
+            foreignKey: "id"
+
+        })
+
+    };
+
     return products;
 }
