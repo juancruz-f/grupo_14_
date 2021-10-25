@@ -1,5 +1,6 @@
 const {body} = require('express-validator');
-const users =require('../data/users_db');
+const db = require('../database/models')
+/* const users =require('../data/users_db'); */
 module.exports = [
     body('nombre')
     .notEmpty().withMessage('El nombre es obligatorio').bail()
@@ -19,12 +20,16 @@ module.exports = [
 
     body('email')
     .isEmail().withMessage('Debes ingresar un email válido')
-    .custom((value,{req}) => {
-        if(value !== req.body.email){
-            return false
-        }
-        return true
-    }).withMessage('Email ya se encuentra registrado'),
+    .custom(value => {
+        db.users.findOne({
+            where:{mail: value}
+        })
+        .then(user =>{
+            if(user){
+                return Promise.reject("Este mail ya se encuentra registrado")
+            }
+        })
+    }),
  
  
 

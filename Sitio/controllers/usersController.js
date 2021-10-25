@@ -1,12 +1,14 @@
 const db = require('../database/models');
+/* Eliine las llamadas a los json */
+const fsMethods = require("../utils/fsMethods");
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
 
-module.exports = {
-    register: (req, res) => {
-        return res.render('register', {
-            /* products, */
+module.exports= {
+    register:(req,res)=>{
+        return res.render('register',{
+
         })
     },
     processRegister: (req, res) => {
@@ -22,51 +24,54 @@ module.exports = {
                 avatar: "default.png",
                 rolId: 1
             })
-
-                .then(result => {
-                    return res.redirect('/users/login')
-                }
-                )
-
-
-
-
-        } else {
-            return res.render('register', {
-                products,
-                old: req.body,
-                errores: errors.mapped(),
+            
+            .then(result => {
+                return res.redirect('/users/login')}
+            )     
+        }else{
+            return res.render('register',{
+                /* elimine el envio de productos, obsoleto por que lo usaban del json */
+                old : req.body,
+                errores : errors.mapped(),
             })
         }
 
     },
-    login: (req, res) => {
-        return res.render('login')
+    login : (req,res) => {
+        return res.render('login',{
+            /* elimine el envio de productos, obsoleto por que lo usaban del json */
+        })
     },
-    processLogin: (req, res) => {
-
+    processLogin : (req,res) => {
         let errors = validationResult(req);
-        const { email, recordar } = req.body;
-        if (errors.isEmpty()) {
-            db.users.findOne({  //por el mail
-                where: { email : email }
-            }).then(user => {
-                console.log(user);
-                req.session.userLogin = {
-                    id: user.id,
-                    nombre: user.nombre,
-                    apellido: user.apellido,
-                    rolId: user.rolId,
-                    email : user.email,
-                    avatar : user.avatar,
+        const {email, recordar} = req.body;
+        if(errors.isEmpty()){
+            /* Uso la base de datos */
+            db.users.findOne({
+                where: {
+                    email: email
                 }
-                recordar && res.cookie('ohshots', req.session.userLogin, { maxAge: 1000 * 60 })
+            }).then(usuario => {
+                req.session.userLogin = {
+                    id : usuario.id,
+                    nombre : usuario.nombre,
+                    rol : usuario.rol,
+                    imagen: usuario.imagen,
+                    apellido: usuario.apellido
+                }
+                if(recordar){
+                    res.cookie('ohshots',req.session.userLogin,{maxAge: 1000 * 60})
+                }
                 return res.redirect('/')
-            })
-        } else {
-            return res.render('login', {
-                products,
-                errores: errors.mapped()
+    
+            }).catch(error => res.send(error))
+
+            /*obsoleto ->usado en el json
+             let usuario = usuarios.find(usuario => usuario.email === email) */
+            
+        }else{
+            return res.render('login',{
+                errores : errors.mapped()
             })
         }
     },
@@ -78,26 +83,73 @@ module.exports = {
     contact: (req, res) => {
         return res.render('contact')
     },
-    profile: (req, res) => {
-        db.users.findOne({
-            include : ['rol'],
-            where: {email : req.session.userLogin.email}
+    profile : (req,res) =>{
+        db.users.findByPk(req.params.id)
+        .then(usuario => {
+            res.render('userProfile',{
+                usuario
+            })
         })
-        .then(user =>{ 
-            console.log(user);
-            res.render("userProfile", {user}
-        )})
-
-    },
+    }
     
-    updateProfile: (req, res) => {
+    /* res.render("userProfile",{usuario : usuarios.find(usuario => usuario.id === +req.params.id)}) */,
+    updateProfile : (req,res) => {
         const errors = validationResult(req);
-        console.log(errors);
-        if (errors.isEmpty()) {
-            db.users.update( 
-                {
-                    nombre : req.body.name,
-                    avatar: req.file ? req.file.filename : "default.png",
+
+        if(errors.isEmpty()){
+
+            db.users.update({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                rol: req.body.rol,
+                image: req.file ? req.file.filename : req.session.userLogin,
+                },{
+                    where:{
+                        id:req.params.id
+                    }                
+            }).then(result =>{
+                db.users.findByPk(req.session.userLogin.id)
+                .then(usuario => {
+                    req.session.userLogin = {
+                        id : usuario.id,
+                        nombre : usuario.nombre,
+                        rol : usuario.rol,
+                        imagen: usuario.imagen,
+                        apellido: usuario.apellido
+                    }
+                    res.cookie('ohshots',req.session.userLogin,{maxAge: 1000 * 60})
+                    return res.redirect('/')
+                })
+
+                
+            })
+        }else{
+            req.file ? fsMethods.deleteFile(`../public/images/avatar/${req.file.filename}`) : null
+
+            res.render("userProfile",{
+                errors : errors.mapped(),
+                old : req.body,
+                usuario : req.session.userLogin
+            })
+        }
+            /* usuarios.forEach(usuario => {
+                if(usuario.id === +req.params.id){
+
+                    oldImage = usuario.image
+                    image = req.file ? req.file.filename : usuario.image
+                    
+                    
+                    usuario.nombre = req.body.nombre
+                    usuario.apellido = req.body.apellido
+                    usuario.email = req.body.email
+                    usuario.rol = req.body.rol
+                    usuario.image = image != req.body.deleteImage ? image : "default-user-image.png"
+                }
+            }); */
+
+            /* fsMethods.saveUsers(users);
+            req.body.deleteImage != "noBorrar" && oldImage != "default-user-image.png" ? fsMethods.deleteFile(`../public/images/users/${oldImage}`) : null; 
 
                 },
                { where : {email : req.session.userLogin.email}},
@@ -110,15 +162,20 @@ module.exports = {
             })
               
             
+            if (req.cookies.rememberSession) {
+                res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+            }     
 
+                
+        }else{
+            req.file ? fsMethods.deleteFile(`../public/images/avatar/${req.file.filename}`) : null
 
-        } else {
-
-            res.render("userProfile", {
-                errors: errors.mapped(),
-                old: req.body,
-            })
-        }
+            res.render("userProfile",{
+                errors : errors.mapped(),
+                old : req.body,
+                usuario : usuarios.find(usuario => usuario.id === +req.params.id)
+            })*/ 
+        
     }
 
 }
