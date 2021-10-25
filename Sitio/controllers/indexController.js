@@ -13,8 +13,10 @@ module.exports = {
                 { association: "origen" },
                 { association: "imagen" },
                 { association: "products" },
-              ]
-            }).then(productos =>{
+              ],
+            })
+            .then(productos =>{
+                console.log(productos);
             res.render('index',{
                 productos,
                 usuario: req.session.userLogin
@@ -38,4 +40,8 @@ module.exports = {
     
     },
     about : (req,res)=>res.render('about'),
+
+    test: (req,res)=> res.render('index')
+
+
 }
