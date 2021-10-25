@@ -8,7 +8,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             allowNull: false
         },
-        name: {
+        file: {
             type: dataTypes.STRING,
             allowNull: false,
             
@@ -37,7 +37,7 @@ module.exports = (sequelize, dataTypes) => {
     images.associate = function (models) {
         images.belongsTo(models.products, {
             as: "products",
-            foreignKey: "imagenId"
+            foreignKey: "id"
             
 
         })
