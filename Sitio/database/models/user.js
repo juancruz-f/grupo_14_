@@ -62,6 +62,11 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "rolId"
 
         })
+        /* users.belongsTo(models.carts, {
+            as: "users",
+            foreignKey: "id"
+
+        }) */
     
 
     }

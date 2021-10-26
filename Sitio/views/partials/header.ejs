@@ -1,15 +1,11 @@
 <header>
+<div class="box-de-header" >
+  <a href="/users/login"> <i class="far fa-user fa-lg"></i></a>
   <a href="/">
     <img src="/images/logotipo.png" alt="">
   </a>
-
-  <div class="botones">
-    <a href="/users/login"> <i class="far fa-user fa-lg"></i></a>
-
-
-    <a href="/products/cart"><i class="fas fa-shopping-cart fa-lg"></i></a>
-
-  </div>
+   <a href="/products/cart"><i class="fas fa-shopping-cart fa-lg"></i></a>
+</div>
 
   <nav class="navegador">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--colorGrisClaro);">
@@ -38,7 +34,7 @@
 
             
               <% if (locals.userLogin) { %>
-                <% if (locals.userLogin.rol==="admin" ) { %>
+                <% if (typeof locals.userLogin.rolId == 2 ) { %>
                   
                     <div class="dropdown" id="navbarDropdown">
                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,11 +50,11 @@
                       </ul>
                     </div>
                     <% } %>
-                    <% if (locals.userLogin.rol !=="admin") { %>
+                    <% if (locals.userLogin.rolId !==2) { %>
                       <div class="dropdown" id="navbarDropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                           <i class="fas fa-sign-in-alt"></i>
-                          <%=  locals.userLogin.nombre %> 
+                          <%=  locals.userLogin.nombre + " " + locals.userLogin.apellido %> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                           <li><a class="dropdown-item" href="/users/profile/<%= userLogin.id %>">Perfil</a></li>

@@ -1,117 +1,147 @@
-const fs = require('fs');
-const path = require('path');
-const categories= require('../data/categories_db');
-const origenes= require('../data/origen_db')
-const sections= require('../data/sections_db')
-const {products, guardar} = require('../data/products_db');
+const db = require('../database/models');
 const {validationResult} = require('express-validator');
-const db = require('../database/models')
 
-module.exports = {
+ module.exports = {
 
     add : (req,res) => {
-        db.categories.findAll()
-        .then(categorias =>{
-            return res.render('productAdd',{
-                categorias
-            })
-        }).catch(error=>console.log(error))
-    
-    },
+        db.products
+          .findAll()
+          .then((product) => {
+            return res.render("productAdd", {
+              products,
+              categories,
+              origenes,
+              sections,
+            });
+          })
+          .catch((error) => console.log(error));
+      },
     detail : (req,res) => {
-        let product=products.find(product=> product.id === +req.params.id);
-        return res.render('productDetail',{
-                products,
-                product,
-                interes: products.filter(product => product.section === "interes"),
-                origenes,
-                
-        })
-    },
+        db.products
+          .findOne({
+            where: {
+              id: req.params.id,
+            },
+            include: [
+              { association: "category" },
+              { association: "section" },
+              { association: "origen" },
+              { association: "imagen" },
+              { association: "products" },
+            ],
+          })
+          .then((products) => {
+            return res.render("productDetail", {
+              products,
+              product,
+              origenes,
+              section,
+            });
+          })
+          .catch((error) => console.log(error));
+      },
     loading : (req,res)=>res.render('productLoading'),
 
-    save: (req,res)=>{
-        
+    save: (req,res)=> {
         let errors = validationResult(req);
-        if(errors.isEmpty()){
-            const {title,description,price,category,origen,section} = req.body;
-            if(req.files){
-                var imagenes = req.files.map(imagen=>imagen.filename)
-            }
-            let product={
-                id : products[products.length - 1].id + 1,
-                title,
-                description,
-                category,
-                section,
-                images: req.files.length != 0 ? imagenes : ['default-image.png'],
-                origen,
-                price : +price,  
-            }
-       products.push(product);
-       guardar(products);
-       res.redirect('/');
-
-        }else{
-            return res.render("productAdd",{
-                categories,
-                sections,
-                origenes,
-                errors : errors.mapped(),
-                old : req.body,
+        if (errors.isEmpty()) {
+          const { title, description, price, category, origen, section } = req.body;
+          db.products.create({
+            ...req.body,
+            title: title.trim(),
+            description: description.trim(),
+            price: price,
+            category: category,
+            origen: origen,
+            section: section
+        }).then(product => {
     
-                })
-      
+            if (req.files) {
+                var images = [];
+                var imagenes = req.files.map(imagen => imagen.filename);
+                imagenes.forEach(img => {
+                    var image = {
+                        file: img,
+                        productId: product.id
+                    }
+                    images.push(image)
+                });
+    
+                db.image.bulkCreate(images, { validate: true })
+                    .then(() => console.log('imagenes agregadas'))
             }
-    },
+    
+            return res.redirect('/listProducts')
+        }).catch(error => console.log(error))
+    
+    } else {
+        db.categories.findAll()
+            .then(categorias => {
+                return res.render('productAdd', {
+                    categorias,
+                    errores: errors.mapped(),
+                    old: req.body
+                })
+            }).catch(error => console.log(error))
+    
+    
+          
+        }
+      },
     edit : (req,res) => {
-        let product = products.find(product => product.id === +req.params.id);
-
-        return res.render('productEdit',{
-            categories,
-            sections,
-            products,
-            product,
-            origenes,
-        })
+        let categorias = db.categories.findAll();
+        let producto = db.products.findByPk(req.params.id);
+        Promise.all([categorias, producto])
+            .then(([categorias, producto]) => {
+                return res.render('productEdit', {
+                    categorias,
+                    producto
+                })
+            })
+    
     },
     
     update : (req,res) => {
-        const {title, description,price,origen,category,section} = req.body;
-        let product = products.find(product => product.id === +req.params.id)
-        let productoEditado = {
-            id : +req.params.id,
-            title,
-             description,
-            origen,
-            price : +price,
-            image : req.file ? req.file.filename : product.image,
-            category,
-            section,
-        }
-
-        let productosModificados = products.map(product => product.id === +req.params.id ? productoEditado : product)
-
-        guardar(productosModificados)
-        res.redirect('/products/admin')
+        const { title, description, price, category, origen, section } = req.body;
+    
+        db.products.update(
+            {
+                title: title.trim(),
+                description: description.trim(),
+                price,
+                category,
+                origen,
+                section
+            },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
+        ).then(() => res.redirect('/listProducts'))
+            .catch(error => console.log(error))
     
     },
     remove : (req,res) => {
-        res.send(req.params.id)
-   
-    },
+        db.products.destroy({
+            where: {
+                id: req.params.id
+            }
+        }).then(() => res.redirect('/listProducts'))
+            .catch(error => console.log(error))
+      },
     cart : (req,res) => {
         return res.render('productCart')
     },
 
     products : (req,res) => {
-        res.render('listProducts',{
-            products,
-            categories,
-            sections,
-            bebidasBlancas : products.filter(product => product.category === "bebidas blancas"),
-            vinos: products.filter(product => product.category === "vinos"),
-            packs : products.filter(product => product.category === "packs"),
+        const productos = db.products.findAll()
+        const productosId = db.products.findByPk(req.params.id);
+        Promise.all([productos, productosId]).then(([productos, productosId]) => {
+            return res.render('listProducts',{
+                productos,
+                productosId,
+            })
         })
     },
     admin: (req, res)=>{
@@ -120,4 +150,4 @@ module.exports = {
             products: JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data','products.json'),'utf-8'))
         })
     },
-}
+} 

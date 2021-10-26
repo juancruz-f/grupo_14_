@@ -49,8 +49,8 @@
             <!----------------------------------    BOOSTRAP   ------------------------------------------>
               <div class="c-title-error">
                 <label class="form-label title-images">Imagen de perfil : </label>
-                <%if( locals.errors && locals.errors.image){%>
-                  <p style="color: red;margin: unset;"><%=errors.image.msg%></p>
+                <%if( locals.errors && locals.errors.avatar){%>
+                  <p style="color: red;margin: unset;"><%=errors.avatar.msg%></p>
                 <%}%>
               </div>
               <div class="c-image-inputs">
@@ -79,13 +79,7 @@
                     
                     <div class="col-md-3 inputs-text">
                       <label for="email" class="form-label">Email :</label>
-                      <input type="text" class="form-control <%= locals.errors && errors.email ? "is-invalid" : null%>" id="email" name="email" placeholder="Email" value="<%= typeof old != "undefined" ? old.email : locals.userLogin.email %>">
-                      <input type="text" style="display: none;" value="<%=locals.userLogin.email%>" name="originalEmail">
-                      <div class="invalid-feedback" style="margin: 1vw 0;">
-                        <%if(locals.errors && errors.email){%>
-                          <%=errors.email.msg%>
-                        <%}%>
-                      </div>
+                      <input type="email" disabled class="form-control" id="email" name="email" placeholder="<%= user.email %> " value="">
                     </div>
   
                     <div class="mb-4 input-selects">

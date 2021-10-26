@@ -8,50 +8,50 @@
     <!-- Header -->
     <%- include('./partials/header') %>
       <main class="main--admin">
-        <% products.forEach(product=> { %>
+        <%# products.forEach(product=> { %>
           <h1>
-            <%= product.title %>
+            <%#= product.title %>
 
           </h1>
           <div class="contenedor--admin">
 
             <div class="caja--admin">
 
-              <img src="/images/<%= product.image %> " alt="">
+              <img src="/images/<%#= product.image %> " alt="">
 
             </div>
             <div class="caja--admin">
               <p><b>Id: </b>
-                <%= product.id %>
+                <%#= product.id %>
               </p>
 
               <p><b>Descripción: </b>
-                <%= product.description %>
+                <%#= product.description %>
               </p>
               <p> <b>Precio: </b>$
-                <%= product.price %>
+                <%#= product.price %>
               </p>
               <p> <b>Categoría: </b>
-                <%= product.category %>
+                <%#= product.category %>
               </p>
               <p><b>Origen: </b>
-                <%= product.origen %>
+                <%#= product.origen %>
 
               </p>
               <p><b>Sección: </b>
-                <%= product.section %>
+                <%#= product.section %>
 
               </p>
             </div>
 
 
             <div class="caja--admin">
-              <div class="button--admin"><a id="button1" href="/products/edit/<%= product.id %> "><button
+              <div class="button--admin"><a id="button1" href="/products/edit/<%#= product.id %> "><button
                     class="button-1">
                     editar
                   </button></a>
 
-                <form action="/products/remove/<%= product.id %>?method=DELETE" method="POST">
+                <form action="/products/remove/<%#= product.id %>?method=DELETE" method="POST">
                   <button type="submit" class="button-2">Borrar</button>
                 </form>
 
@@ -63,7 +63,7 @@
           </div>
           </div>
 
-          <% }) %>
+          <%# }) %>
       </main>
 
 

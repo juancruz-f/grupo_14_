@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('./partials/head') %>
+</head>
+<body>
+ <!-- Header -->
+ <%- include('./partials/header') %>
+
+<main>
+    <div>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <h4>Editar Perfil</h4>
+            <!-- img de perfil -->
+            <label for=""> Seleccionar imagen de Perfil</label>
+            <input class="profile-pic" type="file" name="profilePic" accept=".jpg">
+            <!-- nombre -->
+            <input type="text" name="nombre" placeholder="  NOMBRE">
+            <!-- apellido -->
+            <input type="text" name="apellido" placeholder="APELLIDO">
+            <!--  -->
+        </form>
+
+    </div>
+
+
+
+</main>
+
+ <!-- Footer -->
+
+ <%- include('./partials/footer') %>
+
+ <!-- Script -->
+ <%- include('./partials/script') %>
+    
+</body>
+</html>

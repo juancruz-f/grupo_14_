@@ -21,6 +21,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage : storage});
 
 
+
 /* GET users listing. */
 router.get('/login',login);
 router.post('/login', loginValidator, processLogin);

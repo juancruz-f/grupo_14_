@@ -40,7 +40,6 @@
         </ul>
 
       </div>
-
       <main class="listado">
 
         <h1 class="h1--listproducts">Listado de productos</h1>
@@ -48,58 +47,60 @@
         <h2>Bebidas Blancas</h2>
         <section class="contenedor-lista">
 
-          <% bebidasBlancas.forEach(product=>{%>
+          <%# bebidasBlancas.forEach(product=>{%>
 
             <article>
-              <img src="/images/<%= product.image %>" alt="">
+              <img src="/images/<%#= product.image %>" alt="">
               <h4>
-                <%= product.title %>
+                <%#= product.title %>
               </h4>
               <p>
-               $ <%= product.price %>
+               $ <%#= product.price %>
               </p>
-              <button class="articulo-listProducts"><a href="/products/detail/<%= product.id %>">Más info</a></button>
+              <button class="articulo-listProducts"><a href="/products/detail/<%#= product.id %>">Más info</a></button>
             </article>
-            <% }) %>
+            <%# }) %>
 
         </section>
 
         <h2>Vinos</h2>
         <section class="contenedor-lista">
-          <% vinos.forEach(product=>{%>
+          <%# vinos.forEach(product=>{%>
 
             <article>
-              <img src="/images/<%= product.image %>" alt="">
+              <img src="/images/<%#= product.image %>" alt="">
               <h4>
-                <%= product.title %>
+                <%#= product.title %>
               </h4>
               <p>
-                $ <%= product.price %>
+                $ <%#= product.price %>
               </p>
-              <button class="articulo-listProducts"><a href="/products/detail/<%= product.id %>">Más info</a></button>
+              <button class="articulo-listProducts"><a href="/products/detail/<%#= product.id %>">Más info</a></button>
             </article>
-            <% }) %>
+            <%# }) %>
 
         </section>
 
         <h2>Packs</h2>
         <section class="contenedor-lista">
-          <% packs.forEach(product=>{%>
+          <%# packs.forEach(product=>{%>
 
             <article>
-              <img src="/images/<%= product.image %>" alt="">
+              <img src="/images/<%#= product.image %>" alt="">
               <h4>
-                <%= product.title %>
+                <%#= product.title %>
               </h4>
               <p>
-               $ <%= product.price %>
+               $ <%#= product.price %>
               </p>
-              <button class="articulo-listProducts"><a href="/products/detail/<%= product.id %>">Más info</a></button>
+              <button class="articulo-listProducts"><a href="/products/detail/<%#= product.id %>">Más info</a></button>
             </article>
-            <% }) %>
+            <%# }) %>
         </section>
         
 
+        
+          </div>
       </main>
       <!-- Footer -->
 

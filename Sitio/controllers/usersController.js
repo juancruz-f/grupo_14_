@@ -2,7 +2,7 @@ const db = require('../database/models');
 /* Eliine las llamadas a los json */
 const fsMethods = require("../utils/fsMethods");
 const bcrypt = require('bcryptjs');
-const {validationResult} = require('express-validator');
+const { validationResult } = require('express-validator');
 
 
 module.exports= {
@@ -11,18 +11,18 @@ module.exports= {
 
         })
     },
-    processRegister : (req,res) => {
+    processRegister: (req, res) => {
         let errors = validationResult(req);
-        let {nombre,apellido,email,password}= req.body;
-        
-        if(errors.isEmpty()){
+        let { nombre, apellido, email, password } = req.body;
+
+        if (errors.isEmpty()) {
             db.users.create({
-                nombre : nombre,
+                nombre: nombre,
                 apellido: apellido,
                 email: email,
-                password: bcrypt.hashSync(password, 10), 
-                avatar : "default.png",
-                rolId : 1
+                password: bcrypt.hashSync(password, 10),
+                avatar: "default.png",
+                rolId: 1
             })
             
             .then(result => {
@@ -35,7 +35,7 @@ module.exports= {
                 errores : errors.mapped(),
             })
         }
-        
+
     },
     login : (req,res) => {
         return res.render('login',{
@@ -75,12 +75,12 @@ module.exports= {
             })
         }
     },
-    logout : (req,res) => {
+    logout: (req, res) => {
         req.session.destroy();
-        res.cookie('ohshots',null,{maxAge:-1})
+        res.cookie('ohshots', null, { maxAge: -1 })
         return res.redirect('/')
     },
-    contact:(req,res)=>{
+    contact: (req, res) => {
         return res.render('contact')
     },
     profile : (req,res) =>{
@@ -151,12 +151,16 @@ module.exports= {
             /* fsMethods.saveUsers(users);
             req.body.deleteImage != "noBorrar" && oldImage != "default-user-image.png" ? fsMethods.deleteFile(`../public/images/users/${oldImage}`) : null; 
 
-            let updatedUser = usuarios.find(usuario => usuario.id === +req.params.id)
+                },
+               { where : {email : req.session.userLogin.email}},
+            ).then(() => {
             
-            req.session.save(err =>{
-                req.session.userLogged = updatedUser
-                res.redirect("/")
+                if (req.cookies.rememberSession) {
+                    res.cookie('rememberSession', req.session.userLogged, { maxAge: 10000 * 60 });
+                }
+                res.redirect('/')
             })
+              
             
             if (req.cookies.rememberSession) {
                 res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});

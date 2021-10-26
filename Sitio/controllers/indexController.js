@@ -40,7 +40,7 @@ module.exports = {
     },
     about : (req,res)=>res.render('about'),
 
-    test: (req,res)=> res.render('index')
+    test: (req,res)=> res.render('index',{})
 
 
 }
