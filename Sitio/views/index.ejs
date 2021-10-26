@@ -44,23 +44,18 @@
 
         <h1>Destacados</h1>
         <section class="contenedor">
-          <p><%= productos[0].title %> </p>
 
-          <% productos.forEach(producto => {%>
-            <% if (true) {%>
+          <% productos.forEach(producto => {%>      
               <article>
-                
-              <img src="/images/<%= producto.imagen[0].file %>" alt="">
-              <h4>
-                <%= producto.title %>
-              </h4>
-              <p>
-               $ <%= producto.price %>
-              </p>
-              <button class="articulo"><a href="/products/detail/<%= producto.id %>">Más info</a></button>
-            </article>
-            <%}%>
-           
+                <img src="/images/<%= producto.imagen[0].file %>" alt="">
+                <h4>
+                  <%= producto.title %>
+                </h4>
+                <p>
+                $ <%= producto.price %>
+                </p>
+                <button class="articulo"><a href="/products/detail/<%= producto.id %>">Más info</a></button>
+              </article>          
             
           <%})%>
 
