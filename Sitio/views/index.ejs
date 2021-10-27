@@ -42,10 +42,11 @@
       </div>
       <main id="primero" class="destacados">
 
-        <h1>Destacados</h1>
+        <h1>Nuestros productos</h1>
         <section class="contenedor">
 
           <% productos.forEach(producto => {%>      
+            <%  %>
               <article>
                 <img src="/images/<%= producto.imagen[0].file %>" alt="">
                 <h4>
@@ -61,7 +62,7 @@
 
         </section>
 
-        <h1>Tambien puede interesarte</h1>
+       <!--  <h1>Tambien puede interesarte</h1>
         <section class="contenedor">
           <%# interes.forEach(product=>{%>
 
@@ -94,7 +95,7 @@
               <button class="articulo"><a href="/products/detail/<%#= product.id %>">Más info</a></button>
             </article>
             <%# }) %>
-        </section>
+        </section> -->
 
       </main>
       <section>

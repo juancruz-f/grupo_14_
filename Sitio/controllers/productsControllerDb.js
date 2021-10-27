@@ -1,8 +1,8 @@
-/* const db = require('../database/models')
+const db = require('../database/models')
 const {validationResult} = require('express-validator');
- */
 
-/* module.exports = {
+
+ module.exports = {
   add: (req, res) => {
     db.products.findAll()
       .then((product) => {
@@ -127,4 +127,4 @@ remove: (req, res) => {
       .catch(error => console.log(error))
 }
 
-}; */
+};

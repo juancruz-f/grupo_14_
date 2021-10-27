@@ -16,24 +16,46 @@ footer nav ul li a{
     
 
 }
+footer .contacto li a{
+    padding: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
 footer div.contacto{
-    background-color: var(--color-grisFooter);
+    background-color: var(--color-footer);
    text-align: center;
    padding: 10px;
 }
 footer div.contacto img{
     max-width: 30px;
     max-height: 30px;
+    margin-top: 10px;
 }
 footer div.metodos img{
-    max-height: 100px;
-    max-width: 200px;
+    max-height: 50%;
+    max-width: 20%;
     padding: 10px;
+}
+footer p{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-grisClaro);
+    padding-top: 20px;
+    font-weight: 500;
+}
+footer .copyright-os{
+    font-size: 10px;
 }
 @media(min-width:1024px){
     footer nav div.preguntas{
         display: flex;
         justify-content: space-evenly;
+    }
+    footer div.metodos img{
+        max-height: 20%;
+        max-width: 5%;
+        padding: 5px;
     }
 
 }

@@ -1,6 +1,4 @@
 /* Esto debe ser borrado */
-const {products}= require('../data/products_db');
-const sections= require('../data/sections_db')
 
 const db = require('../database/models')
 
@@ -40,7 +38,7 @@ module.exports = {
     },
     about : (req,res)=>res.render('about'),
 
-    test: (req,res)=> res.render('index',{})
+    test: (req,res)=> res.render('index')
 
 
 }
