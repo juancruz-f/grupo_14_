@@ -43,12 +43,14 @@
     </ul>
 
   </div>
-    <main>            
+    <main>
+      <div class="perfil-cont">
+
           <form class="formProfile" action="/users/profile/<%=locals.userLogin.id %>" method="POST" enctype="multipart/form-data">
 
             <!----------------------------------    BOOSTRAP   ------------------------------------------>
               <div class="c-title-error">
-                <label class="form-label title-images">Imagen de perfil : </label>
+                <label class="form-label title-images">Imagen de perfil </label>
                 <%if( locals.errors && locals.errors.avatar){%>
                   <p style="color: red;margin: unset;"><%=errors.avatar.msg%></p>
                 <%}%>
@@ -57,18 +59,22 @@
                 <div class="c-imagenes">
                   <div class="mb-3 input-file">
                     <div class="preview" id="preview">
-                      <img id="preview-image" src="<%= locals.userLogin.image ? `/images/users/${locals.userLogin.image}` : `/images/icon/default-image1.png`%>">
-                      <input class="delete" type="text" name="deleteImage" value=noBorrar id="<%=locals.userLogin.image%>">
+                      <img id="preview-image" src="<%= locals.userLogin.image ? `/images/users/${locals.userLogin.image}` : `/images/default.png`%>">
+                      <!-- <input class="delete" type="text" name="deleteImage" value=noBorrar id="<%=locals.userLogin.image%>"> -->
                     </div>
-                    <input type="file" id="image" name="image" class="file">
+                    <div>
+                    <input type="file" id="image" name="image" class="file-perfil">
+                    <div class="perfil-btn">
                     <label for="image" class="file-agregar btn" onclick="document.getElementById(`<%=locals.userLogin.image%>`).value = `<%=locals.userLogin.image%>`;">Agregar</label>
                     <button type="button" id="quitar" onclick="limpiar(`image`,`preview-image`,`<%=locals.userLogin.image%>`)" class="file-quitar btn">Quitar</button>
+                    </div>
+                  </div>
                   </div>
                 </div>
                 
                 <div class="container-inputs">
                     <div class="col-md-3 inputs-text">
-                      <label for="name" class="form-label">Nombre :</label>
+                      <label for="name" class="form-label">Nombre </label>
                       <input type="text" class="form-control <%= locals.errors && errors.name ? "is-invalid" : null%>" id="name" name="name" placeholder="Nombre" value="<%= typeof old != "undefined" ? old.name : locals.userLogin.name %>">
                       <div class="invalid-feedback" style="margin: 1vw 0;">
                         <%if(locals.errors && errors.name){%>
@@ -78,27 +84,27 @@
                     </div>
                     
                     <div class="col-md-3 inputs-text">
-                      <label for="email" class="form-label">Email :</label>
-                      <input type="email" disabled class="form-control" id="email" name="email" placeholder="<%= user.email %> " value="">
+                      <label for="email" class="form-label">Email </label>
+                      <input type="email" disabled class="form-control" id="email" name="email" placeholder="<%= locals.userLogin.email %>" value=""> <!-- cambiar esto -->
                     </div>
   
-                    <div class="mb-4 input-selects">
+                    <!-- <div class="mb-4 input-selects">
                       <label for="type" class="form-label">Tipo de acceso :</label>
-                      <select class="form-select  <%= locals.errors && errors.access ? "is-invalid" : null%>" id="access" name="access">                       
-                        <%if(locals.old && old.access){%>
-                          <option value="user"  <%= old.access === "user"  ? 'selected' : null %>>Usuario</option>
-                          <option value="admin" <%= old.access === "admin" ? 'selected' : null %>>Admin</option>  
-                        <%}else{%>
-                          <option value="user"  <%= locals.userLogin.access === "user"  ? 'selected' : null %>>Usuario</option>
-                          <option value="admin"  <%= locals.userLogin.access === "admin"  ? 'selected' : null %>>Admin</option>
-                        <%}%>
+                      <select class="form-select  <%#= locals.errors && errors.access ? "is-invalid" : null%>" id="access" name="access">                       
+                        <%#if(locals.old && old.access){%>
+                          <option value="user"  <%#= old.access === "user"  ? 'selected' : null %>>Usuario</option>
+                          <option value="admin" <%#= old.access === "admin" ? 'selected' : null %>>Admin</option>  
+                        <%#}else{%>
+                          <option value="user"  <%#= locals.userLogin.access === "user"  ? 'selected' : null %>>Usuario</option>
+                          <option value="admin"  <%#= locals.userLogin.access === "admin"  ? 'selected' : null %>>Admin</option>
+                        <%#}%>
                       </select>
                       <div class="invalid-feedback" style="margin: 1vw 0;">
-                        <%if(locals.errors && errors.access){%>
-                          <%=errors.access.msg%>
-                        <%}%>
+                        <%#if(locals.errors && errors.access){%>
+                          <%#=errors.access.msg%>
+                        <%#}%>
                       </div>
-                    </div>
+                    </div> -->
                 </div>
               </div>
   
@@ -109,7 +115,7 @@
                 <a href="/" class="btn btn-borrar">Cancelar</a>
             </div>
           </form>
-
+        </div>
     </main>
  <!-- Footer -->
 
