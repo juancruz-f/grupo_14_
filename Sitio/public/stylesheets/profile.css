@@ -1,0 +1,27 @@
+main .perfil-cont{
+    display: flex;
+    justify-content: center;
+}
+.title-images{
+    display: flex;
+    justify-content: center;
+}
+
+.file-perfil{
+    font-size: 12px;
+    margin: 10px 0;
+    display: flex;
+}
+.preview{
+    display: flex;
+    justify-content: center;
+}
+#preview-image{
+    border-radius: 50%;
+}
+.perfil-btn{
+    display: flex;
+}
+.container-buttons{
+    display: flex;
+}
