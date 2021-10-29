@@ -156,6 +156,7 @@ form.addEventListener('submit', function (e) {
 
     // hace el submit si el formulario es valido
     if (isFormValid) {
+       
 
     }
 });
