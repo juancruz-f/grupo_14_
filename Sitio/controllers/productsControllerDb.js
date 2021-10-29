@@ -35,6 +35,28 @@ const {validationResult} = require('express-validator');
       })
       .catch((error) => console.log(error));
   },
+  search : (req,res) =>{
+    let Producto = db.Products.findAll({
+        where : {
+            name : {
+                [Op.substring] : req.query.search /* para q me busque ej : auris, micro etc.. */
+            }
+        },
+            include : [
+                {association : 'images'},
+                {association : 'Categories'}
+            ]
+    })
+    let Categories = db.Categories.findAll()
+    Promise.all([Producto,Categories])
+    .then(([Producto,Categories])=>{
+        return res.render('resultSearch',{
+            Producto,
+            Categories,
+            name : req.query.search
+        })
+    })
+},
   loading: (req, res) => res.render("productLoading"),
   save: (req, res) => {
     let errors = validationResult(req);
