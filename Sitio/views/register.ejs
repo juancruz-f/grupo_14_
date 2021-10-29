@@ -45,7 +45,7 @@
         <nav class="container--register">
           <div class="container">
             <!-- Quito el signup por que no me deja enviar el formulario -->
-            <form class="form" action="/users/register" id="signup" method="POST">
+            <form class="form" action="/users/register"  method="POST">
 
               <h4 class="h4--register">CREAR CUENTA</h4>
               <p class="register--responsive">Comprá más rápido y llevá el control de tus pedidos, ¡en un solo
@@ -67,7 +67,7 @@
               </div>
               <div class="form-field d-flex flex-column">
                 <label for="email">Email:</label>
-                <input type="email" id="email" aria-describedby="emailHelp" autocomplete="off" name="email">
+                <input type="email" id="email" name="email">
                  <span class="text-danger small"><%= locals.errores && locals.errores.email ? errores.email.msg : null %> </span>
                 <small></small>
               </div>

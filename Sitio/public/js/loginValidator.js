@@ -1,5 +1,5 @@
 
-const emailEl = document.querySelector('#mail');
+/* const emailEl = document.querySelector('#mail');
 const passwordEl = document.querySelector('#contrasenia');
 
 
@@ -126,4 +126,4 @@ form.addEventListener('input', debounce(function (e) {
             break;
       
     }
-}));
+})); */

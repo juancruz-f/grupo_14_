@@ -20,16 +20,18 @@ module.exports = [
 
     body('email')
     .isEmail().withMessage('Debes ingresar un email válido')
-    .custom(value => {
-        db.users.findOne({
-            where:{mail: value}
-        })
-        .then(user =>{
-            if(user){
-                return Promise.reject("Este mail ya se encuentra registrado")
+    .custom((value)=> {
+        return db.users.findOne({
+            where : {
+                email : value
             }
-        })
+        }).then(user =>{
+            if(user){
+                return Promise.reject()
+            }
+        }).catch(() => Promise.reject("Este email ya esta registrado"))
     }),
+
  
  //YA VUELVOOOO PROF
 

@@ -14,6 +14,7 @@ module.exports= {
     processRegister: (req, res) => {
         let errors = validationResult(req);
         let { nombre, apellido, email, password } = req.body;
+        console.log(errors)
 
         if (errors.isEmpty()) {
             db.users.create({

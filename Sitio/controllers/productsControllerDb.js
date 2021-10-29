@@ -25,15 +25,12 @@ const {validationResult} = require('express-validator');
           { association: "section" },
           { association: "origen" },
           { association: "imagen" },
-          { association: "products" },
         ],
       })
       .then((products) => {
+        console.log(products.imagen[0]);
         return res.render("productDetail", {
           products,
-          product,
-          origenes,
-          section,
         });
       })
       .catch((error) => console.log(error));

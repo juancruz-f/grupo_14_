@@ -1,4 +1,4 @@
-const userNameEl = document.querySelector('#nombre');
+/* const userNameEl = document.querySelector('#nombre');
 const lastNameEl = document.querySelector('#apellido');
 const emailEl = document.querySelector('#email');
 const passwordEl = document.querySelector('#password');
@@ -191,4 +191,4 @@ form.addEventListener('input', debounce(function (e) {
             checkConfirmPassword();
             break;
     }
-}));
+})); */
