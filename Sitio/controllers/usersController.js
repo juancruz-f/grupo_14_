@@ -53,17 +53,21 @@ module.exports= {
                     email: email
                 }
             }).then(usuario => {
+                               
                 req.session.userLogin = {
                     id : usuario.id,
                     nombre : usuario.nombre,
-                    rol : usuario.rol,
+                    rolId : usuario.rolId,
                     imagen: usuario.imagen,
                     apellido: usuario.apellido
                 }
+               
                 if(recordar){
                     res.cookie('ohshots',req.session.userLogin,{maxAge: 1000 * 60})
-                }
+                                  }
+               console.log(usuario);
                 return res.redirect('/')
+                
     
             }).catch(error => res.send(error))
 

@@ -13,7 +13,7 @@ module.exports = {
               ],
             })
             .then(productos =>{
-                console.log(productos);
+                
             res.render('index',{
                 productos,
                 usuario: req.session.userLogin

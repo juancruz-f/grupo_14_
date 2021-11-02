@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Head -->
+<%- include('./partials/head') %> 
+
+
+<body class="body--register">
+
+
+  <!-- Header -->
+ <%- include('./partials/header') %> 
+
+
+  
+<main>
+    <div class="contenedor--contact">
+        <form  class="caja--contact" action="/contact" method="POST">
+            <div class="div--contact">
+                <label for=""> Nombre y Apellido</label>
+                <input type="text" name=nombreyapellido value="" required>
+            </div>
+
+            <div class="div--contact">
+                <label for="">Email</label>
+                <input type="email" name="email" value="" required>
+            </div>
+
+            <div class="mensaje--contact">
+                <label for=""> Mensaje</label>
+                <textarea class="form-control" name="mensaje" id="mensaje" cols="50" rows="10"></textarea>
+            </div>
+
+            <div class="button--contact">
+                <button type="submit">Enviar</button>
+            </div>
+
+        </form>
+    </div>
+
+</main>
+  <!-- Footer -->
+
+  <%- include('./partials/footer') %> 
+
+  <!-- Script -->
+  <%- include('./partials/script') %> 
+</html>
+<div></div>

@@ -1,10 +1,12 @@
 <header>
 <div class="box-de-header" >
-  <a href="/users/login"> <i class="far fa-user fa-lg"></i></a>
+  <a href="/products/cart"><i class="fas fa-shopping-cart fa-lg"></i></a>
+ 
   <a href="/">
     <img src="/images/logotipo.png" alt="">
   </a>
-   <a href="/products/cart"><i class="fas fa-shopping-cart fa-lg"></i></a>
+  <a href="/users/login"> <i class="far fa-user fa-lg"></i></a>
+   
 </div>
 
   <nav class="navegador">
@@ -34,7 +36,7 @@
 
             
               <% if (locals.userLogin) { %>
-                <% if (typeof locals.userLogin.rolId == 2 ) { %>
+                <% if (locals.userLogin.rolId == 2 ) { %>
                   
                     <div class="dropdown" id="navbarDropdown">
                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

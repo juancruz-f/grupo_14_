@@ -43,16 +43,16 @@ const {validationResult} = require('express-validator');
             }
         },
             include : [
-                {association : 'images'},
-                {association : 'Categories'}
+                {association : 'imagen'},
+                {association : 'category'}
             ]
     })
-    let Categories = db.Categories.findAll()
-    Promise.all([Producto,Categories])
-    .then(([Producto,Categories])=>{
+    let categorias = db.categories.findAll()
+    Promise.all([producto,categorias])
+    .then(([producto,categorias])=>{
         return res.render('resultSearch',{
-            Producto,
-            Categories,
+            producto,
+            categories,
             name : req.query.search
         })
     })

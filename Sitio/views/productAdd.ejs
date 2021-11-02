@@ -38,11 +38,11 @@
 
                 <select id="category" class="form-select" name="category">
                   <option value="" selected hidden>Seleccione la categoría</option>
-                  <%# categories.forEach(category=> { %>
-                    <option value="<%#= category %>">
-                      <%#= category %>
+                  <% categories.forEach(category=> { %>
+                    <option value="<%= category %>">
+                      <%= category %>
                     </option>
-                    <%# }) %>
+                    <% }) %>
                 </select>
               </div>
               <div class="mb-3">
@@ -50,11 +50,11 @@
 
                 <select id="section" class="form-select" name="section">
                   <option value="" selected hidden>Seleccione seccion</option>
-                  <%# sections.forEach(section=> { %>
-                    <option value="<%#= section %>">
-                      <%#= section %>
+                  <% sections.forEach(section=> { %>
+                    <option value="<%= section %>">
+                      <%= section %>
                     </option>
-                    <%# }) %>
+                    <% }) %>
                 </select>
               </div>
               <div class="mb-3">
@@ -62,9 +62,9 @@
 
                 <select id="origen" class="form-select" name="origen">
                   <option value="" selected hidden>Seleccione el origen</option>
-                  <%# origenes.forEach(origen=> { %>
-                    <option value="<%#= origen %>"><%#= origen %></option>
-                    <%# }) %>
+                  <% origenes.forEach(origen=> { %>
+                    <option value="<%= origen %>"><%= origen %></option>
+                    <% }) %>
                 </select>
               </div>
 
