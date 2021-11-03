@@ -1,5 +1,6 @@
 const db = require('../database/models')
 const {validationResult} = require('express-validator');
+const category = require('../utils/idConverter')
 
 
  module.exports = {
@@ -9,13 +10,15 @@ const {validationResult} = require('express-validator');
     let sections = db.sections.findAll();
     Promise.all([categories, origenes, sections])
       .then(([categories, origenes, sections]) => {
-        return res.render("productAdd", {
+        res.render("productAdd", {
+          
           
          categories,
           origenes,
           sections,
         });
-      })
+      console.log(categories);      })
+      
       .catch((error) => console.log(error));
   },
   detail: (req, res) => {
@@ -39,7 +42,7 @@ const {validationResult} = require('express-validator');
       .catch((error) => console.log(error));
   },
   search : (req,res) =>{
-    let Producto = db.Products.findAll({
+    let producto = db.products.findAll({
         where : {
             name : {
                 [Op.substring] : req.query.search /* para q me busque ej : auris, micro etc.. */
@@ -47,15 +50,18 @@ const {validationResult} = require('express-validator');
         },
             include : [
                 {association : 'imagen'},
-                {association : 'category'}
+                {association : 'category'},
+                {association: 'section'},
+                {association: 'origen'}
             ]
+
     })
     let categorias = db.categories.findAll()
     Promise.all([producto,categorias])
     .then(([producto,categorias])=>{
         return res.render('resultSearch',{
             producto,
-            categories,
+            categorias,
             name : req.query.search
         })
     })
@@ -150,12 +156,8 @@ remove: (req, res) => {
       .catch(error => console.log(error))
 },
 admin : (req, res)=>{
-  let categories = db.categories.findAll();
-    let origenes = db.origenes.findAll();
-    let sections = db.sections.findAll();
-    let images = db.images.findAll();
-    Promise.all([categories, origenes, sections, images])
-  db.products.findAll({
+ 
+    db.products.findAll({
       include: [
           { association: "category" },
           { association: "section" },
@@ -164,14 +166,13 @@ admin : (req, res)=>{
         ],
       })
       .then(productos =>{
-       console.log(productos);
+
+        console.log(category(productos.categoryId));
           
       res.render('productAdmin',{
           productos,
-          categories,
-          origenes,
-          sections,
-          images,
+          category: category,
+          
 
           usuario: req.session.userLogin
       })
@@ -180,6 +181,7 @@ admin : (req, res)=>{
       .catch(error => {
           console.log(error)
       })
+  
     }
 
 

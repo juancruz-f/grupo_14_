@@ -5,6 +5,7 @@ const db = require('../database/models')
 module.exports = {
     index : (req, res)=>{
         db.products.findAll({
+            limit: 6,
             include: [
                 { association: "category" },
                 { association: "section" },
