@@ -29,7 +29,7 @@
               </div>
               <div class='imagen--add'>
                 <label for=""> Seleccionar imagen de producto</label>
-                <input class="image" type="file" name="image" accept=".jpg">
+                <input class="image" type="file" name="imageId" accept=".jpg">
 
               </div>
 
@@ -39,8 +39,8 @@
                 <select id="category" class="form-select" name="category">
                   <option value="" selected hidden>Seleccione la categoría</option>
                   <% categories.forEach(category=> { %>
-                    <option value="<%= category %>">
-                      <%= category %>
+                    <option value="<%= category.id %>">
+                      <%= category.name %>
                     </option>
                     <% }) %>
                 </select>
@@ -51,8 +51,8 @@
                 <select id="section" class="form-select" name="section">
                   <option value="" selected hidden>Seleccione seccion</option>
                   <% sections.forEach(section=> { %>
-                    <option value="<%= section %>">
-                      <%= section %>
+                    <option value="<%= section.id %>">
+                      <%= section.name %>
                     </option>
                     <% }) %>
                 </select>
@@ -63,7 +63,7 @@
                 <select id="origen" class="form-select" name="origen">
                   <option value="" selected hidden>Seleccione el origen</option>
                   <% origenes.forEach(origen=> { %>
-                    <option value="<%= origen %>"><%= origen %></option>
+                    <option value="<%= origen.id %>"><%= origen.name %></option>
                     <% }) %>
                 </select>
               </div>

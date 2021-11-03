@@ -1,6 +1,6 @@
 Swal.fire({
     title: "Bienvenido!",
-	html: '<iframe width="642" height="361" src="https://www.youtube.com/embed/P6sFUz7S32I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+	html: '<div class="container"><iframe width="642" height="361" src="https://www.youtube.com/embed/P6sFUz7S32I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>' ,
 	
     
 

@@ -4,11 +4,14 @@ const {validationResult} = require('express-validator');
 
  module.exports = {
   add: (req, res) => {
-    db.products.findAll()
-      .then((product) => {
+    let categories = db.categories.findAll();
+    let origenes = db.origenes.findAll();
+    let sections = db.sections.findAll();
+    Promise.all([categories, origenes, sections])
+      .then(([categories, origenes, sections]) => {
         return res.render("productAdd", {
-          products,
-          categories,
+          
+         categories,
           origenes,
           sections,
         });
@@ -60,6 +63,7 @@ const {validationResult} = require('express-validator');
   loading: (req, res) => res.render("productLoading"),
   save: (req, res) => {
     let errors = validationResult(req);
+    console.log(errors);
     if (errors.isEmpty()) {
       const { title, description, price, category, origen, section } = req.body;
       db.products.create({
