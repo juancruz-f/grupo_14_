@@ -87,7 +87,7 @@ const {validationResult} = require('express-validator');
                 images.push(image)
             });
 
-            db.image.bulkCreate(images, { validate: true })
+            db.images.bulkCreate(images, { validate: true })
                 .then(() => console.log('imagenes agregadas'))
         }
 
@@ -148,6 +148,39 @@ remove: (req, res) => {
       }
   }).then(() => res.redirect('/listProducts'))
       .catch(error => console.log(error))
-}
+},
+admin : (req, res)=>{
+  let categories = db.categories.findAll();
+    let origenes = db.origenes.findAll();
+    let sections = db.sections.findAll();
+    let images = db.images.findAll();
+    Promise.all([categories, origenes, sections, images])
+  db.products.findAll({
+      include: [
+          { association: "category" },
+          { association: "section" },
+          { association: "origen" },
+          { association: "imagen" },
+        ],
+      })
+      .then(productos =>{
+       console.log(productos);
+          
+      res.render('productAdmin',{
+          productos,
+          categories,
+          origenes,
+          sections,
+          images,
+
+          usuario: req.session.userLogin
+      })
+
+      })
+      .catch(error => {
+          console.log(error)
+      })
+    }
+
 
 };
