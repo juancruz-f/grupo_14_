@@ -181,6 +181,12 @@ module.exports= {
                 usuario : usuarios.find(usuario => usuario.id === +req.params.id)
             })*/ 
         
+    },
+    about: (req, res) => {
+        return res.render('about')
+    },
+    faqs: (req, res) => {
+        return res.render('faqs')
     }
 
 }

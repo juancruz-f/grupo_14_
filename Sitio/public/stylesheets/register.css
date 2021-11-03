@@ -93,7 +93,6 @@
 
 .form-field {
     margin-bottom: 5px;
-    width: 100vh;
 
 }
 
@@ -190,6 +189,9 @@
     .caja--register p{
         text-align: center;
         font-weight: 500;
+    }
+    .form-field{
+        width: 100vh;
     }
     
 

@@ -12,8 +12,10 @@
     color: var( --color-header);
     margin: 45px 30px 10px;
     font-weight: 700;
-
+    display: flex;
+    justify-content: center;
 }
+
 .cont--login{
     border-top: solid 1px var( --color-footer);
     display: flex;
@@ -135,6 +137,9 @@
         width: 80px;
         color: var( --color-grisFooter);
     }
+    .opt-regis{
+        text-align: center;
+    }
 }
 
 
@@ -151,7 +156,6 @@
         padding-top: 80px;
     }
     .cont--loginInt{
-        height: 300px;
         padding: 3px;
     
     }
@@ -163,3 +167,6 @@
     }
     
 }
+.opt-regist{
+        text-align: center;
+    }

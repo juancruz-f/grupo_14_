@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const {register,login, contact, processRegister,processLogin, logout, profile, updateProfile} = require('../controllers/usersController');
+const {register,login, contact, processRegister,processLogin, logout, profile, updateProfile, about, faqs} = require('../controllers/usersController');
 const loginValidator =require('../validations/loginValidator');
 const registerValidator = require('../validations/registerValidator');
 const profileValidator = require("../validations/profileValidator");
@@ -36,5 +36,7 @@ router.get('/contact', contact)
 
 router.get('/logout',logout);
 
+router.get('/about', about)
 
+router.get('/faqs', faqs)
 module.exports = router;

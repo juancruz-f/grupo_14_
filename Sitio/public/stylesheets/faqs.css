@@ -1,0 +1,7 @@
+.faqs-c{
+    background-color: #eeee;
+}
+.faqs-box{
+    background-color: var(--color-amarillo);
+    margin: 30px
+}

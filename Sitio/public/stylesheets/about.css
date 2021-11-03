@@ -1,0 +1,7 @@
+.about-c{
+    background-color: #eeee;
+}
+.about-box{
+    background-color: var(--color-amarillo);
+    margin: 25px;
+}
