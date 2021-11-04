@@ -1,5 +1,7 @@
 Swal.fire({
-    title: "Bienvenido!",
+    title: "Bienvenido a",
+	image: "Ohshots_1.png",
+
 	html: '<div class="container"><iframe width="642" height="361" src="https://www.youtube.com/embed/P6sFUz7S32I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>' ,
 	
     

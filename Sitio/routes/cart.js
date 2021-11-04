@@ -4,6 +4,6 @@ const router = express.Router();
 const {cart} = require("../controllers/cartController")
 
 /* GET home page. */
-router.get('/',cart)
+router.get('/cart',cart)
 
 module.exports = router;

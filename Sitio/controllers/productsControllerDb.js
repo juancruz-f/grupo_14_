@@ -156,7 +156,7 @@ remove: (req, res) => {
       where: {
           id: req.params.id
       }
-  }).then(() => res.redirect('/listProducts'))
+  }).then(() => res.redirect('/products/listProducts'))
       .catch(error => console.log(error))
 },
 admin : (req, res)=>{
@@ -189,7 +189,7 @@ admin : (req, res)=>{
       })
   
     },
-    list: (req, res)=> db.products.findAll({
+    list: (req, res)=> {db.products.findAll({
       include: [
         { association: "category" },
         { association: "section" },
@@ -199,9 +199,11 @@ admin : (req, res)=>{
     })
     .then((productos) => {
       console.log(productos.imagen);;
-      res.render("/products/listProducts", {
+      res.render("listProducts", {
         productos,
       });
     })
     .catch((error) => console.log(error))
 }
+ }
+

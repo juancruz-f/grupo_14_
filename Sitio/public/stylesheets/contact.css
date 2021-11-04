@@ -1,6 +1,7 @@
 .contenedor--contact{
     display: flex;
     justify-content: center;
+    margin: 30px;
 
 }
 .caja--contact{
