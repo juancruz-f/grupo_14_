@@ -14,7 +14,7 @@ main{
     margin: 15px;
     padding-top: 20px;
 }
-.articulo-listProducts a{
+button.articulo-listProducts a{
     color: var(--color-header)
 }
 .contenedor-lista{

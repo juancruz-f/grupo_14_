@@ -14,11 +14,11 @@
         <h1 class="h1--listproducts">Listado de productos</h1>
 
         
-        <section class="contenedor-lista">
+        <section >
 
           <% productos.forEach(producto=>{%>
 
-            <article>
+            <article class="contenedor-lista">
               <img src="/images/<%= producto.imagen[0].file %>" alt="">
               <h4>
                 <%= producto.title %>
