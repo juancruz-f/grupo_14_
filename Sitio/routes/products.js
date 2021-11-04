@@ -5,7 +5,7 @@ const path = require("path");
 const productAddValidator = require('../validations/productAddValidator')
 const adminUserCheck= require("../middlewares/adminUserCheck")
 
-const {detail, add, save, edit, update, remove, admin, products} = require('../controllers/productsControllerDb')
+const {detail, add, save, edit, update, remove, admin, list} = require('../controllers/productsControllerDb')
 
 
 
@@ -37,7 +37,7 @@ router.put('/edit/:id',upload.any(),adminUserCheck,update);
 
 /*product delete*/
 router.post('/remove/:id',adminUserCheck,remove);
-/* router.get('/listProducts',products) */
+router.get('/listProducts',list) 
 /*carrito*/
 
 

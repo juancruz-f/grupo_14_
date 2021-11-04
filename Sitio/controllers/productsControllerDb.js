@@ -182,7 +182,20 @@ admin : (req, res)=>{
           console.log(error)
       })
   
-    }
-
-
-};
+    },
+    list: (req, res)=> db.products.findAll({
+      include: [
+        { association: "category" },
+        { association: "section" },
+        { association: "origen" },
+        { association: "imagen" },
+      ],
+    })
+    .then((productos) => {
+      console.log(productos.imagen);;
+      res.render("listProducts", {
+        productos,
+      });
+    })
+    .catch((error) => console.log(error))
+}

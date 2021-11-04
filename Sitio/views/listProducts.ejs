@@ -16,10 +16,10 @@
         
         <section class="contenedor-lista">
 
-          <% productos.forEach(product=>{%>
+          <% productos.forEach(producto=>{%>
 
             <article>
-              <img src="<%= producto.imagen[0].file %>" alt="">
+              <img src="/images/<%= producto.imagen[0].file %>" alt="">
               <h4>
                 <%= producto.title %>
               </h4>

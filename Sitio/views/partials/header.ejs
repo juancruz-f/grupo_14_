@@ -33,6 +33,12 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#" id="navbarDropdown">Recetas</a>
             </li>
+            <li class="nav-item">
+              <form id="form-search-header" action="/products/search" class="d-flex" method="GET">
+                <input id="input-search-header" name="keywords" class="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Search">
+                <button type="submit" id="btn-search" class="btn btn-outline-light"><i class="fas fa-search"></i></button>
+              </form>
+            </li>
 
             
               <% if (locals.userLogin) { %>
@@ -49,7 +55,9 @@
                         <li><a class="dropdown-item" href="/products/add">Agregar productos</a></li>
                         <li><a class="dropdown-item" href="/products/admin">Editar productos</a></li>
                         <li><a class="dropdown-item" href="/users/logout">Cerrar sesión</a></li>
+                        
                       </ul>
+                      
                     </div>
                     <% } %>
                     <% if (locals.userLogin.rolId !==2) { %>
