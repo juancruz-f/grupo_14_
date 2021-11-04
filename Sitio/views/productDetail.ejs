@@ -10,7 +10,7 @@
 
 
       <main class="productDetail">
-        <h4><%= products.category %> > <%= products.title %> </h4>
+        <h4><%= idCategory(products.categoryId-1) %> > <%= products.title %> </h4>
         <article>
           <img src="/images/<%= products.imagen[0].file %>" alt="">
         </article>
@@ -21,7 +21,7 @@
     Detalle de producto/informacion
   </h3> -->
         <p class="detalle"><%= products.description %> </p>
-        <p clas="detalle"><%= products.origen %> </p>
+        <p clas="detalle"><%= idOrigen(products.origenId-1) %> </p>
         <div class="contenedor">
           <p class="precio"> <%= products.price.toFixed(2) %>  </p> 
           <a href="/products/cart"><button class="boton">comprar</button></a>

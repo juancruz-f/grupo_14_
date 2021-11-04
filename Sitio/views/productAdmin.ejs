@@ -32,14 +32,14 @@
                 <%= producto.price %>
               </p>
               <p> <b>Categoría: </b>
-                <%= category(producto.categoryId) %>
+                <%= idCategory(producto.categoryId-1) %>
               </p>
               <p><b>Origen: </b>
-                <%= producto.origenId %>
+                <%= idOrigen(producto.origenId-1) %>
 
               </p>
               <p><b>Sección: </b>
-                <%= producto.sectionId %>
+                <%=idSection(producto.sectionId-1) %>
 
               </p>
             </div>

@@ -1,6 +1,7 @@
 const db = require('../database/models')
 const {validationResult} = require('express-validator');
-const category = require('../utils/idConverter')
+const category = require('../utils/idConverter');
+const { idSection, idCategory, idOrigen} = require('../utils/idConverter');
 
 
  module.exports = {
@@ -37,6 +38,9 @@ const category = require('../utils/idConverter')
         console.log(products.imagen[0]);
         return res.render("productDetail", {
           products,
+          idCategory,
+          idOrigen,
+          
         });
       })
       .catch((error) => console.log(error));
@@ -167,11 +171,13 @@ admin : (req, res)=>{
       })
       .then(productos =>{
 
-        console.log(category(productos.categoryId));
+        
           
       res.render('productAdmin',{
           productos,
-          category: category,
+          idCategory,
+          idSection,
+          idOrigen,
           
 
           usuario: req.session.userLogin
@@ -193,7 +199,7 @@ admin : (req, res)=>{
     })
     .then((productos) => {
       console.log(productos.imagen);;
-      res.render("listProducts", {
+      res.render("/products/listProducts", {
         productos,
       });
     })

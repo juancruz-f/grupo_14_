@@ -7,10 +7,26 @@ db.categories.findAll()
 })
     
 );
+let section = [];
+
+db.sections.findAll()
+.then(sections => sections.forEach(element =>{
+ section.push(element.name)
+})
+    
+);
+let origen = [];
+db.origenes.findAll()
+.then(origenes => origenes.forEach(element =>{
+ origen.push(element.name)
+})
+
+);
 
 
-module.exports = 
-    function nombre (value) {
+
+module.exports = {
+   idCategory: (value)=> {
       /*   console.log(category); */
        for (let i = 0; i < category.length; i++) {
            if(value == 0){
@@ -31,4 +47,32 @@ module.exports =
            
        }
 
-    }
+    },
+    idSection : (value)=> {
+        for (let i = 0; i < section.length; i++) {
+            if(value == 0){
+                return section[0];
+            }
+            else if(value == 1){
+             return section[1];
+         } else if(value == 2){
+             return section[2];
+         }
+            
+            
+        }
+
+    },
+    idOrigen: (value)=>{
+        for (let i = 0; i < origen.length; i++) {
+            if(value == 0){
+                return origen[0];
+            }
+            else if(value == 1){
+             return origen[1];
+
+    
+} console.log(origen);
+console.log(section);
+console.log(category);
+        }}}
