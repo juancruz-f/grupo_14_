@@ -42,7 +42,7 @@
                 </div>
                 
                 <div class="container-inputs">
-                    <div class="col-md-3 inputs-text">
+                    <div class="col-md-12 inputs-text">
                       <label for="name" class="form-label">Nombre </label>
                       <input type="text" class="form-control <%= locals.errors && errors.name ? "is-invalid" : null%>" id="name" name="name" placeholder="Nombre" value="<%= typeof old != "undefined" ? old.name : locals.userLogin.name %>">
                       <div class="invalid-feedback" style="margin: 1vw 0;">
@@ -52,9 +52,9 @@
                       </div>
                     </div>
                     
-                    <div class="col-md-3 inputs-text">
+                    <div class="col-md-12 inputs-text">
                       <label for="email" class="form-label">Email </label>
-                      <input type="email" disabled class="form-control" id="email" name="email" placeholder="<%= locals.userLogin.email %>" value=""> <!-- cambiar esto -->
+                      <input type="email" disabled class="form-control" id="email" name="email" placeholder="<%= usuario.email %>" value=""> <!-- cambiar esto -->
                     </div>
   
                     <!-- <div class="mb-4 input-selects">
