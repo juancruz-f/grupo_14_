@@ -1,6 +1,6 @@
 const db = require('../database/models')
 const {validationResult} = require('express-validator');
-const category = require('../utils/idConverter');
+
 const { idSection, idCategory, idOrigen} = require('../utils/idConverter');
 
 
@@ -18,7 +18,7 @@ const { idSection, idCategory, idOrigen} = require('../utils/idConverter');
           origenes,
           sections,
         });
-      console.log(categories);      })
+          })
       
       .catch((error) => console.log(error));
   },
@@ -35,8 +35,8 @@ const { idSection, idCategory, idOrigen} = require('../utils/idConverter');
         ],
       })
       .then((products) => {
-        console.log(products.imagen[0]);
-        return res.render("productDetail", {
+        
+        return res.render("/productDetail", {
           products,
           idCategory,
           idOrigen,
@@ -75,16 +75,22 @@ const { idSection, idCategory, idOrigen} = require('../utils/idConverter');
     let errors = validationResult(req);
     console.log(errors);
     if (errors.isEmpty()) {
-      const { title, description, price, category, origen, section } = req.body;
+     
+    
+      const { title, description, price, categoryId, origenId, sectionId } = req.body;
+      
+      
+      
       db.products.create({
         ...req.body,
         title: title.trim(),
         description: description.trim(),
         price: price,
-        category: category,
-        origen: origen,
-        section: section
-    }).then(product => {
+        
+            
+    })
+    .then(product => {
+     
 
         if (req.files) {
             var images = [];
