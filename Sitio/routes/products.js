@@ -33,7 +33,7 @@ router.post('/add', upload.any(),productAddValidator,save);
 
 /*product edit*/
 router.get('/edit/:id',adminUserCheck,edit);
-router.put('/edit/:id',upload.any(),adminUserCheck,update);
+router.put('/edit/:id',upload.array('image'),adminUserCheck,update);
 
 /*product delete*/
 router.post('/remove/:id',adminUserCheck,remove);

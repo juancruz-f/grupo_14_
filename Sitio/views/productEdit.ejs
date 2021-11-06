@@ -12,53 +12,66 @@
         <%- include('./partials/header') %>
 
 
-         
+
             <main>
                 <div class="container--add">
                     <div class='caja--add'>
                         <h2>Editar producto</h2>
-                        <form class='caja--add' action="/products/edit/<%= producto.id %> ?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <form class='caja--add' action="/products/edit/<%= producto.id %> ?_method=PUT" method="POST"
+                            enctype="multipart/form-data">
                             <div>
                                 <label for="formGroupExampleInput" class="form-label">Marca</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" name="title" value=<%= producto.title %> >
+                                <input type="text" class="form-control" id="formGroupExampleInput" name="title"
+                                    value=<%=producto.title %> >
                             </div>
                             <div>
                                 <label for="floatingTextarea">Descripción</label>
-                                <textarea class="form-control" id="floatingTextarea" name="description"><%= producto.description %> </textarea>
+                                <textarea class="form-control" id="floatingTextarea"
+                                    name="description"><%= producto.description %> </textarea>
 
                             </div>
                             <div class='imagen--add'>
                                 <label for=""> Seleccionar imagen de producto</label>
-                                <input class="avatar" type="file" name="image" accept=".jpg" required value="<%= producto.imagen[0].file %> ">
+                                <input class="avatar" type="file" name="image" accept=".jpg" 
+                                   multiple>
 
                             </div>
 
                             <div>
                                 <label for="category" class="form-label" name="category">Categoría</label>
 
-                                <select id="category" class="form-select" name="category">
+                                <select id="category" class="form-select" name="categoryId">
                                     <option value="" selected hidden>Seleccione la categoría</option>
                                     <% categories.forEach(category=> { %>
-                                      <option value="<%= category.id %>">
-                                        <%= category.name %>
-                                      </option>
-                                      <% }) %>
-                                  </select>
-            
+                                        <option <%= category.id == producto.categoryId ? 'selected' : null %>  value="<%= category.id %>">
+                                            <%= category.name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                                <label for="origen" class="form-label" >Origen</label>
 
-                                <label for="origen" class="form-label" name="origen">Origen</label>
-                               
-                <select id="section" class="form-select" name="section">
-                    <option value="" selected hidden>Seleccione seccion</option>
-                    <% sections.forEach(section=> { %>
-                      <option value="<%= section.id %>">
-                        <%= section.name %>
-                      </option>
-                      <% }) %>
-                  </select>
+
+                                <select id="origen" class="form-select" name="origenId">
+                                    <option value="" selected hidden>Seleccione seccion</option>
+                                    <% origenes.forEach(origen=> { %>
+                                        <option <%= origen.id == producto.origenId ? 'selected' : null %> value="<%= origen.id %>">
+                                            <%= origen.name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                                <label for="section" class="form-label" >Sección</label>
+                                <select id="section" class="form-select" name="sectionId">
+                                    <option value="" selected hidden>Seleccione seccion</option>
+                                    <% sections.forEach(section=> { %>
+                                        <option <%= section.id == producto.sectionId ? 'selected' : null %> value="<%= section.id %>">
+                                            <%= section.name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
                                 <div>
                                     <label for="formGroupExampleInput2" class="form-label">Precio</label>
-                                    <input type="number" class="form-control" id="formGroupExampleInput2" name="price" value=<%= producto.price %> >
+                                    <input type="number" class="form-control" id="formGroupExampleInput2" name="price"
+                                        value=<%=producto.price %> >
                                 </div>
                             </div>
                             <button class="button--add" type="submit">Guardar</button>
