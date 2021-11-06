@@ -184,10 +184,10 @@ module.exports = {
             })
             db.images.bulkCreate(images, { validate: true })
               .then(() => console.log('imagenes agregadas'))
-              return res.redirect('/products/listProducts')
+              
               
           })
-         
+          return res.redirect('/products/listProducts')
       }else {
         return res.redirect('/products/listProducts')
       }
