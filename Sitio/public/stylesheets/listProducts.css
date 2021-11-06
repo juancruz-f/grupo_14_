@@ -1,50 +1,47 @@
 body{
-    background-color: var(--color-amarillo);
+    background-color: var(--color-grisClaro);
 }
 main{
-    background-color: var(--color-amarillo);
+    background-color: var(--color-grisClaro);
 }
 .h1--listproducts{
-    text-align: left;
-    margin: 5px;
-
+    text-align: center;
+    margin-top: 10px;
+    background-color: var(--color-amarillo);
 }
 .listado h2{
     
     margin: 15px;
     padding-top: 20px;
 }
-button.articulo-listProducts a{
-    color: var(--color-header)
+button.art-listProducts a{
+    color: var(--color-grisClaro);
+    text-decoration: none;
+    padding: 5px;
 }
 .contenedor-lista{
     background-color: var(--color-grisClaro);
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin: 15px;
-    padding: 5px;
-    border: 1px var(--color-header) solid;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(100, 100, 100);
     border-radius: 15px;
+    flex-direction: column;
+    text-align: center;
 }
 .contenedor-lista img{
     display: block;
     margin: auto;
 }
-.caja-lista {
-    margin: 5px;
-    padding: 5px;
-    justify-content: space-between;
-    width: 100%;
-    /* height: 200px; */
-    flex-wrap: nowrap;
-    align-self: center;
-}
-.caja-lista button{
+
+ button{
     border-style: none;
-    color: var(--color-header);
-    text-decoration: none;
+    background-color: var(--color-header);
     border-radius: 20px;
+    width: 40%;
+    align-self: center;
 }
 
 
@@ -55,4 +52,15 @@ button.articulo-listProducts a{
         flex-direction: row;
         justify-content: space-between;
     }
+    button{
+        width: 20%;
+    }
+    /* .caja-lista{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; */
 }
+
+/* @media (min-width: 1024px){
+    
+} */

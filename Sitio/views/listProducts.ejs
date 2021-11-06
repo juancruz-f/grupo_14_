@@ -14,10 +14,9 @@
         <h1 class="h1--listproducts">Listado de productos</h1>
 
         
-        <section >
-
+        <section class="caja-lista">
           <% productos.forEach(producto=>{%>
-
+            
             <article class="contenedor-lista">
               <img src="/images/<%= producto.imagen[0].file %>" alt="">
               <h4>
@@ -26,10 +25,10 @@
               <p>
                $ <%= producto.price %>
               </p>
-              <button class="articulo-listProducts"><a href="/products/detail/<%= producto.id %>">Más info</a></button>
+              <button class="art-listProducts"><a href="/products/detail/<%= producto.id %>">Más info</a></button>
             </article>
+         
             <% }) %>
-
         </section>
 
        
