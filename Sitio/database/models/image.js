@@ -20,6 +20,10 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: {
             type: dataTypes.DATE,
             allowNull: true
+        },
+        productId: {
+            type: dataTypes.INTEGER,
+            allowNull: true
         }
 
 
@@ -36,8 +40,8 @@ module.exports = (sequelize, dataTypes) => {
 
     images.associate = function (models) {
         images.belongsTo(models.products, {
-            as: "products",
-            foreignKey: "id"
+            as: "product",
+            foreignKey: "productId"
             
 
         })

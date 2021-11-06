@@ -1,4 +1,4 @@
-Swal.fire({
+/* Swal.fire({
     title: "Bienvenido a",
 	image: "logotipo.png",
 
@@ -7,7 +7,7 @@ Swal.fire({
     
 
 });
-
+ */
 
 
 

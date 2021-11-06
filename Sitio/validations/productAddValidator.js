@@ -15,11 +15,13 @@ module.exports = [
     .notEmpty().withMessage('Añade un precio')
     .isInt().withMessage("debes introducir un numero"),
 
-    body('category')
+    body('categoryId')
     .notEmpty().withMessage('Indica la categoría'),
 
-    body("section")
+    body("sectionId")
     .notEmpty().withMessage("Debes elegir una seccion"),
+    body("origenId")
+    .notEmpty().withMessage("Debes elegir un origen"),
 
     
     body("image").custom((value,{req})=>{
