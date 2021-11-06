@@ -14,29 +14,33 @@
 
   
 <main>
-    <div class="contenedor--contact">
-        <form  class="caja--contact" action="/contact" method="POST">
-            <div class="div--contact">
-                <label for=""> Nombre y Apellido</label>
-                <input type="text" name=nombreyapellido value="" required>
+    <h1 class="class-1">Test</h1>
+    <form class="col-sm-6 col-12" action="contact" id="contact-form" method="post" role="form" style="margin-top: 40px" >
+        <h1>Contact Us</h1>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control" id="name" placeholder="name" required>
+          </div>
+          <div class="form-group">
+              <label for="telephone">Telephone</label>
+              <input type="tel" name="telephone" class="form-control" id="telephone" placeholder="telephone">
             </div>
-
-            <div class="div--contact">
-                <label for="">Email</label>
-                <input type="email" name="email" value="" required>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="email" required>
             </div>
-
-            <div class="mensaje--contact">
-                <label for=""> Mensaje</label>
-                <textarea class="form-control" name="mensaje" id="mensaje" cols="50" rows="10"></textarea>
-            </div>
-
-            <div class="button--contact">
-                <button type="submit">Enviar</button>
-            </div>
-
+          <div class="form-group">
+          <label for="message">Message</label>
+          <textarea class="form-control" name="message" id="message" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
         </form>
-    </div>
+        <script src="server.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
 
 </main>
   <!-- Footer -->
