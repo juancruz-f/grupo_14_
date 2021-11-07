@@ -17,8 +17,7 @@ const {validationResult} = require('express-validator');
           .catch((error) => console.log(error));
       },
     detail : (req,res) => {
-        db.products
-          .findOne({
+        db.products.findOne({
             where: {
               id: req.params.id,
             },
