@@ -36,10 +36,11 @@ module.exports = {
     })
       .then((products) => {
 
-        return res.render("/productDetail", {
+        return res.render('productDetail', {
           products,
           idCategory,
           idOrigen,
+          
 
         });
       })
