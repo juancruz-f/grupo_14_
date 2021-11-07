@@ -81,8 +81,11 @@ CREATE TABLE `images` (
   `file` varchar(255) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `productId` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `productId_idx` (`productId`),
+  CONSTRAINT `fk_images_products1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +94,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,'gin.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(2,'vino.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(3,'andesroja.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(4,'yuGin.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(5,'sidraPeer.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(6,'absolutVodka.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(7,'packBrahma.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(8,'packStella.png','2021-10-24 00:00:00','2021-10-24 00:00:00'),(9,'patagoniaLatas.png','2021-10-24 00:00:00','2021-10-24 00:00:00');
+INSERT INTO `images` VALUES (1,'gin.png','2021-10-24 00:00:00','2021-10-24 00:00:00',1),(2,'vino.png','2021-10-24 00:00:00','2021-10-24 00:00:00',2),(3,'andesroja.png','2021-10-24 00:00:00','2021-10-24 00:00:00',3),(4,'yuGin.png','2021-10-24 00:00:00','2021-10-24 00:00:00',4),(5,'sidraPeer.png','2021-10-24 00:00:00','2021-10-24 00:00:00',5),(6,'absolutVodka.png','2021-10-24 00:00:00','2021-10-24 00:00:00',6),(7,'packBrahma.png','2021-10-24 00:00:00','2021-10-24 00:00:00',7),(8,'packStella.png','2021-10-24 00:00:00','2021-10-24 00:00:00',8),(9,'patagoniaLatas.png','2021-10-24 00:00:00','2021-10-24 00:00:00',9),(11,'product1636142467480.png','2021-11-05 20:01:07','2021-11-05 20:01:07',11),(12,'product1636142652334.png','2021-11-05 20:04:12','2021-11-05 20:04:12',12);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,20 +136,17 @@ CREATE TABLE `products` (
   `price` int NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  `imageId` int NOT NULL,
-  `origenId` int NOT NULL,
-  `sectionId` int NOT NULL,
-  `categoryId` int NOT NULL,
+  `origenId` int DEFAULT NULL,
+  `sectionId` int DEFAULT NULL,
+  `categoryId` int DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_products_images1_idx` (`imageId`),
   KEY `fk_products_origenes1_idx` (`origenId`),
   KEY `fk_products_sections1_idx` (`sectionId`),
   KEY `fk_products_categories1_idx` (`categoryId`),
   CONSTRAINT `fk_products_categories1` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `fk_products_images1` FOREIGN KEY (`imageId`) REFERENCES `images` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_products_origenes1` FOREIGN KEY (`origenId`) REFERENCES `origenes` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_products_sections1` FOREIGN KEY (`sectionId`) REFERENCES `sections` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,7 +155,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Alquimista Gin','Es un gin pensado y diseñado para ser armónico, elegante y disruptivo',1799,'2021-10-24 00:00:00','2021-10-24 00:00:00',1,1,1,2),(2,'Vino Estancia Mendoza','De estilo frutado, en estos vinos destacan los aromas varietales y sus taninos redondos.',230,'2021-10-24 00:00:00','2021-10-24 00:00:00',2,1,1,3),(3,'Cerveza Andes Roja','Pack de 24 unidades, 473ml',2760,'2021-10-24 00:00:00','2021-10-24 00:00:00',3,1,1,4),(4,'Yu Gin','Un gin refrescante y único, elaborado en Francia.',7600,'2021-10-24 00:00:00','2021-10-24 00:00:00',4,2,2,2),(5,'Sidra Peer','Peer Maracuyá es una sidra de pera con Maracuyá. Pack de 4 unidades por 500ml',1000,'2021-10-24 00:00:00','2021-10-24 00:00:00',5,1,2,5),(6,'Absolut Peach','Vodka con sabor a durazno, 750ml',2600,'2021-10-24 00:00:00','2021-10-24 00:00:00',6,2,2,2),(7,'Cerveza Brahma','Pack de 24 unidades, 473 ml.',1900,'2021-10-24 00:00:00','2021-10-24 00:00:00',7,1,3,4),(8,'Stella Artois','Pack de 24 unidades, 473 ml.',2300,'2021-10-24 00:00:00','2021-10-24 00:00:00',8,2,3,4),(9,'Cerveza Patagonia','Pack de 24 unidades, 473 ml.',3000,'2021-10-24 00:00:00','2021-10-24 00:00:00',9,1,3,4);
+INSERT INTO `products` VALUES (1,'Alquimista Gin','Es un gin pensado y diseñado para ser armónico, elegante y disruptivo',1799,'2021-10-22 17:21:25','2021-10-22 17:21:25',1,1,2),(2,'Vino Estancia Mendoza','De estilo frutado, en estos vinos destacan los aromas varietales y sus taninos redondos.',230,'2021-10-22 17:21:25','2021-10-22 17:21:25',1,1,3),(3,'Cerveza Andes roja','Pack de 24 unidades, 473ml',2760,'2021-10-22 17:21:25','2021-10-22 17:21:25',1,1,4),(4,'Yu Gin','Un gin refrescante y único, elaborado en Francia.',7600,'2021-10-22 17:21:25','2021-10-22 17:21:25',2,2,2),(5,'Sidra Peer','Peer Maracuyá es una sidra de pera con Maracuyá. Pack de 4 unidades por 500ml',1000,'2021-10-22 17:21:25','2021-10-22 17:21:25',1,2,5),(6,'Absolut Peach','Vodka con sabor a durazno, 750ml',2600,'2021-10-22 17:21:25','2021-10-22 17:21:25',2,2,2),(7,'Cerveza Brahma','Pack de 24 unidades',1900,'2021-10-22 17:21:25','2021-10-22 17:21:25',1,3,4),(8,'Stella Artois','Pack de 24 unidades',3000,'2021-10-22 17:21:25','2021-10-22 17:21:25',2,3,4),(9,'Cerveza Patagonia','Pack de 24 unidades',3400,'2021-10-22 17:21:25','2021-10-22 17:21:25',1,3,4),(11,'Vino Tanti','Vinito que pega un montón',250,'2021-11-05 20:01:07','2021-11-05 20:01:07',NULL,NULL,NULL),(12,'Gin Pegamucho','Este pega duro',3000,'2021-11-05 20:04:12','2021-11-05 20:04:12',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -228,7 +228,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `fk_users_roles1_idx` (`rolId`),
   CONSTRAINT `fk_users_roles1` FOREIGN KEY (`rolId`) REFERENCES `roles` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -237,7 +237,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'eric','mena','ericmena@gmail.com','$2a$10$BJLttZXy7CCM6FPhnykhs.J2U5dCEiQElujUQ3vJTbSKw9kZ/moXO','2021-10-01 00:14:58','2021-10-01 00:14:58',1,'default.png'),(3,'juanito','perez','juanitoperez@hotmail.com','$2a$10$yobrwMdiDkPHY5wALbqS7.F5G8jf6PktJOhyXJtgwgiPBKOHQzlL.','2021-10-01 00:16:43','2021-10-01 00:16:43',1,'default.png'),(4,'Segundo','Fernandez','juancruzfernandez108@gmail.com','$2a$10$k6g5z4HryaOerQDDX1cZSuYm62O398zdYD814L32pC/FqhxgERM..','2021-10-01 02:26:28','2021-10-19 23:30:24',1,'default.png'),(5,'Renato','Saucedo','renisaucedo@gmail.com','$2a$10$V25LL8rfviD9fBQy.WX9buIsDae8jJ3HSZ92NQX8lpLu9Ec3E.AJS','2021-10-01 02:28:08','2021-10-01 02:28:08',1,'default.png'),(6,'ramon','nodo','ramonodo@hotmail.com','$2a$10$uC2JhoVofShdX/r3XLGWqOGArtKYJHytC7cRZ.d7nGaUXQtg73Nem','2021-10-05 21:46:25','2021-10-05 21:46:25',1,'default.png'),(7,'rika','rika','rikarika@gmail.com','$2a$10$vsVcipVq7BWLEPgz1Yuy8OfyASzefOK0xMZI4cfwma201eAv0250.','2021-10-08 22:04:57','2021-10-08 22:04:57',1,'default.png'),(8,'rana','rene','ranarene@gmail.com','$2a$10$N3.YL/rQgAAmBHC3jv2SV.Jb700Zd1VLDBdnx/P.1vdzMhe.hjvuu','2021-10-08 22:08:09','2021-10-08 22:08:09',1,'default.png');
+INSERT INTO `users` VALUES (2,'eric','mena','ericmena@gmail.com','$2a$10$BJLttZXy7CCM6FPhnykhs.J2U5dCEiQElujUQ3vJTbSKw9kZ/moXO','2021-10-01 00:14:58','2021-10-01 00:14:58',1,'default.png'),(3,'juanito','perez','juanitoperez@hotmail.com','$2a$10$yobrwMdiDkPHY5wALbqS7.F5G8jf6PktJOhyXJtgwgiPBKOHQzlL.','2021-10-01 00:16:43','2021-10-01 00:16:43',1,'default.png'),(4,'Juan','Fernandez','juancruzfernandez108@gmail.com','$2a$10$k6g5z4HryaOerQDDX1cZSuYm62O398zdYD814L32pC/FqhxgERM..','2021-10-01 02:26:28','2021-10-19 23:30:24',2,'default.png'),(5,'Renato','Saucedo','renisaucedo@gmail.com','$2a$10$V25LL8rfviD9fBQy.WX9buIsDae8jJ3HSZ92NQX8lpLu9Ec3E.AJS','2021-10-01 02:28:08','2021-10-01 02:28:08',1,'default.png'),(6,'ramon','nodo','ramonodo@hotmail.com','$2a$10$uC2JhoVofShdX/r3XLGWqOGArtKYJHytC7cRZ.d7nGaUXQtg73Nem','2021-10-05 21:46:25','2021-10-05 21:46:25',1,'default.png'),(7,'rika','rika','rikarika@gmail.com','$2a$10$vsVcipVq7BWLEPgz1Yuy8OfyASzefOK0xMZI4cfwma201eAv0250.','2021-10-08 22:04:57','2021-10-08 22:04:57',1,'default.png'),(8,'rana','rene','ranarene@gmail.com','$2a$10$N3.YL/rQgAAmBHC3jv2SV.Jb700Zd1VLDBdnx/P.1vdzMhe.hjvuu','2021-10-08 22:08:09','2021-10-08 22:08:09',1,'default.png'),(9,'Belen','Mamani','belbel11@gmail.com','$2a$10$OVDx0LFr8.pnKukttl39u.DyLAjLcBeGXz21Fa5/Z0LRBGOKTf0rm','2021-11-04 18:00:41','2021-11-04 18:00:41',2,'default.png'),(10,'charly','garcia','charly@gmail.com','$2a$10$7SramjbPiMVcSR4KYksD1eXeb59qvMxl0/Yl3CiWnvHpIgnl2ks/S','2021-11-04 18:08:30','2021-11-04 18:08:30',1,'default.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -250,4 +250,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-25 14:53:38
+-- Dump completed on 2021-11-05 17:43:34
