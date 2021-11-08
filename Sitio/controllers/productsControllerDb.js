@@ -206,7 +206,7 @@ module.exports = {
       where: {
         id: req.params.id
       }
-    }).then(() => res.redirect('/products/listProducts'))
+    }).then(() => res.redirect('/products/admin'))
       .catch(error => console.log(error))
   },
   admin: (req, res) => {
