@@ -90,6 +90,7 @@ a{
     }
     .dropdown, #dropdownMenuButton1, .btn, #navbarDropdown{
         right: 30px;
+        
 
     }
 
@@ -100,7 +101,7 @@ a{
     .dropdown, #dropdownMenuButton1, .btn, #navbarDropdown{
         border:none;
         background-color: transparent;
-        left: 430px;
+        left: 730px;
         top:-3px;
     
     }
