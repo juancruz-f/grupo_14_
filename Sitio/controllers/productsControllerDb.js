@@ -108,9 +108,10 @@ module.exports = {
 
             db.images.bulkCreate(images, { validate: true })
               .then(() => console.log('imagenes agregadas'))
-          }
+                     }
+                     return res.redirect('/products/admin')   
 
-          return res.redirect('/listProducts')
+          
         }).catch(error => console.log(error))
 
     } else {
@@ -188,9 +189,9 @@ module.exports = {
               
               
           })
-          return res.redirect('/products/listProducts')
+          return res.redirect('/products/admin')
       }else {
-        return res.redirect('/products/listProducts')
+        return res.redirect('/products/admin')
       }
 
 
@@ -257,4 +258,3 @@ module.exports = {
       .catch((error) => console.log(error))
   }
 }
-
