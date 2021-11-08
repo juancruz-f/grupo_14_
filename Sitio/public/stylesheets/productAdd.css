@@ -12,6 +12,7 @@
 }
 .form-select{
     margin:15px 0;
+    text-transform: uppercase;
 }
 .button--add{
     background-color: var( --color-footer);

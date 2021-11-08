@@ -13,10 +13,10 @@ module.exports = {
                 { association: "imagen" },
               ],
             })
-            .then(productos =>{
+            .then(products =>{
                 
             res.render('index',{
-                productos,
+                products,
                 usuario: req.session.userLogin
             })
 
@@ -25,15 +25,7 @@ module.exports = {
                 console.log(error)
             })
 
-        /* return res.render('index',{
-            title : "Oh Shots",
-            products,
-            sections,
-            destacados : products.filter(product => product.section === "destacados"),
-            interes: products.filter(product => product.section === "interes"),
-            packs : products.filter(product => product.section === "packs"),
-    }) */
-
+    
 
     
     },
