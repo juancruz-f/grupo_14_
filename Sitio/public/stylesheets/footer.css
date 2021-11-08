@@ -4,7 +4,7 @@
     background: var(--color-header);
     color: #eeee;
     font-size: 14px;
-    padding: 60px 0 20px;
+    padding: 15px 0 0;
   }
 
   .container {
@@ -25,7 +25,12 @@
   .footer p {
     color: #8a8a8a;
   }
-  
+  .footer h3.mtd {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 21px;
+    padding-top: 25px;
+  }
   .footer h3 {
     color: #fff;
     margin-bottom: 20px;
